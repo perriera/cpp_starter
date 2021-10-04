@@ -1,6 +1,8 @@
 
 # cpp_starter
 
+Global search and replace cpp_starter to <project_name>
+
 ###   Description
 > This is a C++ library that predicts the next chess move, (based on some of the greatest chess minds in history).</br> 
 > 
