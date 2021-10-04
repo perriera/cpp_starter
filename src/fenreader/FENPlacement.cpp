@@ -1,6 +1,6 @@
-#include "../include/chessmind/fen/FENPlacement.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/fen/FENPlacement.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
 #include "extras/string_support.hpp"
 #include <ctype.h>
 #include <iostream>

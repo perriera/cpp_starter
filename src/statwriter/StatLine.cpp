@@ -1,11 +1,11 @@
-#include "../include/chessmind/stat/StatLine.hpp"
+#include "../include/cpp_starter/stat/StatLine.hpp"
 #include "extras/string_support.hpp"
 #include <iomanip>
 #include <iostream>
 
 using namespace std;
 
-ostream &operator<<(ostream &out, const StatLine &line) {
+ostream& operator<<(ostream& out, const StatLine& line) {
   string comma = ",";
   out << line.fenLine << comma;
   out << dec << line.moveNo << comma;
@@ -19,7 +19,7 @@ ostream &operator<<(ostream &out, const StatLine &line) {
   return out;
 }
 
-istream &operator>>(istream &in, StatLine &line) {
+istream& operator>>(istream& in, StatLine& line) {
   char comma = ' ';
   in >> line.fenLine >> comma;
   in >> dec >> line.moveNo >> comma;

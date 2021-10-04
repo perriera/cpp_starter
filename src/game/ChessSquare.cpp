@@ -1,12 +1,12 @@
-#include "../include/chessmind/game/ChessSquare.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
-#include "../include/chessmind/game/ChessPosition.hpp"
+#include "../include/cpp_starter/game/ChessSquare.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/game/ChessPosition.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 
 using namespace std;
 
-void ChessCoordinateException::assertation(const ChessCoordinate &coordinate) {
+void ChessCoordinateException::assertation(const ChessCoordinate& coordinate) {
   char value = coordinate._value;
   int offset = coordinate._assertions_off ? 1 : 0;
   if (value < coordinate._from - offset || value > coordinate._to + offset) {
@@ -15,7 +15,7 @@ void ChessCoordinateException::assertation(const ChessCoordinate &coordinate) {
 }
 
 ChessCoordinate::ChessCoordinate(char from, char to, char value, int direction)
-    : _from(from), _to(to), _value(value), _direction(direction) {
+  : _from(from), _to(to), _value(value), _direction(direction) {
   ChessCoordinateException::assertation(*this);
 }
 

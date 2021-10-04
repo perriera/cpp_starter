@@ -3,9 +3,9 @@
 #include <sstream>  // std::stringstream
 #include <string>   // std::string
 
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
-#include "../include/chessmind/game/ChessKnight.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/game/ChessKnight.hpp"
 #include "catch.hpp"
 #include "extras/string_support.hpp"
 
@@ -29,7 +29,7 @@ SCENARIO("Verify ChessKnight incorrectly placed", "[ChessBoard]") {
 }
 
 SCENARIO("Verify ChessKnight calculate all possible positions",
-         "[ChessBoard]") {
+  "[ChessBoard]") {
   ChessBoard board;
   WhiteKnight knight('b', '1');
   auto moves = knight.allCalculatedMoves(&board);

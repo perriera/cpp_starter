@@ -4,9 +4,9 @@
 #include <sstream>// std::stringstream
 #include <string>// std::string
 
-#include "../include/chessmind/fen/FENReader.hpp"
-#include "../include/chessmind/pgn/PGNGame.hpp"
-#include "../include/chessmind/stat/StatWriter.hpp"
+#include "../include/cpp_starter/fen/FENReader.hpp"
+#include "../include/cpp_starter/pgn/PGNGame.hpp"
+#include "../include/cpp_starter/stat/StatWriter.hpp"
 #include "catch.hpp"
 #include "extras/string_support.hpp"
 

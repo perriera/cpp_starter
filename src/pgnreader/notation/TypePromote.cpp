@@ -1,12 +1,12 @@
 #include <iostream>
-#include "../include/chessmind/pgn/notation/TypePromote.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessPosition.hpp"
-#include "../include/chessmind/game/ChessSquare.hpp"
+#include "../include/cpp_starter/pgn/notation/TypePromote.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessPosition.hpp"
+#include "../include/cpp_starter/game/ChessSquare.hpp"
 
 using namespace std;
 
-istream &operator>>(istream &in, PGNotationTypePromote &obj)
+istream& operator>>(istream& in, PGNotationTypePromote& obj)
 {
     in >> obj._position;
     char check;
@@ -25,7 +25,7 @@ void TypePromoteException::assertation(char check)
     }
 }
 
-string PGNotationTypePromote::resolve(const MovesTable &moves, const string &black_or_white_set, const ChessBoard *board) const
+string PGNotationTypePromote::resolve(const MovesTable& moves, const string& black_or_white_set, const ChessBoard* board) const
 {
     // int rank1 = -1;
     string _foundMove;
@@ -40,10 +40,10 @@ string PGNotationTypePromote::resolve(const MovesTable &moves, const string &bla
     }
     if (_foundMove.size() == 0)
         throw TypePromoteException("No moves found: " + original());
-    ChessBoard &b = const_cast<ChessBoard &>(*board);
+    ChessBoard& b = const_cast<ChessBoard&>(*board);
     _move = _foundMove;
     bool is_black = isupper(black_or_white_set[0]);
-    char _black_or_white = is_black?toupper(_promotion):tolower(_promotion);
+    char _black_or_white = is_black ? toupper(_promotion) : tolower(_promotion);
     b.setPiece(_move.a(), _black_or_white);
     return _foundMove;
 }

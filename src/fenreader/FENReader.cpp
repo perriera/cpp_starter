@@ -1,5 +1,5 @@
-#include "../include/chessmind/fen/FENReader.hpp"
-#include "../include/chessmind/fen/FENLine.hpp"
+#include "../include/cpp_starter/fen/FENReader.hpp"
+#include "../include/cpp_starter/fen/FENLine.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 

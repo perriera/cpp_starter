@@ -1,11 +1,11 @@
-#include "../include/chessmind/stat/NextMove.hpp"
+#include "../include/cpp_starter/stat/NextMove.hpp"
 #include "extras/string_support.hpp"
 #include <iomanip>
 #include <iostream>
 
 using namespace std;
 
-ChessMoves NextMove::determine(const StatLines &statLines) {
+ChessMoves NextMove::determine(const StatLines& statLines) {
   ChessMoves nextMoves;
   ChessMove nextMove;
   for (auto statLine : statLines) {
@@ -16,8 +16,8 @@ ChessMoves NextMove::determine(const StatLines &statLines) {
   return nextMoves;
 }
 
-StatLines NextMove::apply(const StatLines &statLines,
-                          const ChessMoves &nextMoves) {
+StatLines NextMove::apply(const StatLines& statLines,
+  const ChessMoves& nextMoves) {
   StatLines updated;
   int index = 0;
   ChessMoves bumpedNextMoves = nextMoves;

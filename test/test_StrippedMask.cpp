@@ -5,11 +5,11 @@
 
 // #include "catch.hpp"
 // #include "extras/string_support.hpp"
-// #include "../include/chessmind/fen/FENReader.hpp"
-// #include "../include/chessmind/stat/StatWriter.hpp"
-// #include "../include/chessmind/stat/StatHeader.hpp"
-// #include "../include/chessmind/masking/DataMask.hpp"
-// #include "../include/chessmind/masking/StrippedMask.hpp"
+// #include "../include/cpp_starter/fen/FENReader.hpp"
+// #include "../include/cpp_starter/stat/StatWriter.hpp"
+// #include "../include/cpp_starter/stat/StatHeader.hpp"
+// #include "../include/cpp_starter/masking/DataMask.hpp"
+// #include "../include/cpp_starter/masking/StrippedMask.hpp"
 
 // using namespace std;
 

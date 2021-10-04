@@ -3,12 +3,12 @@
 #include <sstream>// std::stringstream
 #include <string>// std::string
 
-#include "../include/chessmind/ai/CrossTableIO.hpp"
-#include "../include/chessmind/ai/CrossTableLine.hpp"
-#include "../include/chessmind/ai/CrossTableMap.hpp"
-#include "../include/chessmind/blockchain/Block.hpp"
-#include "../include/chessmind/fen/FENReader.hpp"
-#include "../include/chessmind/stat/StatWriter.hpp"
+#include "../include/cpp_starter/ai/CrossTableIO.hpp"
+#include "../include/cpp_starter/ai/CrossTableLine.hpp"
+#include "../include/cpp_starter/ai/CrossTableMap.hpp"
+#include "../include/cpp_starter/blockchain/Block.hpp"
+#include "../include/cpp_starter/fen/FENReader.hpp"
+#include "../include/cpp_starter/stat/StatWriter.hpp"
 #include "catch.hpp"
 #include "extras/crc32_support.hpp"
 #include "extras/crc64_support.hpp"

@@ -4,8 +4,8 @@
 #include <string>
 #include "catch.hpp"
 #include "extras/string_support.hpp"
-#include "../include/chessmind/pgn/PGNGame.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
+#include "../include/cpp_starter/pgn/PGNGame.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
 
 using namespace std;
 

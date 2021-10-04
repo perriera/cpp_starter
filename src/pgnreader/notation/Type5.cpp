@@ -1,12 +1,12 @@
 #include <iostream>
-#include "../include/chessmind/pgn/notation/Type5.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/pgn/notation/Type5.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
 
 using namespace std;
 
-ostream &operator<<(ostream &out, const PGNotationType5 &obj)
+ostream& operator<<(ostream& out, const PGNotationType5& obj)
 {
     out << obj._piece;
     out << 'x';
@@ -14,7 +14,7 @@ ostream &operator<<(ostream &out, const PGNotationType5 &obj)
     return out;
 }
 
-istream &operator>>(istream &in, PGNotationType5 &obj)
+istream& operator>>(istream& in, PGNotationType5& obj)
 {
     in >> skipws >> obj._piece;
     in >> skipws >> obj._row_or_column;
@@ -40,7 +40,7 @@ istream &operator>>(istream &in, PGNotationType5 &obj)
 //     throw NoAvailableMovesException(notation.san(), black_or_white_set);
 // }
 
-static string rowNotation(const MovesTable &moves, const PGNotationInterface &notation, const std::string &black_or_white_set)
+static string rowNotation(const MovesTable& moves, const PGNotationInterface& notation, const std::string& black_or_white_set)
 {
     for (auto move : moves)
     {
@@ -54,7 +54,7 @@ static string rowNotation(const MovesTable &moves, const PGNotationInterface &no
     throw NoAvailableMovesException(notation.san(), black_or_white_set);
 }
 
-string PGNotationType5::resolve(const MovesTable &intersections, const std::string &black_or_white_set, const ChessBoard *board) const
+string PGNotationType5::resolve(const MovesTable& intersections, const std::string& black_or_white_set, const ChessBoard* board) const
 {
     bool usingTypeNotation = isupper(piece());
     if (usingTypeNotation)
@@ -66,18 +66,18 @@ string PGNotationType5::resolve(const MovesTable &intersections, const std::stri
         else
             selected = selectRows(intersections, columnToSelect);
 
-    if (selected.size() == 0)
-        throw NoAvailableMovesException(san(), black_or_white_set);
-    MovesTable filtered = selectPiece(selected, piece(), board);
-    if (filtered.size() == 0)
-        throw NoAvailableMovesException(san(), black_or_white_set);
-    if (filtered.size() == 1)
-        return filtered.front();
-    ChessMove selected_piece = rowPriority(filtered);
+        if (selected.size() == 0)
+            throw NoAvailableMovesException(san(), black_or_white_set);
+        MovesTable filtered = selectPiece(selected, piece(), board);
+        if (filtered.size() == 0)
+            throw NoAvailableMovesException(san(), black_or_white_set);
+        if (filtered.size() == 1)
+            return filtered.front();
+        ChessMove selected_piece = rowPriority(filtered);
 
-    return selected_piece;
+        return selected_piece;
 
-//        return typeNotation(selected, black_or_white_set, *this, board);
+        //        return typeNotation(selected, black_or_white_set, *this, board);
     }
     else
         return rowNotation(intersections, *this, black_or_white_set);

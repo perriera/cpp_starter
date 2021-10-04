@@ -1,5 +1,5 @@
-#include "../include/chessmind/fen/FENLine.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
+#include "../include/cpp_starter/fen/FENLine.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 

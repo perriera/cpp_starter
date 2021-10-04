@@ -1,5 +1,5 @@
-#include "../include/chessmind/ai/CrossTableIO.hpp"
-#include "../include/chessmind/ai/CrossTableInterface.hpp"
+#include "../include/cpp_starter/ai/CrossTableIO.hpp"
+#include "../include/cpp_starter/ai/CrossTableInterface.hpp"
 #include "extras/ansi_colors.hpp"
 #include "extras/crc16_support.hpp"
 #include "extras/crc64_support.hpp"
@@ -11,9 +11,9 @@
 using namespace std;
 using namespace extras;
 
-ostream &operator<<(ostream &out, const CrossTableIO &) { return out; }
+ostream& operator<<(ostream& out, const CrossTableIO&) { return out; }
 
-istream &operator>>(istream &in, CrossTableIO &obj)
+istream& operator>>(istream& in, CrossTableIO& obj)
 {
   string header;
   getline(in, header);
@@ -27,14 +27,14 @@ istream &operator>>(istream &in, CrossTableIO &obj)
   return in;
 }
 
-void CrossTableIO::train(const StatLines &)
+void CrossTableIO::train(const StatLines&)
 {
   throw CrossTableException("n/a");
 }
 
 int CrossTableIO::size() const { throw CrossTableException("n/a"); }
 
-CrossTableLine CrossTableIO::predict(const FENLine &fenLine)
+CrossTableLine CrossTableIO::predict(const FENLine& fenLine)
 {
 
   auto start = this->_start;
@@ -57,24 +57,26 @@ CrossTableLine CrossTableIO::predict(const FENLine &fenLine)
     if (this->_verbose) {
       cout << blue << cursor << endl;
       cout << magenta << hex << fenLineKey << ' ' << yellow << hex
-           << cursor.key();
+        << cursor.key();
       cout << red << ' ' << dec << start << ' ' << loc << ' ' << end;
       cout << green << ' ' << dec << this->_in->tellg() << endl;
     }
     if (cursor.key() < fenLineKey) {
       if (this->_verbose)
         cout << "up"
-             << ": " << ++search_count << endl;
+        << ": " << ++search_count << endl;
       start = start + loc;
-    } else if (cursor.key() > fenLineKey) {
+    }
+    else if (cursor.key() > fenLineKey) {
       if (this->_verbose)
         cout << "down"
-             << ": " << ++search_count << endl;
+        << ": " << ++search_count << endl;
       end = start + loc;
-    } else {
+    }
+    else {
       if (this->_verbose)
         cout << "locked"
-             << ": " << ++search_count << endl;
+        << ": " << ++search_count << endl;
       return cursor;
     }
   }

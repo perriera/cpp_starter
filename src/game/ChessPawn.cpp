@@ -1,6 +1,6 @@
-#include "../include/chessmind/game/ChessPawn.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/game/ChessPawn.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 
@@ -13,8 +13,8 @@ string ChessPawn::addPosition(char col, char row) {
   return move_pos;
 }
 
-bool enPassantDetected(const ChessBoard *board, char col, char row,
-                       bool left_of_right) {
+bool enPassantDetected(const ChessBoard* board, char col, char row,
+  bool left_of_right) {
   string lastMove = board->lastMove();
   if (lastMove != "") {
     string pos_of_piece_to_check;
@@ -35,7 +35,7 @@ bool enPassantDetected(const ChessBoard *board, char col, char row,
     int r3 = lastMove[3];
     int c1 = lastMove[0];
     int c2 = _col;
-    bool goingUp = r1 < r2 && r2 < r3;
+    bool goingUp = r1 < r2&& r2 < r3;
     bool goingDown = r1 > r2 && r2 > r3;
     if (c1 == c2 && goingUp)
       return true;
@@ -45,9 +45,9 @@ bool enPassantDetected(const ChessBoard *board, char col, char row,
   return false;
 }
 
-MovesTable addPawnMove(const ChessPiece *piece, const MovesTable &moves,
-                       char col, char row, const ChessBoard *board,
-                       bool takeable) {
+MovesTable addPawnMove(const ChessPiece* piece, const MovesTable& moves,
+  char col, char row, const ChessBoard* board,
+  bool takeable) {
   MovesTable duplicate = moves;
   {
     stringstream to;
@@ -85,20 +85,20 @@ bool ChessPawn::pawnAtStart() const {
   return false;
 }
 
-static bool pawnAtStartClearToJump(const ChessPiece *piece, char col, char row,
-                                   const ChessBoard *board) {
+static bool pawnAtStartClearToJump(const ChessPiece* piece, char col, char row,
+  const ChessBoard* board) {
   ChessPosition pos(col, row);
   return !board->spaceOccupied(piece, pos);
 }
 
-MovesTable ChessPawn::allCalculatedMoves(const ChessBoard *board) {
+MovesTable ChessPawn::allCalculatedMoves(const ChessBoard* board) {
   MovesTable possibleMoves;
   possibleMoves = addPawnMove(this, possibleMoves, col(),
-                              row() + this->direction(), board, true);
+    row() + this->direction(), board, true);
   if (pawnAtStart() &&
-      pawnAtStartClearToJump(this, col(), row() + this->direction(), board))
+    pawnAtStartClearToJump(this, col(), row() + this->direction(), board))
     possibleMoves = addPawnMove(this, possibleMoves, col(),
-                                row() + this->direction() * 2, board, false);
+      row() + this->direction() * 2, board, false);
   return allLegalMoves(possibleMoves, board);
 }
 

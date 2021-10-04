@@ -3,8 +3,8 @@
 #include <sstream>  // std::stringstream
 #include <string>   // std::string
 
-#include "../include/chessmind/game/ChessExceptions.hpp"
-#include "../include/chessmind/game/ChessSquare.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/game/ChessSquare.hpp"
 #include "catch.hpp"
 #include "extras/string_support.hpp"
 
@@ -41,28 +41,32 @@ SCENARIO("Verify ChessSquare can do (PGN Type1) 'e2'", "[ChessSquare]") {
       ChessCol sample("a1");
       --sample;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
     try {
       ChessCol sample("a1");
       sample -= 2;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
     try {
       ChessCol sample("h1");
       ++sample;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
     try {
       ChessCol sample("h1");
       sample += 2;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
   }
@@ -133,28 +137,32 @@ SCENARIO("Verify ChessSquare can do (PGN Type1) 'e2'", "[ChessSquare]") {
       WhiteRow sample("a1");
       --sample;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
     try {
       WhiteRow sample("a1");
       sample -= 2;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
     try {
       WhiteRow sample("a8");
       ++sample;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
     try {
       WhiteRow sample("a8");
       sample += 2;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
   }
@@ -195,28 +203,32 @@ SCENARIO("Verify ChessSquare can do (PGN Type1) 'e2'", "[ChessSquare]") {
       BlackRow sample("a8");
       --sample;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
     try {
       BlackRow sample("a8");
       sample -= 2;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
     try {
       BlackRow sample("a1");
       ++sample;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
     try {
       BlackRow sample("a1");
       sample += 2;
       FAIL('failed');
-    } catch (ChessCoordinateException &ex) {
+    }
+    catch (ChessCoordinateException& ex) {
       SUCCEED('passed');
     }
   }

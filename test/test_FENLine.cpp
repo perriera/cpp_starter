@@ -3,9 +3,9 @@
 #include <sstream>  // std::stringstream
 #include <string>   // std::string
 
-#include "../include/chessmind/fen/FENLine.hpp"
-#include "../include/chessmind/fen/FENPlacement.hpp"
-#include "../include/chessmind/fen/FENReader.hpp"
+#include "../include/cpp_starter/fen/FENLine.hpp"
+#include "../include/cpp_starter/fen/FENPlacement.hpp"
+#include "../include/cpp_starter/fen/FENReader.hpp"
 #include "catch.hpp"
 #include "extras/string_support.hpp"
 

@@ -1,12 +1,12 @@
 #include <iostream>
-#include "../include/chessmind/pgn/notation/Type3.hpp"
-#include "../include/chessmind/pgn/notation/Type1.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/pgn/notation/Type3.hpp"
+#include "../include/cpp_starter/pgn/notation/Type1.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
 
 using namespace std;
 
-ostream &operator<<(ostream &out, const PGNotationType3 &obj)
+ostream& operator<<(ostream& out, const PGNotationType3& obj)
 {
     out << obj._piece;
     out << 'x';
@@ -14,7 +14,7 @@ ostream &operator<<(ostream &out, const PGNotationType3 &obj)
     return out;
 }
 
-istream &operator>>(istream &in, PGNotationType3 &obj)
+istream& operator>>(istream& in, PGNotationType3& obj)
 {
     in >> skipws >> obj._piece;
     char x;
@@ -25,7 +25,7 @@ istream &operator>>(istream &in, PGNotationType3 &obj)
     return in;
 }
 
-static string typeNotation(const MovesTable &moves, const std::string &black_or_white_set, const PGNotationInterface &notation, const ChessBoard *board)
+static string typeNotation(const MovesTable& moves, const std::string& black_or_white_set, const PGNotationInterface& notation, const ChessBoard* board)
 {
     for (auto move : moves)
     {
@@ -54,7 +54,7 @@ static string typeNotation(const MovesTable &moves, const std::string &black_or_
 //     throw NoAvailableMovesException(san.san(), black_or_white_set);
 // }
 
-string PGNotationType3::resolve(const MovesTable &intersections, const std::string &black_or_white_set, const ChessBoard *board) const
+string PGNotationType3::resolve(const MovesTable& intersections, const std::string& black_or_white_set, const ChessBoard* board) const
 {
     bool usingTypeNotation = isupper(piece());
     if (usingTypeNotation)

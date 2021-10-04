@@ -1,11 +1,11 @@
 #include <iostream>
-#include "../include/chessmind/pgn/notation/Type4.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/pgn/notation/Type4.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
 
 using namespace std;
 
-istream &operator>>(istream &in, PGNotationType4 &obj)
+istream& operator>>(istream& in, PGNotationType4& obj)
 {
     in >> skipws >> obj._piece;
     char c;
@@ -16,7 +16,7 @@ istream &operator>>(istream &in, PGNotationType4 &obj)
     return in;
 }
 
-static string colNotation(const MovesTable &moves, const PGNotationInterface &san, const std::string &black_or_white_set)
+static string colNotation(const MovesTable& moves, const PGNotationInterface& san, const std::string& black_or_white_set)
 {
     char lookingForCol = san.original()[1];
     for (auto move : moves)
@@ -31,7 +31,7 @@ static string colNotation(const MovesTable &moves, const PGNotationInterface &sa
     throw NoAvailableMovesException(san.san(), black_or_white_set);
 }
 
-static string rowNotation(const MovesTable &moves, const PGNotationInterface &san, const std::string &black_or_white_set)
+static string rowNotation(const MovesTable& moves, const PGNotationInterface& san, const std::string& black_or_white_set)
 {
     char lookingForRow = san.original()[1];
     for (auto move : moves)
@@ -46,18 +46,18 @@ static string rowNotation(const MovesTable &moves, const PGNotationInterface &sa
     throw NoAvailableMovesException(san.san(), black_or_white_set);
 }
 
-string PGNotationType4::resolve(const MovesTable &intersections, const string &black_or_white_set, const ChessBoard *board) const
+string PGNotationType4::resolve(const MovesTable& intersections, const string& black_or_white_set, const ChessBoard* board) const
 {
     auto _original = original();
     char lookingForRowOrCol = _original[1];
     if (isalpha(lookingForRowOrCol))
     {
-        MovesTable selected = selectPiece(intersections,piece(),board);
+        MovesTable selected = selectPiece(intersections, piece(), board);
         return rowNotation(selected, *this, black_or_white_set);
     }
     else
     {
-        MovesTable selected = selectPiece(intersections,piece(),board);
+        MovesTable selected = selectPiece(intersections, piece(), board);
         return colNotation(selected, *this, black_or_white_set);
     }
 }

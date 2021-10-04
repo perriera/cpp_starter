@@ -1,14 +1,14 @@
-#include "../include/chessmind/game/ChessRook.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/game/ChessRook.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 
 using namespace std;
 
 MovesTable ChessRook::addDirection(char col, char row, int up, int right,
-                                   const ChessBoard *board,
-                                   const ChessPiece *piece) {
+  const ChessBoard* board,
+  const ChessPiece* piece) {
   MovesTable moves;
   string from;
   from += col;
@@ -28,12 +28,13 @@ MovesTable ChessRook::addDirection(char col, char row, int up, int right,
       }
       moves.push_back(to);
     }
-  } catch (OutOfBoundsException &ex) {
+  }
+  catch (OutOfBoundsException& ex) {
   }
   return moves;
 }
 
-MovesTable ChessRook::allCalculatedMoves(const ChessBoard *board) {
+MovesTable ChessRook::allCalculatedMoves(const ChessBoard* board) {
   MovesTable possibleMoves;
   MovesTable v1 = addDirection(col(), row(), 1, 0, board, this);
   MovesTable v2 = addDirection(col(), row(), -1, 0, board, this);

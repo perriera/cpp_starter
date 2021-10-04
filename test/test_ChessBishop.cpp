@@ -3,9 +3,9 @@
 #include <sstream>  // std::stringstream
 #include <string>   // std::string
 
-#include "../include/chessmind/game/ChessBishop.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/game/ChessBishop.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
 #include "catch.hpp"
 #include "extras/string_support.hpp"
 
@@ -34,7 +34,7 @@ SCENARIO("Verify ChessBishop incorrectly placed", "[ChessBoard]") {
 }
 
 SCENARIO("Verify ChessBishop calculate all possible positions",
-         "[ChessBoard]") {
+  "[ChessBoard]") {
   ChessBoard board;
   board.move("a2a3");
   cout << board.draw() << endl;

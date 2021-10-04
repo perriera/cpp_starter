@@ -1,11 +1,11 @@
 #include <iostream>
-#include "../include/chessmind/pgn/notation/Type6.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/pgn/notation/Type6.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
 
 using namespace std;
 
-istream &operator>>(istream &in, PGNotationType6 &obj)
+istream& operator>>(istream& in, PGNotationType6& obj)
 {
     in >> skipws >> obj._piece;
     char c;
@@ -17,7 +17,7 @@ istream &operator>>(istream &in, PGNotationType6 &obj)
 }
 
 
-static string colNotation(const MovesTable &moves, const PGNotationInterface &san, const std::string &black_or_white_set)
+static string colNotation(const MovesTable& moves, const PGNotationInterface& san, const std::string& black_or_white_set)
 {
     char lookingForCol = san.original()[1];
     for (auto move : moves)
@@ -33,7 +33,7 @@ static string colNotation(const MovesTable &moves, const PGNotationInterface &sa
 }
 
 
-static string rowNotation(const MovesTable &moves, const PGNotationInterface &san, const std::string &black_or_white_set)
+static string rowNotation(const MovesTable& moves, const PGNotationInterface& san, const std::string& black_or_white_set)
 {
     char lookingForRow = san.original()[1];
     for (auto move : moves)
@@ -48,7 +48,7 @@ static string rowNotation(const MovesTable &moves, const PGNotationInterface &sa
     throw NoAvailableMovesException(san.san(), black_or_white_set);
 }
 
-string PGNotationType6::resolve(const MovesTable &intersections, const string &black_or_white_set, const ChessBoard *) const
+string PGNotationType6::resolve(const MovesTable& intersections, const string& black_or_white_set, const ChessBoard*) const
 {
     auto _original = original();
     char lookingForRowOrCol = _original[1];

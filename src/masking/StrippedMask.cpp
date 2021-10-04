@@ -1,20 +1,20 @@
-#include "../include/chessmind/masking/StrippedMask.hpp"
+#include "../include/cpp_starter/masking/StrippedMask.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 
 using namespace std;
 using namespace extras;
 
-ostream &operator<<(ostream &out, const StrippedMask &obj) {
+ostream& operator<<(ostream& out, const StrippedMask& obj) {
   auto dup = obj._strippedLines;
   for (auto line : dup)
     out << line << endl;
   return out;
 }
 
-istream &operator>>(istream &in, StrippedMask &) { return in; }
+istream& operator>>(istream& in, StrippedMask&) { return in; }
 
-void StrippedMask::strip(const MaskedLines &maskedLines) {
+void StrippedMask::strip(const MaskedLines& maskedLines) {
   StrippedLines strippedLines;
   for (auto maskedLine : maskedLines) {
     stringstream ss;

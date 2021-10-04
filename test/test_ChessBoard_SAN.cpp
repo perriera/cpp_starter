@@ -3,16 +3,16 @@
 #include <sstream>  // std::stringstream
 #include <string>   // std::string
 
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
 #include "catch.hpp"
 #include "extras/string_support.hpp"
 
 using namespace std;
 
 SCENARIO(
-    "Verify ChessBoard can movetext in Standard Algebraic Notation (SAN) White",
-    "[ChessBoard]") {
+  "Verify ChessBoard can movetext in Standard Algebraic Notation (SAN) White",
+  "[ChessBoard]") {
   ChessBoard board;
   cout << board.draw();
   REQUIRE(board.symbolAt("e2") == 'p');
@@ -24,8 +24,8 @@ SCENARIO(
 }
 
 SCENARIO(
-    "Verify ChessBoard can movetext in Standard Algebraic Notation (SAN) Black",
-    "[ChessBoard]") {
+  "Verify ChessBoard can movetext in Standard Algebraic Notation (SAN) Black",
+  "[ChessBoard]") {
   ChessBoard board;
   cout << board.draw();
   REQUIRE(board.symbolAt("e7") == 'P');
@@ -53,8 +53,8 @@ SCENARIO("Verify ChessBoard can do two moves", "[ChessBoard]") {
 }
 
 SCENARIO(
-    "Verify ChessBoard can movetext (SAN) White can't make an impossible move",
-    "[ChessBoard]") {
+  "Verify ChessBoard can movetext (SAN) White can't make an impossible move",
+  "[ChessBoard]") {
   ChessBoard board;
   cout << board.draw();
   REQUIRE(board.symbolAt("e2") == 'p');
@@ -63,8 +63,8 @@ SCENARIO(
 }
 
 SCENARIO(
-    "Verify ChessBoard can movetext (SAN) Black can't make an impossible move",
-    "[ChessBoard]") {
+  "Verify ChessBoard can movetext (SAN) Black can't make an impossible move",
+  "[ChessBoard]") {
   ChessBoard board;
   cout << board.draw();
   REQUIRE(board.symbolAt("e7") == 'P');

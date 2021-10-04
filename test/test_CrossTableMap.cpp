@@ -4,10 +4,10 @@
 #include <string>// std::string
 #include <filesystem>
 
-#include "../include/chessmind/ai/CrossTableLine.hpp"
-#include "../include/chessmind/ai/CrossTableMap.hpp"
-#include "../include/chessmind/fen/FENReader.hpp"
-#include "../include/chessmind/stat/StatWriter.hpp"
+#include "../include/cpp_starter/ai/CrossTableLine.hpp"
+#include "../include/cpp_starter/ai/CrossTableMap.hpp"
+#include "../include/cpp_starter/fen/FENReader.hpp"
+#include "../include/cpp_starter/stat/StatWriter.hpp"
 #include "catch.hpp"
 #include "extras/files.hpp"
 #include "extras/ansi_colors.hpp"

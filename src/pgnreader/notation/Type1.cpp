@@ -1,18 +1,18 @@
 #include <iostream>
 #include <ctype.h>
-#include "../include/chessmind/pgn/notation/Type1.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/pgn/notation/Type1.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
 
 using namespace std;
 
-istream &operator>>(istream &in, PGNotationType1 &obj)
+istream& operator>>(istream& in, PGNotationType1& obj)
 {
     in >> obj._san;
     return in;
 }
 
-string PGNotationType1::lowestValue(const MovesTable &moves, const ChessBoard *board, const std::string &black_or_white_set)
+string PGNotationType1::lowestValue(const MovesTable& moves, const ChessBoard* board, const std::string& black_or_white_set)
 {
     int rank1 = -1;
     string bestMove;
@@ -29,8 +29,8 @@ string PGNotationType1::lowestValue(const MovesTable &moves, const ChessBoard *b
         {
             char col1 = bestMove[0];
             char col2 = move[0];
-            if (col2>col1) {
-                bestMove=move;
+            if (col2 > col1) {
+                bestMove = move;
             }
         }
     }
@@ -40,7 +40,7 @@ string PGNotationType1::lowestValue(const MovesTable &moves, const ChessBoard *b
     return bestMove;
 }
 
-string PGNotationType1::resolve(const MovesTable &intersections, const string &black_or_white_set, const ChessBoard *board) const
+string PGNotationType1::resolve(const MovesTable& intersections, const string& black_or_white_set, const ChessBoard* board) const
 {
 
     if (intersections.size() == 1)

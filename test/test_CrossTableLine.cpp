@@ -3,9 +3,9 @@
 #include <sstream>// std::stringstream
 #include <string>// std::string
 
-#include "../include/chessmind/ai/CrossTableLine.hpp"
-#include "../include/chessmind/fen/FENReader.hpp"
-#include "../include/chessmind/stat/StatWriter.hpp"
+#include "../include/cpp_starter/ai/CrossTableLine.hpp"
+#include "../include/cpp_starter/fen/FENReader.hpp"
+#include "../include/cpp_starter/stat/StatWriter.hpp"
 #include "catch.hpp"
 #include "extras/ansi_colors.hpp"
 #include "extras/crc32_support.hpp"
@@ -37,7 +37,8 @@ SCENARIO("Verify CrossTableLine ('KASPAROV.ct')", "[CrossTableLine]")
         cout << statLine << endl;
       }
     }
-  } catch (exception &ex) {
+  }
+  catch (exception& ex) {
     cout << ex.what() << endl;
   }
 }

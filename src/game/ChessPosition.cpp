@@ -1,32 +1,33 @@
-#include "../include/chessmind/game/ChessPosition.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
-#include "../include/chessmind/game/ChessKing.hpp"
-#include "../include/chessmind/game/ChessPawn.hpp"
+#include "../include/cpp_starter/game/ChessPosition.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/game/ChessKing.hpp"
+#include "../include/cpp_starter/game/ChessPawn.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 
 using namespace std;
 
-void ChessPositionException::assertation(const std::string &pos) {
+void ChessPositionException::assertation(const std::string& pos) {
   if (pos.size() != 2) {
     throw ChessPositionException("Bad size: " + pos);
   }
   try {
     ChessCol a(pos[0]);
     ChessRow b(pos[1]);
-  } catch (ChessCoordinateException &ex) {
+  }
+  catch (ChessCoordinateException& ex) {
     throw ChessPositionException(ex.what());
   }
 }
 
-std::ostream &operator<<(std::ostream &out, const ChessPosition &obj) {
+std::ostream& operator<<(std::ostream& out, const ChessPosition& obj) {
   out << obj._col;
   out << obj._row;
   return out;
 }
 
-std::istream &operator>>(std::istream &in, ChessPosition &obj) {
+std::istream& operator>>(std::istream& in, ChessPosition& obj) {
   in >> obj._col;
   in >> obj._row;
   ChessPositionException::assertation(obj);
@@ -42,7 +43,7 @@ std::istream &operator>>(std::istream &in, ChessPosition &obj) {
 //     return *this;
 // }
 
-ChessPosition &ChessPosition::operator=(const std::string &b) {
+ChessPosition& ChessPosition::operator=(const std::string& b) {
   ChessPositionException::assertation(b);
   stringstream ss;
   ss << b;
@@ -50,7 +51,7 @@ ChessPosition &ChessPosition::operator=(const std::string &b) {
   return *this;
 }
 
-ChessPosition::ChessPosition(const std::string &text) : _assigned(true) {
+ChessPosition::ChessPosition(const std::string& text) : _assigned(true) {
   ChessPositionException::assertation(text);
   stringstream ss;
   ss << text;

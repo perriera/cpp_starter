@@ -3,7 +3,7 @@
 #include <sstream>// std::stringstream
 #include <string>// std::string
 
-#include "../include/chessmind/fen/FENReader.hpp"
+#include "../include/cpp_starter/fen/FENReader.hpp"
 #include "catch.hpp"
 #include "extras/string_support.hpp"
 

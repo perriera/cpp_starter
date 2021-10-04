@@ -1,28 +1,28 @@
-#include "../include/chessmind/pgn/PGNotation.hpp"
-#include "../include/chessmind/pgn/notation/Draw.hpp"
-#include "../include/chessmind/pgn/notation/GameOver.hpp"
-#include "../include/chessmind/pgn/notation/Type1.hpp"
-#include "../include/chessmind/pgn/notation/Type2.hpp"
-#include "../include/chessmind/pgn/notation/Type3.hpp"
-#include "../include/chessmind/pgn/notation/Type4.hpp"
-#include "../include/chessmind/pgn/notation/Type5.hpp"
-#include "../include/chessmind/pgn/notation/Type6.hpp"
-#include "../include/chessmind/pgn/notation/TypeCastle.hpp"
-#include "../include/chessmind/pgn/notation/TypePromote.hpp"
+#include "../include/cpp_starter/pgn/PGNotation.hpp"
+#include "../include/cpp_starter/pgn/notation/Draw.hpp"
+#include "../include/cpp_starter/pgn/notation/GameOver.hpp"
+#include "../include/cpp_starter/pgn/notation/Type1.hpp"
+#include "../include/cpp_starter/pgn/notation/Type2.hpp"
+#include "../include/cpp_starter/pgn/notation/Type3.hpp"
+#include "../include/cpp_starter/pgn/notation/Type4.hpp"
+#include "../include/cpp_starter/pgn/notation/Type5.hpp"
+#include "../include/cpp_starter/pgn/notation/Type6.hpp"
+#include "../include/cpp_starter/pgn/notation/TypeCastle.hpp"
+#include "../include/cpp_starter/pgn/notation/TypePromote.hpp"
 #include "extras/string_support.hpp"
 #include <ctype.h>
 #include <iostream>
 
 using namespace std;
 
-ostream &operator<<(ostream &out, const PGNotation &) {
+ostream& operator<<(ostream& out, const PGNotation&) {
   // if (obj._piece!=-1)
   //     out << obj._piece;
   // out << obj._san;
   return out;
 }
 
-istream &operator>>(istream &in, PGNotation &obj) {
+istream& operator>>(istream& in, PGNotation& obj) {
   string word;
   in >> word;
   bool kingCheck = (word.find_last_of('+') != string::npos);

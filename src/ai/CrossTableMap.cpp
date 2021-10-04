@@ -1,4 +1,4 @@
-#include "../include/chessmind/ai/CrossTableMap.hpp"
+#include "../include/cpp_starter/ai/CrossTableMap.hpp"
 #include "extras/ansi_colors.hpp"
 #include "extras/crc16_support.hpp"
 #include "extras/crc64_support.hpp"
@@ -10,7 +10,7 @@
 using namespace std;
 using namespace extras;
 
-ostream &operator<<(ostream &out, const CrossTableMap &obj) {
+ostream& operator<<(ostream& out, const CrossTableMap& obj) {
   out << "key (crc64), FEN Line, moveno, color moved, last move, ";
   out << "last san, next move, next san, piece moved, piece taken, ";
   out << "optional moves" << endl;
@@ -19,7 +19,7 @@ ostream &operator<<(ostream &out, const CrossTableMap &obj) {
   return out;
 }
 
-istream &operator>>(istream &in, CrossTableMap &obj) {
+istream& operator>>(istream& in, CrossTableMap& obj) {
   string header;
   getline(in, header);
   while (in.good()) {
@@ -34,7 +34,7 @@ istream &operator>>(istream &in, CrossTableMap &obj) {
   return in;
 }
 
-void CrossTableMap::insert(const StatLine &line) {
+void CrossTableMap::insert(const StatLine& line) {
   CrossTableLine ctl(line);
   auto it = _map.find(ctl);
   if (it == _map.end())
@@ -52,7 +52,7 @@ void CrossTableMap::insert(const StatLine &line) {
   }
 }
 
-void CrossTableMap::train(const StatLines &statLines) {
+void CrossTableMap::train(const StatLines& statLines) {
   for (auto line : statLines) {
     insert(line);
     predict(line.fenLine);
@@ -61,7 +61,7 @@ void CrossTableMap::train(const StatLines &statLines) {
 
 int CrossTableMap::size() const { return _map.size(); }
 
-CrossTableLine CrossTableMap::predict(const FENLine &fenLine) {
+CrossTableLine CrossTableMap::predict(const FENLine& fenLine) {
   crc64 _crc;
   auto key = _crc.update(fenLine);
   auto it = _map.find(key);
@@ -69,9 +69,9 @@ CrossTableLine CrossTableMap::predict(const FENLine &fenLine) {
   return it->second;
 }
 
-void CrossTableMapException::assertation(const CrossTableLineMap &map,
-                                         const CrossTableLineKey &key,
-                                         const FENLine &fenLine) {
+void CrossTableMapException::assertation(const CrossTableLineMap& map,
+  const CrossTableLineKey& key,
+  const FENLine& fenLine) {
   if (map.find(key) == map.end())
     throw CrossTableMapException(fenLine);
 }

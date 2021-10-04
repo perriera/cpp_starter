@@ -1,11 +1,11 @@
-#include "../include/chessmind/stat/StatHeader.hpp"
+#include "../include/cpp_starter/stat/StatHeader.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 
 using namespace std;
 using namespace extras;
 
-ostream &operator<<(ostream &out, const StatHeader &) {
+ostream& operator<<(ostream& out, const StatHeader&) {
   out << "nnn, c, last, next, x1, x2,     san, ";
   for (char row = '8'; row > '0'; row--) {
     for (char col = 'a'; col < 'i'; col++) {
@@ -15,7 +15,7 @@ ostream &operator<<(ostream &out, const StatHeader &) {
   return out;
 }
 
-istream &operator>>(istream &in, StatHeader &) {
+istream& operator>>(istream& in, StatHeader&) {
   in >> skipws;
   return in;
 }

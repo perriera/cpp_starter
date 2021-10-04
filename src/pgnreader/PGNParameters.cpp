@@ -1,6 +1,6 @@
-#include "../include/chessmind/pgn/PGNParameters.hpp"
-#include "../include/chessmind/pgn/PGNMoves.hpp"
-#include "../include/chessmind/pgn/PGNReader.hpp"
+#include "../include/cpp_starter/pgn/PGNParameters.hpp"
+#include "../include/cpp_starter/pgn/PGNMoves.hpp"
+#include "../include/cpp_starter/pgn/PGNReader.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 

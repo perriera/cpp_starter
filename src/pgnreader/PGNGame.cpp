@@ -1,11 +1,11 @@
-#include "../include/chessmind/pgn/PGNGame.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/pgn/PGNReader.hpp"
+#include "../include/cpp_starter/pgn/PGNGame.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/pgn/PGNReader.hpp"
 #include "extras/ansi_colors.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 #include <fstream>
-#include "../include/chessmind/fen/FENReader.hpp"
+#include "../include/cpp_starter/fen/FENReader.hpp"
 
 using namespace std;
 using namespace extras;

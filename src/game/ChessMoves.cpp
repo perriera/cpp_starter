@@ -1,41 +1,42 @@
-#include "../include/chessmind/game/ChessMoves.hpp"
-#include "../include/chessmind/game/ChessBoard.hpp"
-#include "../include/chessmind/game/ChessExceptions.hpp"
-#include "../include/chessmind/game/ChessPosition.hpp"
+#include "../include/cpp_starter/game/ChessMoves.hpp"
+#include "../include/cpp_starter/game/ChessBoard.hpp"
+#include "../include/cpp_starter/game/ChessExceptions.hpp"
+#include "../include/cpp_starter/game/ChessPosition.hpp"
 #include "extras/string_support.hpp"
 #include <iostream>
 
 using namespace std;
 
-void ChessMoveException::assertation(const std::string &pos) {
+void ChessMoveException::assertation(const std::string& pos) {
   if (pos.size() != 4) {
     throw ChessMoveException("Bad size: " + pos);
   }
   try {
     ChessPosition(pos.substr(0, 2));
     ChessPosition(pos.substr(2, 2));
-  } catch (ChessPositionException &ex) {
+  }
+  catch (ChessPositionException& ex) {
     throw ChessMoveException(ex.what());
   }
 }
 
-std::ostream &operator<<(std::ostream &out, const ChessMove &obj) {
+std::ostream& operator<<(std::ostream& out, const ChessMove& obj) {
   out << obj._a << obj._b;
   return out;
 }
 
-std::istream &operator>>(std::istream &in, ChessMove &obj) {
+std::istream& operator>>(std::istream& in, ChessMove& obj) {
   in >> obj._a >> obj._b;
   return in;
 }
 
-bool operator==(const ChessMove &a, const ChessMove &b) {
+bool operator==(const ChessMove& a, const ChessMove& b) {
   auto t1 = (a._a == b._a);
   auto t2 = (a._b == b._b);
   return t1 && t2;
 }
 
-bool operator==(const ChessMove &a, const char *b) {
+bool operator==(const ChessMove& a, const char* b) {
   stringstream ss;
   ss << a;
   return ss.str() == b;
@@ -49,7 +50,7 @@ bool operator==(const ChessMove &a, const char *b) {
 //     return *this;
 // }
 
-ChessMove &ChessMove::operator=(const char *b) {
+ChessMove& ChessMove::operator=(const char* b) {
   ChessMoveException::assertation(b);
   string a;
   a = b;
@@ -59,19 +60,19 @@ ChessMove &ChessMove::operator=(const char *b) {
   return *this;
 }
 
-ChessMove::ChessMove(const std::string &text) {
+ChessMove::ChessMove(const std::string& text) {
   ChessMoveException::assertation(text);
   stringstream ss;
   ss << text;
   ss >> *this;
 }
 
-ChessMove::ChessMove(const ChessPosition &col, const ChessPosition &row) {
+ChessMove::ChessMove(const ChessPosition& col, const ChessPosition& row) {
   _a = col;
   _b = row;
 }
 
-ChessMove::ChessMove(const std::string &a, const std::string &b) {
+ChessMove::ChessMove(const std::string& a, const std::string& b) {
   _a = a;
   _b = b;
 }
@@ -94,7 +95,7 @@ MovesTable selectRows(const MovesTable moves, char row) {
   return filtered;
 }
 
-ChessMoves selectColumns(const ChessMoves &moves, char column) {
+ChessMoves selectColumns(const ChessMoves& moves, char column) {
   ChessMoves filtered;
   for (auto move : moves) {
     if (move.a().col() == column)
@@ -103,7 +104,7 @@ ChessMoves selectColumns(const ChessMoves &moves, char column) {
   return filtered;
 }
 
-ChessMoves selectRows(const ChessMoves &moves, char row) {
+ChessMoves selectRows(const ChessMoves& moves, char row) {
   ChessMoves filtered;
   for (auto move : moves) {
     if (move.a().row() == row)
@@ -113,7 +114,7 @@ ChessMoves selectRows(const ChessMoves &moves, char row) {
 }
 
 MovesTable selectPiece(const MovesTable moves, char symbol,
-                       const ChessBoard *board) {
+  const ChessBoard* board) {
   MovesTable filtered;
   for (auto move : moves) {
     ChessMove _move = move;
