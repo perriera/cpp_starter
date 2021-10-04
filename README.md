@@ -1,7 +1,10 @@
 
 # cpp_starter
 
-Global search and replace cpp_starter to <project_name>
+1. Global search and replace cpp_starter to <project_name> 
+2. change directory name 'include/cpp_starter' to 'include/<project_name>'
+3. change version number using include/version.hpp
+4. keep changelog in sync with include/version.hpp
 
 ###   Description
 > This is a C++ library that predicts the next chess move, (based on some of the greatest chess minds in history).</br> 
