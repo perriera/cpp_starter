@@ -1,0 +1,48 @@
+[Event "Horgen"]
+[Site "Horgen SUI"]
+[Date "1995.10.26"]
+[EventDate "1995.10.21"]
+[Round "6"]
+[Result "0-1"]
+[White "Garry Kasparov"]
+[Black "Vassily Ivanchuk"]
+[ECO "C16"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "61"]
+
+1.e4 {Notes by Stockfish 8 v270317 (minimum 30s/ply)} e6 2.d4
+d5 3.Nc3 Bb4 4.e5 b6 5.a3 Bf8 6.Nf3 Ne7 7.h4 {7.Bd3 was played
+in A Brkic vs D Andreikin, 2008 (1-0)} h6 8.h5 a5 {better is
+8...c5 9.Nb5 Nec6 10.Bf4 Bb7 11.c3 Nd7 12.g3 a6 13.Nd6+ = 0.00
+(30 ply)} 9.Bb5+ {better is 9.Be3 Ba6 10.g4 Bxf1 11.Kxf1 Nc8
+12.Kg2 c5 13.Ne2 Qd7 +/= +0.66 (28 ply)} c6 {= +0.10 (33 ply)}
+10.Ba4 Nd7 {better is 10...Ba6 11.Ne2 b5 12.Bb3 a4 13.Ba2 c5
+14.O-O Nec6 15.c3 = +0.01 (32 ply)} 11.Ne2 {better is 11.O-O
+b5 12.Bb3 Rb8 13.Re1 Bb7 14.Ne2 c5 15.dxc5 Nxc5 +/= +0.52 (31
+ply)} b5 {= -0.01 (33 ply)} 12.Bb3 c5 13.c3 Nc6 14.O-O Qc7
+15.Re1 c4 16.Bc2 Nb6 17.Bf4 Be7 {better is 17...b4 18.axb4
+axb4 19.Rxa8 Nxa8 20.Qd2 Qa7 21.g4 Nb6 = -0.15 (32 ply)}
+18.Bg3 {? 18.Nd2 Qb7 19.Ng3 b4 20.Qg4 Bf8 21.Bd1 Bd7 22.Ndf1
+b3 = +0.43 (35 ply)} Rb8 {? 18...b4 19.Nf4 b3 20.Bb1 Qd8
+21.Nh2 O-O 22.Qg4 Qe8 23.Nf3 = -0.35 (32 ply)} 19.Nh2 {better
+is 19.Nf4 Qd8 20.Nh2 Kd7 21.Qg4 Qf8 22.Bh4 Bxh4 23.Qxh4 Qd8
++/= +0.90 (32 ply)} Qd8 {better is 19...b4 20.axb4 axb4 21.Nf4
+b3 22.Qg4 Kf8 23.Bg6 Bd8 = +0.28 (31 ply)} 20.Ng4 {better is
+20.Nf4 Kd7 21.Qg4 Qf8 22.Nf1 Kc7 23.Ne3 Kb7 24.Bh4 Bxh4 +/=
++0.81 (26 ply)} b4 {better is 20...Na4 21.Rb1 Nb6 22.f4 O-O
+23.Ra1 b4 24.axb4 axb4 = +0.25 (32 ply)} 21.axb4 {+/= +0.87
+(33 ply)} axb4 22.cxb4 {? 22.f4 b3 23.Bb1 O-O 24.Ne3 Ra8
+25.Rxa8 Nxa8 26.f5 Nb6 +/= +0.82 (31 ply)} Nxb4 {= -0.42 (31
+ply)} 23.Bb1 Bd7 {better is 23...Ra8 24.Rxa8 Nxa8 25.f4 O-O
+26.Ne3 Qb6 27.f5 exf5 =/+ -0.59 (22 ply)} 24.b3 {= 0.00 (25
+ply) after 24.Rf1 Ra8 25.Rxa8 Qxa8 26.f4 O-O 27.Qd2 Nd3 28.Nf2
+Nb4 } Ra8 25.Rxa8 Qxa8 26.bxc4 {better is 26.Ne3 cxb3 27.Qxb3
+Qa4 28.Qxa4 Nxa4 29.Rc1 Bb5 30.Rc8+ = -0.27 (34 ply)} Nxc4
+{=/+ -0.89 (35 ply)} 27.Nc1 {? 27.Bf4 Qa4 28.Qc1 Na3 29.Qd2
+Qb3 30.Nc3 Nc6 31.Rc1 Qb6 = -0.43 (32 ply)} Ba4 {-/+ -1.67 (35
+ply)} 28.Qe2 Qa7 29.Ne3 Qxd4 30.Nxc4 dxc4 31.Qf1 {? 31.Qe4 Qd5
+32.Ne2 Bc6 33.Qxd5 Bxd5 34.Rd1 Kd7 35.f3 Ra8 -/+ -1.59 (35
+ply)} O-O {-+ -3.92 (36 ply) after 31...c3 32.Re4 Qd7 33.Bd3
+Nxd3 34.Qxd3 Qxd3 35.Nxd3 Bb5 ; 32.Ne2 Qg4 33.f3 Qxh5 34.Nc3
+Bb3 35.Qf2 Rc8 36.Ne4 Rd8 -+ -3.02 (35 ply)} 0-1

@@ -1,0 +1,35 @@
+[Event "Leningrad"]
+[Site "Leningrad URS"]
+[Date "1975.??.??"]
+[EventDate "?"]
+[Round "?"]
+[Result "0-1"]
+[White "Oleg Romanishin"]
+[Black "Garry Kasparov"]
+[ECO "A02"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "64"]
+
+1.f4 {Notes by Stockfish 9 v010218 (minimum 6s/ply)} d5 2.Nf3
+Nf6 3.e3 Bg4 4.b3 Nbd7 {4...g6 was played in Martley vs M
+Jago, 1937 (0-1)} 5.Bb2 c6 6.Be2 Qc7 7.O-O Bxf3 8.Bxf3 e5 9.d3
+{better is 9.Nc3 Bd6 10.e4 O-O 11.exd5 cxd5 12.fxe5 Bxe5
+13.Kh1 d4 = 0.00 (21 ply)} Bd6 {=/+ -0.72 (22 ply) after
+9...O-O-O 10.fxe5 Nxe5 11.Nd2 Bd6 12.h3 Kb8 13.Rf2 } 10.g3
+O-O-O 11.c4 {better is 11.Nd2 exf4 12.exf4 h5 13.h4 Rde8
+14.Re1 Bxf4 15.Rxe8+ = -0.11 (20 ply)} dxc4 {=/+ -0.73 (23
+ply)} 12.bxc4 h5 {better is 12...Qb6 13.Qd2 exf4 14.gxf4 Bxf4
+15.Bd4 Qxd4 16.exd4 =/+ -1.33 (23 ply)} 13.Qc2 {? 13.d4 h4
+14.c5 Be7 15.g4 exf4 16.g5 Nh7 17.exf4 Nxc5 =/+ -0.75 (21
+ply)} h4 {-/+ -2.17 (23 ply)} 14.Nc3 hxg3 {better is 14...Bc5
+15.d4 exd4 16.Ne2 dxe3 17.g4 Ne8 18.Rfd1 f6 -/+ -2.05 (23
+ply)} 15.hxg3 {-/+ -1.55 (26 ply)} exf4 16.exf4 g5 17.Ne4 Nxe4
+18.dxe4 {? 18.Bxe4 f6 19.d4 c5 20.Rf3 gxf4 21.Rb3 b6 22.Bg2
+Rde8 -/+ -1.82 (22 ply)} Rhg8 {-+ -2.94 (22 ply)} 19.e5 Bc5+
+20.Kg2 gxf4 21.g4 Nxe5 22.Qf5+ Qd7 23.Qxd7+ Nxd7 24.Kh3 Nb6
+25.Bf6 Rd3 26.Rac1 {? 26.Rad1 Ra3 27.Bb2 Ra5 28.Bd4 Nxc4
+29.Be2 Ne3 30.Bxe3 -+ -3.02 (26 ply)} Nd7 {-+ -5.52 (29 ply)}
+27.Ba1 f5 28.Kh4 Be7+ 29.Kh5 Rg5+ {-+ mate-in-5 after 29...Rd6
+30.Bf6 Rxf6 31.gxf5 Rxf5+ 32.Kh6 Bg5+} 30.Kh6 Rd6+ 31.Kh7 Nf8+
+32.Kh8 Rh6# 0-1

@@ -1,0 +1,44 @@
+[Event "Baku"]
+[Site "Baku"]
+[Date "1975.??.??"]
+[EventDate "?"]
+[Round "3"]
+[Result "0-1"]
+[White "Einoris"]
+[Black "Garry Kasparov"]
+[ECO "B59"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "84"]
+
+1.e4 {Notes by Stockfish 9 v010218 (minimum 6s/ply)} c5 2.Nf3
+Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 d6 6.Be2 e5 7.Nb3 Be7 8.O-O O-O
+9.f4 a5 10.a4 Nb4 11.Kh1 Bd7 12.Bf3 Bc6 {better is 12...Qc8
+13.Be3 Rd8 14.Bb6 Re8 15.Bxa5 Nc6 16.fxe5 Nxe5 = 0.00 (21
+ply)} 13.Nd5 {better is 13.Qe2 b6 14.Rd1 Qc8 15.g4 Nd7 16.f5
+h6 17.Be3 Rd8 18.Rd2 +/= +0.55 (22 ply)} Bxd5 {= -0.19 (24
+ply)} 14.exd5 e4 15.Be2 Nbxd5 16.g4 Nc7 17.g5 {better is
+17.Bd2 d5 18.Bxa5 Nd7 19.c4 Nc5 20.cxd5 Nxb3 21.Bxc7 = +0.15
+(21 ply)} Nfe8 {=/+ -0.60 (23 ply)} 18.Bd2 Ne6 19.h4 f5 20.Be3
+d5 21.c4 N8c7 22.Bb6 {? 22.Nd4 Nc5 23.h5 Qd7 24.Nb5 Nxb5
+25.axb5 Rfd8 26.cxd5 = -0.29 (23 ply)} Qd6 {=/+ -1.29 (24 ply)
+after 22...Kh8 23.Rc1 Bd6 24.Qd2 Bb4 25.Qe3 Qd7 26.h5 Rad8 }
+23.c5 Qd7 24.Nxa5 {better is 24.Qd2 Rfd8 25.Rfd1 Kh8 26.h5 d4
+27.Bc4 d3 28.h6 Nd5 =/+ -1.27 (19 ply)} Nxc5 {? 24...Bxc5
+25.Bxc7 Nxc7 26.Nxb7 Ba7 27.a5 Ne6 28.a6 Nd4 -/+ -1.90 (22
+ply)} 25.Bxc5 {? 25.Bxc7 Qxc7 26.Qxd5+ Kh8 27.Nc4 Rad8 28.Qe5
+Qxe5 =/+ -0.56 (26 ply)} Bxc5 {-/+ -2.44 (25 ply)} 26.Nxb7 Ba7
+27.a5 d4 28.Bc4+ Kh8 29.a6 {? 29.Qa4 Qe7 30.Rae1 Rac8 31.Qa3
+Qxa3 32.bxa3 Ne8 33.Rc1 -/+ -1.65 (22 ply)} d3 {-+ -2.99 (21
+ply)} 30.b4 {? 30.Qb3 Qd4 31.Rae1 Bb6 32.Qc3 Nxa6 33.Qxd4 Bxd4
+34.Nd6 -/+ -2.29 (22 ply)} Qd4 {-+ -5.58 (22 ply) after
+30...Nd5 31.Bxd5 Qxd5 32.Kg2 Rfc8 33.Nc5 Rab8 34.Qe1 d2 }
+31.Qb3 Qe3 32.Qa2 Rac8 {? 32...Nxa6 33.Rae1 Nxb4 34.Rxe3 Nxa2
+35.Rh3 Nc3 36.Nd6 -+ -5.08 (23 ply)} 33.Nd6 {? 33.Nc5 Rfd8
+34.h5 Rb8 35.h6 Qh3+ 36.Qh2 Qxh2+ 37.Kxh2 -+ -3.24 (22 ply)}
+Rcd8 {-+ -6.97 (23 ply)} 34.Nb7 d2 35.Kh2 Rd3 {? 35...d1=R
+36.Raxd1 Rxd1 37.Rxd1 Qxf4+ 38.Kh1 Qf3+ 39.Qg2 -+ -13.17 (28
+ply)} 36.Bxd3 {-+ -5.37 (22 ply)} Qxd3 37.Qa3 Qxa3 38.Rxa3 e3
+39.Raa1 e2 40.Rh1 Re8 41.Nd6 e1=Q 42.Nxe8 {-+ mate-in-11 after
+42.Rhxe1 Rxe1 43.Nc4 Rxa1 44.Nxd2 Ra2 45.Kg2} Qf2+ {43.Kh3 Nd5
+44.h5 Nxf4# -+ mate-in-2} 0-1

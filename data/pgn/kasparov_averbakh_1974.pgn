@@ -1,0 +1,51 @@
+[Event "Moscow clock sim"]
+[Site "Moscow URS"]
+[Date "1974.??.??"]
+[EventDate "1974.??.??"]
+[Round "?"]
+[Result "1-0"]
+[White "Garry Kasparov"]
+[Black "Yuri Averbakh"]
+[ECO "C69"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "96"]
+
+1.e4 {Notes by Stockfish 9 v010218 (minimum 6s/ply)} e5 2.Nf3
+Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Qd6 6.d3 f6 7.Be3 c5 8.Nfd2
+{8.Nbd2 was played in Macieja vs Z Sturua, 2003 (1-0)} Be6
+9.Nc4 Qd7 10.a4 O-O-O 11.Nc3 {better is 11.Nbd2 h5 12.Qe2 h4
+13.h3 g5 14.f3 b6 15.b4 cxb4 16.Bxb6 = 0.00 (20 ply)} Ne7 {?
+11...h5 12.a5 Ne7 13.Na4 Qc6 14.b3 Ng6 15.Qd2 Kb8 16.f3 =/+
+-0.57 (23 ply)} 12.Bxc5 {= +0.33 (24 ply)} Bxc4 {? 12...Qc6
+13.Bxe7 Bxe7 14.Ne3 Bc5 15.Ncd5 Qd7 16.b4 Bd4 = +0.21 (23
+ply)} 13.dxc4 {+/= +1.22 (28 ply)} Qc6 {better is 13...Qe6
+14.Qe2 Ng6 15.Bxf8 Nf4 16.Qf3 Rhxf8 17.Nd5 Kb8 +/= +0.91 (24
+ply)} 14.Qg4+ {+/= +1.46 (25 ply)} f5 15.exf5 h5 16.Qh3 Qxc5
+17.f6+ Kb8 18.fxe7 Bxe7 19.b3 Rd4 {better is 19...Qd6 20.Nd5
+h4 21.b4 Qd7 22.Qxd7 Rxd7 23.Rfe1 c6 +/= +1.16 (21 ply)}
+20.Rad1 {+/- +1.83 (23 ply) after 20.Rae1 h4 21.Qe6 Bf6 22.Re3
+Qf8 23.Ne4 Qc8 24.Qxc8+ } Bf6 21.Rxd4 exd4 22.Nd5 Qc6 23.Re1
+{better is 23.Qf5 h4 24.h3 Re8 25.Qf4 Bd8 26.Qxd4 Qd7 27.Rd1
+g5 +/- +1.99 (26 ply)} Re8 {+/= +1.47 (27 ply)} 24.Rxe8+ Qxe8
+25.Kf1 Be5 26.Qf3 Bd6 27.Nf4 Bxf4 28.Qxf4 Qg6 29.Qd2 h4 30.g3
+hxg3 {better is 30...Qe4 31.gxh4 Qh1+ 32.Ke2 Qe4+ 33.Kd1 Qxh4
+34.f3 b6 +/= +0.84 (27 ply)} 31.hxg3 {+/= +1.37 (24 ply)} Qe4
+32.Qd3 Qe5 33.f4 Qh5 34.Kg2 c5 {? 34...b6 35.Qxd4 Qe2+ 36.Qf2
+Qd1 37.f5 Kc8 38.c5 Qd5+ +/- +1.75 (25 ply)} 35.Qe4 {+- +2.70
+(27 ply)} Qd1 {? 35...Qg4 36.a5 Qd1 37.Qf5 Qd2+ 38.Kh3 Qxa5
+39.Qf8+ Ka7 +/- +2.29 (21 ply)} 36.Kh3 {+- +3.16 (23 ply)
+after 36.Qf5 g5 37.fxg5 Qe2+ 38.Qf2 Qe4+ 39.Kh3 Ka7 40.g4 b5 }
+Qh5+ 37.Kg2 Qd1 {? 37...Qg4 38.a5 Qd1 39.Qf5 Qd2+ 40.Kh3 Qxa5
+41.Qf8+ Ka7 +/- +2.29 (21 ply)} 38.f5 {? 38.Qf5 g5 39.fxg5
+Qe2+ 40.Qf2 Qe4+ 41.Kh3 Ka7 42.g4 b5 +- +3.16 (23 ply)} Ka7
+{+/= +0.84 (30 ply)} 39.g4 {? 39.Kh3 Qh5+ 40.Kg2 Qd1 41.Qd3
+Qc1 42.Qe2 Kb6 43.Kf2 Qh1 +/= +1.10 (29 ply)} Kb6 {= 0.00 (29
+ply)} 40.Kg3 Qg1+ 41.Kh3 Qc1 42.Kh4 Qh6+ 43.Kg3 Qc1 44.Qf4
+Qg1+ {? 44...Qe1+ 45.Qf2 Qc1 46.Kf3 Ka5 47.Ke4 Kb4 48.Kd3 Ka3
+= 0.00 (30 ply)} 45.Kh3 {+/= +1.18 (30 ply)} Qh1+ 46.Qh2 Qf3+
+47.Kh4 Qc6 48.Qf2 {? 48.Qd2 Qf3 49.a5+ Ka7 50.b4 Qh1+ 51.Kg3
+Qg1+ 52.Kf4 cxb4 +/= +1.26 (26 ply)} Qe4 {? 48...Qh6+ 49.Kg3
+Qc1 50.Qf4 Qe1+ 51.Kh3 Ka5 52.Qf3 Qc1 = 0.00 (30 ply); 49.Qd2
+a5 50.Qh2 Qc6 51.Qe2 Qh1+ 52.Kg3 Qg1+ 53.Kf4 Qc1+ +/= +1.17
+(33 ply)} 1-0

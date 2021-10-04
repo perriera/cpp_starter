@@ -1,0 +1,41 @@
+[Event "Baku"]
+[Site "Baku"]
+[Date "1975.??.??"]
+[EventDate "?"]
+[Round "2"]
+[Result "1-0"]
+[White "Garry Kasparov"]
+[Black "Andrei Sokolov"]
+[ECO "B67"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "63"]
+
+1.e4 {Notes by Stockfish 9 v010218 (minimum 6s/ply)} c5 2.Nf3
+Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 d6 6.Bg5 e6 7.Qd2 a6 8.O-O-O
+Bd7 9.f4 b5 10.a3 Be7 11.Bxf6 {? 11.Nb3 b4 12.axb4 Nxb4
+13.Bxf6 gxf6 14.Be2 O-O 15.Rhf1 +/= +0.67 (19 ply)} gxf6
+{better is 11...Bxf6 12.Nxc6 Bxc6 13.Qxd6 Qxd6 14.Rxd6 Rc8
+15.a4 = -0.20 (20 ply)} 12.f5 {12.Nxc6 was played in Kholmov
+vs Doda, 1957 (1-0)} Qb6 {= +0.09 (21 ply) after 12...Nxd4
+13.Qxd4 Rb8 14.Be2 Qb6 15.Qxb6 Rxb6 16.Rhf1 } 13.fxe6 {better
+is 13.Nxc6 Bxc6 14.Qd3 b4 15.axb4 Qxb4 16.Be2 Rb8 17.Qc4 =
++0.36 (20 ply)} fxe6 {= -0.16 (22 ply)} 14.Be2 h5 {better is
+14...Qxd4 15.Bh5+ Kd8 16.Qxd4 Nxd4 17.Rxd4 Kc7 18.Rhd1 = -0.35
+(20 ply)} 15.Nxc6 {= +0.21 (24 ply)} Bxc6 16.Rhf1 O-O-O
+{better is 16...Qc5 17.g3 a5 18.Qd3 b4 19.Nb5 Bxb5 20.Qxb5+
+Qxb5 = -0.09 (26 ply)} 17.Bf3 {+/= +0.62 (23 ply)} Qc5 18.Qe2
+Qe5 19.Qf2 Kb7 20.Rfe1 {better is 20.Kb1 Qc5 21.Qe1 Rc8 22.Ne2
+Bd7 23.Qd2 e5 24.Ng3 Be6 +/= +0.83 (23 ply)} Rc8 {= +0.27 (22
+ply) after 20...Qc5 21.Qe2 a5 22.e5 dxe5 23.Nxb5 Kb8 24.Bxc6
+Qxc6 } 21.g3 h4 22.Rd5 Bxd5 23.exd5 Qg5+ 24.Kb1 hxg3 {?
+24...e5 25.a4 Rc4 26.a5 Bd8 27.Ne4 Rxe4 28.Bxe4 hxg3 =/+ -0.80
+(22 ply)} 25.hxg3 {? 25.dxe6+ d5 26.hxg3 Rxc3 27.bxc3 Rc8
+28.Qd4 Rc5 29.g4 +/= +1.41 (25 ply)} e5 {=/+ -0.77 (22 ply)}
+26.a4 b4 {? 26...f5 27.axb5 axb5 28.Rf1 Ra8 29.Nxb5 Ra5 30.Be2
+Rha8 = -0.50 (21 ply)} 27.a5 {= +0.43 (26 ply) after 27.Re4 a5
+28.Nb5 Rc5 29.Rc4 Rhc8 30.Rg4 Qh6 31.Be4 Kb8 } Rxc3 {?
+27...bxc3 28.Qb6+ Ka8 29.Qxa6+ Kb8 30.Re4 cxb2 31.Kxb2 = 0.00
+(32 ply)} 28.Qb6+ {+- +6.36 (22 ply)} Kc8 29.bxc3 Bd8 30.Qc6+
+Bc7 31.Qa8+ Bb8 32.Re4 {32...Kd7 33.Qc6+ Kd8 34.Rxb4 Rh1+
+35.Bxh1 Bc7 36.Rc4 Qg7 +- mate-in-18} 1-0
