@@ -135,8 +135,9 @@ endif()
 # TODO: declare example client usage application code here, this is where regression tests should
 # ultimately be written.
 #
-# add_executable(client src/main.cpp) target_include_directories(client PUBLIC ${INCLUDES})
-# target_link_libraries(client PRIVATE ${PROJECT_NAME} stdc++fs cpr::cpr spdlog extras)
+# add_executable(main src/main.cpp) 
+# target_include_directories(main PUBLIC ${INCLUDES})
+# target_link_libraries(main PRIVATE ${PROJECT_NAME} stdc++fs extras )
 
 #
 # NOTE: Install all shared libraries
