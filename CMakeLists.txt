@@ -133,11 +133,13 @@ endif()
 
 #
 # TODO: declare example client usage application code here, this is where regression tests should
-# ultimately be written.
+# ultimately be written. as well, this make file uses a GLOB_RECURSE macro which automatically 
+# includes ALL headers and sources under include/ and src/. So, to keep two or more main() 
+# declarations seperate, we place any sources that have a main() in the instances/ folder
 #
-# add_executable(main src/main.cpp) 
-# target_include_directories(main PUBLIC ${INCLUDES})
-# target_link_libraries(main PRIVATE ${PROJECT_NAME} stdc++fs extras )
+add_executable(main instances/main.cpp) 
+target_include_directories(main PUBLIC ${INCLUDES})
+target_link_libraries(main PRIVATE ${PROJECT_NAME} stdc++fs extras )
 
 #
 # NOTE: Install all shared libraries
