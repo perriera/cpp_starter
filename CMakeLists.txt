@@ -91,7 +91,7 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 CPMAddPackage(
   NAME extras
   GITHUB_REPOSITORY perriera/extras
-  VERSION 3.22.0
+  VERSION 4.16.0
   OPTIONS "MAKE_SPDLOG_SHARED OFF"
 )
 if(extras_ADDED)
