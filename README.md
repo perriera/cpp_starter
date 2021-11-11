@@ -94,5 +94,14 @@ The industry practice of compiling to a build/ directory is supported here. When
 
 > Please note: At present whenever you re-open your project with Visual Studio Code the cmake utility may or may not be in sync with the projects, (you'll notice this when all the source files keep getting rebuilt). To correct this open a Terminal window **inside** the Visual Studio Code environment and delete the build/ directory, (aka. `rm -rf build`)then rebuild the project with **SHIFT-CTRL-B**.
 
+## FakeIt2 C++ Mocking Framework
+This project is already setup for use with [FakeIt](https://github.com/eranpeer/FakeIt). Anyone familiar with writing interface mocks, (as in [Mock Object](https://en.wikipedia.org/wiki/Mock_object) should find the built-in support for mocking interfaces using the FakeIt framework to be indispensible here).
+
+## Catch2 C++ Test Case Framework
+This project is already setup for use with [Catch2](https://github.com/catchorg/Catch2). Anyone familiar with writing test cases, (as in [TDD - Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) should find the built-in support for Catch2 to be indispensible here).
+
+## JIRA/Confluence/Bitbuck support 
+This project is already setup for use with [Jira (software)](https://en.wikipedia.org/wiki/Jira_(software)). Anyone familiar with writing JIRA entries as part of morning [SCRUM](https://en.wikipedia.org/wiki/Scrum_(software_development)) meetings, (or bi-weekly [SCRUM SPRINT](https://en.wikipedia.org/wiki/Scrum_Sprint) meetings) will find **perriera/cpp_starter** to be well suited to the needs of JIRA/SCRUM/SPRINT.
+
 ## Conclusion
 Your brand new C++ project is now setup and ready for use with **[perriera/extras](https://github.com/perriera/extras)**, (which  comes bundled with [spdlog](https://github.com/gabime/spdlog), [cpr](https://github.com/libcpr/cpr), and [nlohmann json](https://github.com/nlohmann/json) support, plus others). 
