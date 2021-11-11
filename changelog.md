@@ -4,8 +4,8 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
-> > git tag -a v0.5.4 -m "perriera/extras v5.0.4"</br>
-> > git push origin v0.5.4
+> > git tag -a v0.5.5 -m "perriera/extras v5.0.7"</br>
+> > git push origin v0.5.5
 > 
 
 IMPORTANT: 
@@ -28,6 +28,10 @@ Correct URL for github, (for source compare)</br>
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordinging</br>
+
+#### 0.5.5 (2021-11-8)
+### Changed 
+- Now using perroera/extras 5.0.7 
 
 #### 0.5.4 (2021-11-8)
 ### Changed 
@@ -122,7 +126,8 @@ Updated README.md accordinging</br>
 ### Removed
 - Conan package manager deprecated
 
-[Unreleased]: https://github.com/perriera/cpp_starter/compare/v0.5.4...HEAD
+[Unreleased]: https://github.com/perriera/cpp_starter/compare/v0.5.5...HEAD
+[0.5.5]: https://github.com/perriera/cpp_starter/compare/v0.5.4...v0.5.5
 [0.5.4]: https://github.com/perriera/cpp_starter/compare/v0.5.3...v0.5.4
 [0.5.3]: https://github.com/perriera/cpp_starter/compare/v0.5.2...v0.5.3
 [0.5.2]: https://github.com/perriera/cpp_starter/compare/v0.5.1...v0.5.2
