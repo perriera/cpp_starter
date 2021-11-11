@@ -100,7 +100,7 @@ This project is already setup for use with [FakeIt](https://github.com/eranpeer/
 ## Catch2 C++ Test Case Framework
 This project is already setup for use with [Catch2](https://github.com/catchorg/Catch2). Anyone familiar with writing test cases, (as in [TDD - Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) should find the built-in support for Catch2 to be indispensible here).
 
-## JIRA/Confluence/Bitbuck support 
+## JIRA/Confluence/Bitbucket support 
 This project is already setup for use with [Jira (software)](https://en.wikipedia.org/wiki/Jira_(software)). Anyone familiar with writing JIRA entries as part of morning [SCRUM](https://en.wikipedia.org/wiki/Scrum_(software_development)) meetings, (or bi-weekly [SCRUM SPRINT](https://en.wikipedia.org/wiki/Scrum_Sprint) meetings) will find **perriera/cpp_starter** to be well suited to the needs of JIRA/SCRUM/SPRINT.
 
 ## Conclusion
