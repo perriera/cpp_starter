@@ -3,8 +3,14 @@
 # perriera/cpp_starter
 Welcome to the perriera/cpp_starter project. 
 
-***Why would someone want to use this?***
+[![CMake](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml/badge.svg?branch=dev)](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml)
 
+<div align="center">
+  <img width="442" height="320" src="assets/extras.png">
+  <br>
+</div>
+
+## Who would want to use this?
 > This project aims to get you up and running with C++17 based project with a 'git clone' operation. As well, this particular C++ project template comes with builtin [CPM](https://github.com/cpm-cmake/CPM.cmake) support. This means that you can incorporate other [github](https://github.com) projects, (or anything that uses the git tool) into your project with the simple inclusion of a CPM directive in in your CMakeLists.txt file. 
 
 ## Prerequisites
