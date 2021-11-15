@@ -25,6 +25,36 @@ With the **checkinstall** package installed your installation process now become
      sudo dpkg -r <your_project>
      sudo checkinstall
      
+The above command will by default install all header file, (of your project) into the shared include (**/usr/local/include**) directory and all shared libraries into the shared libraries directory (**/usr/local/lib**).
+
+CMakeLists.txt:
+
+     #
+     # NOTE: Install all shared libraries
+     #
+     install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib)
+     install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
+
+To install any executables at the same time you would modify the above to, (for example):
+
+CMakeLists.txt:
+
+     #
+     # NOTE: Install all shared libraries & executables
+     #
+     install(TARGETS 
+          parcel
+          socketpool_client socketpool_server
+          uploader_client uploader_server 
+          vendor_client vendor_server 
+          downloader_client downloader_server 
+          ${PROJECT_NAME}
+          LIBRARY DESTINATION lib
+          RUNTIME DESTINATION bin)
+     install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
+
+Where all the named programs you see will be installed into: **/usr/local/bin**
+
 ## Uninstall command
 Assuming you installed **<your_project>** with **checkinstall** you may uninstall at any time with:
 
