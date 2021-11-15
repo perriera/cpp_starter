@@ -54,6 +54,7 @@ CMakeLists.txt:
      install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
 
 Where all the named programs you see will be installed into: **/usr/local/bin**
+Just be sure to have LD_LIBRARY_PATH set, (see below) if your executables use the shared libraries.
 
 ## Uninstall command
 Assuming you installed **<your_project>** with **checkinstall** you may uninstall at any time with:
