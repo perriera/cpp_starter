@@ -68,7 +68,7 @@ Near line 57 of CMakeLists.txt you may specify a production version here:
 	
 In a PRODUCTION build of your project no DEBUG code is included in your installed code.
 
-## important note on using shared libraries
+## Important note on using shared libraries
 After installation the **<your_prject>** library should be found in your **/usr/local/include** and your **/usr/local/lib** directories. Also, set **LD_LIBRARY_PATH**, (if you haven't already done so). 
 
      export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
