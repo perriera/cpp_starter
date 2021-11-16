@@ -84,6 +84,9 @@ where approapriate.
      # Using these flags speeds up the CPM inclusions in other projects significantly.
      #
 
+## CPM dual inclusion
+Inevitably, if you use **perriera/extras** with more than one project, you are probably going to run into a situation where you to coordinate multiple installations. To make that work, you have to make sure that ALL projects are using the same version of **perriera/extras**. If your situation gets more complicated than that, send me an email. The same holds true with any projects that you develope. Look at it from CPM's perspective, if there are more than one version of your library then it is going to try it's best to include them all, (and sometimes you are asking CPM to do the impossible). 
+
 ## PRODUCTION vs. DEBUG
 Near line 57 of CMakeLists.txt you may specify a production version here:
 
