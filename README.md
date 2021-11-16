@@ -37,13 +37,45 @@ If you have done everything correctly, you will see a Catch2 diagnostic with all
 	===============================================================================
 	All tests passed (1 assertion in 2 test cases)
 
+**Recommended**: The project now has been successfully created in git already. So add your first github tag:
+
+	git tag -a v0.1.0 -m "Created <project_name>"
+	git push origin v0.1.0
+
 However, you not done yet:
 
 Inside your favorite editor, (or search & replace command utility):
 
  1. Global search and replace **cpp_starter** to <project_name> (case sensitive)
  2. Global search and replace **CPP_STARTER** to <PROJECT_NAME> (case sensitive)
- 3. change directory name '**include/cpp_starter**' to '**include/<project_name>**'
+ 3. Change directory name '**include/cpp_starter**' to '**include/<project_name>**'
+ 4. Change the links found in changelog.md such that they begin at 0.1.0 for your project.
+
+For example, instead of: 
+
+	[Unreleased]: https://github.com/perriera/cpp_starter/compare/v0.7.0...HEAD
+	[0.7.0]: https://github.com/perriera/cpp_starter/compare/v0.6.6...v0.7.0
+	[0.6.6]: https://github.com/perriera/cpp_starter/compare/v0.5.6...v0.6.0
+	[0.5.6]: https://github.com/perriera/cpp_starter/compare/v0.5.5...v0.5.6
+	[0.5.5]: https://github.com/perriera/cpp_starter/compare/v0.5.4...v0.5.5
+	[0.5.4]: https://github.com/perriera/cpp_starter/compare/v0.5.3...v0.5.4
+	[0.5.3]: https://github.com/perriera/cpp_starter/compare/v0.5.2...v0.5.3
+	[0.5.2]: https://github.com/perriera/cpp_starter/compare/v0.5.1...v0.5.2
+	[0.5.1]: https://github.com/perriera/cpp_starter/compare/v0.5.0...v0.5.1
+	[0.5.0]: https://github.com/perriera/cpp_starter/compare/v0.4.2...v0.5.0
+	[0.4.2]: https://github.com/perriera/cpp_starter/compare/v0.4.1...v0.4.2
+	[0.4.1]: https://github.com/perriera/cpp_starter/compare/v0.4.0...v0.4.1
+	[0.4.0]: https://github.com/perriera/cpp_starter/compare/v0.3.1...v0.4.0
+	[0.3.1]: https://github.com/perriera/cpp_starter/compare/v0.3.0...v0.3.1
+	[0.3.0]: https://github.com/perriera/cpp_starter/compare/v0.2.0...v0.3.0
+	[0.2.0]: https://github.com/perriera/cpp_starter/compare/v0.1.0...v0.2.0
+	[0.1.0]: https://github.com/perriera/cpp_starter/releases/tag/v0.1.0
+
+Make it more like:
+
+	[Unreleased]: https://github.com/perriera/cpp_starter/compare/v0.2.0...HEAD
+	[0.2.0]: https://github.com/perriera/cpp_starter/compare/v0.1.0...v0.2.0
+	[0.1.0]: https://github.com/perriera/cpp_starter/releases/tag/v0.1.0
 
 Then do the following:
 
@@ -51,9 +83,15 @@ Then do the following:
 	cd build
 	make
 	cd ..
+
 This will re-create the project now with all references to cpp_starter changed to <your_project_name>. To test this do  the following:
 
 	build/run-unittests-<your_project_name>
+
+**Recommended**: The project now has been successfully created in git already. So add your first github tag:
+
+	git tag -a v0.2.0 -m "Renamed cpp_starter to: <project_name>"
+	git push origin v0.2.0
 
 ## Changelog.md
 When you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to CPP_STARTER will be changed to <YOUR_PROJECT_NAME>
