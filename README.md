@@ -79,6 +79,44 @@ Make it more like:
 
 Also, while you are at, remove all entries to tags in changelog.md from **[0.2.0]** onward. As in there should only be two tag entries in your new project.
 
+Change this:
+
+	#### 0.8.0 (2021-09-03)
+	### Moved 
+	- Vendor files
+
+	...
+
+	#### 0.3.1 (2021-09-03)
+	### Removed 
+	- Renamed identifier
+
+	#### 0.3.0 (2021-09-03)
+	### Removed 
+	- cpp_starter source code
+
+	#### 0.2.0 (2021-09-03)
+	### Added
+	- SHARED library support
+	- (perriera) extras library support, (3.11.0)
+	- CPM.cmake support
+
+To this:
+
+	#### 0.2.0 (2021-09-03)
+	### Added
+	- SHARED library support
+	- (perriera) extras library support, (3.11.0)
+	- CPM.cmake support
+
+Then change the version information in **include/version.h** to 0.2.0
+
+	#define CPP_STARTER_VER_MAJOR 0
+	#define CPP_STARTER_VER_MINOR 2
+	#define CPP_STARTER_VER_PATCH 0
+
+**Recommended**: You must make sure that the github tags you setup are always the same as the version number for the project. This has to be done by you manually, (at this point in time).
+
 Then do the following:
 
 	rm -rf build
