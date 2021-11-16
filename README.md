@@ -130,37 +130,11 @@ This will re-create the project now with all references to cpp_starter changed t
 
 **Recommended**: The project now has been successfully created in git already. So add your first github tag:
 
-	git tag -a v0.2.0 -m "Renamed C++ template to: <project_name>"
+	git tag -a v0.2.0 -m "Renamed C++ template to: cpp_starter"
 	git push origin v0.2.0
 
 ## Changelog.md
-When you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to CPP_STARTER will be changed to cpp_starter
-
-	#ifndef _CPP_STARTER_VERSION_HPP
-	#define _CPP_STARTER_VERSION_HPP
-
-	/**
-	 * @file version.hpp
-	 * @author Matt Williams (matt@perriera.com)
-	 * @author Perry Anderson (perry@perriera.com)
-	 * @brief Adds version support for Cmake script
-	 * @date 2021-08-08
-	 */
-
-	#define CPP_STARTER_VER_MAJOR 0
-	#define CPP_STARTER_VER_MINOR 5
-	#define CPP_STARTER_VER_PATCH 4
-
-	#define CPP_STARTER_VERSION \
-	  (CPP_STARTER_VER_MAJOR * 10000 + CPP_STARTER_VER_MINOR * 100 + CPP_STARTER_VER_PATCH)
-
-	#endif// _CPP_STARTER_VERSION_HPP
-
-From here add this to your github project and you are good to go:
-
-	git add .
-	git commit -m "Initial content"
-	git push
+Remember, when you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to CPP_STARTER will be changed to cpp_starter
 
 ## CPM Optimization
 > Note: Be sure to have the desired **VERSION** of perrier/extras specified in the **VERSION** keyword of the CPMAddPackage specification, (in your CMakeLists.txt). Also, to optimize CPM support on your projects be sure to set the CPM_SOURCE_CACHE environment variable for shared CPM libraries. Typically you would add this to your `.bashrc` script. With this environment variable set, the CPM package manager will not need to reload after successive build/ directory resets, (aka. `rm -rf build`). 
