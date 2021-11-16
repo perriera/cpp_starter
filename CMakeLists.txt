@@ -57,20 +57,53 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -pedantic -fPIC")
 option(CPP_STARTER_PRODUCTION "Production build" OFF)
 
 #
-# NOTE: Build defaults to production, cmake -DCPP_STARTER_PRODUCTION=OFF will build debug with tests
+# MAKE_CPP_STARTER_LIBRARY_ONLY
 #
-if(NOT CPP_STARTER_PRODUCTION)
-  print(STATUS "Building ${PROJECT_NAME}-${PROJECT_VERSION} [DEBUG]")
-  set(CMAKE_BUILD_TYPE Debug)
-  set(CPP_STARTER_TESTS ON)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
-else()
-  print(STATUS "Building ${PROJECT_NAME}-${PROJECT_VERSION} [RELEASE]")
+# Quite often when you include a library from a github project, (via CPM)
+# all you are interested in are the shared library files. When you use this
+# flag you have to set it on any executables (see below) that you setup
+# and/or wish to make optional. Mind you, this option has not been fully
+# tested for use with CPP_STARTER_PRODUCTION flag. So, there might be 
+# a hiccup in here that needs to be worked out, (reader beware).
+#
+# see also MAKE_CPP_STARTER_LIBRARY_EXECUTABLES
+#
+# This second flag will allow both the shared libraries and any executatbles
+# (but not the unit tests) to be compiled.
+#
+# Using these flags speeds up the CPM inclusions in other projects significantly.
+#
+
+message(STATUS "MAKE_CPP_STARTER_LIBRARY_ONLY is ${MAKE_CPP_STARTER_LIBRARY_ONLY}")
+if(MAKE_CPP_STARTER_LIBRARY_ONLY)
+  option(BUILD_TESTS "Build tests" OFF)
+  option(DEBUG "Debug Build" OFF)
   set(CPP_STARTER_TESTS OFF)
-  set(CMAKE_BUILD_TYPE Release)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
+  message(STATUS "BUILD_TESTS is ${BUILD_TESTS}")
+  message(STATUS "DEBUG is ${DEBUG}")
+else()
+  option(BUILD_TESTS "Build tests" ON)
+  option(DEBUG "Debug Build" ON)
+  message(STATUS "BUILD_TESTS is ${BUILD_TESTS}")
+  message(STATUS "DEBUG is ${DEBUG}")
+
+  #
+  # NOTE: Build defaults to production, cmake -DCPP_STARTER_PRODUCTION=OFF will build debug with tests
+  #
+  if(NOT CPP_STARTER_PRODUCTION)
+    print(STATUS "Building ${PROJECT_NAME}-${PROJECT_VERSION} [DEBUG]")
+    set(CMAKE_BUILD_TYPE Debug)
+    set(CPP_STARTER_TESTS ON)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
+  else()
+    print(STATUS "Building ${PROJECT_NAME}-${PROJECT_VERSION} [RELEASE]")
+    set(CPP_STARTER_TESTS OFF)
+    set(CMAKE_BUILD_TYPE Release)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
+  endif()
+
 endif()
 
 #
@@ -138,15 +171,33 @@ endif()
 # includes ALL headers and sources under include/ and src/. So, to keep two or more main() 
 # declarations seperate, we place any sources that have a main() in the instances/ folder
 #
+if( NOT MAKE_CPP_STARTER_LIBRARY_ONLY OR MAKE_CPP_STARTER_LIBRARY_EXECUTABLES)
 add_executable(main instances/main.cpp) 
 target_include_directories(main PUBLIC ${INCLUDES})
 target_link_libraries(main PRIVATE ${PROJECT_NAME} stdc++fs extras )
+endif()
 
 #
 # NOTE: Install all shared libraries
 #
 install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib)
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
+
+#
+#     #
+#     # NOTE: Install all shared libraries & executables, (sample)
+#     #
+#     install(TARGETS 
+#          parcel
+#          socketpool_client socketpool_server
+#          uploader_client uploader_server 
+#          vendor_client vendor_server 
+#          downloader_client downloader_server 
+#          ${PROJECT_NAME}
+#          LIBRARY DESTINATION lib
+#          RUNTIME DESTINATION bin)
+#     install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
+#
 
 #
 # NOTE: if the compiler supports iter-procedural optimization, turn it on
