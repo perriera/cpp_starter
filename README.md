@@ -77,6 +77,8 @@ Make it more like:
 	[0.2.0]: https://github.com/perriera/cpp_starter/compare/v0.1.0...v0.2.0
 	[0.1.0]: https://github.com/perriera/cpp_starter/releases/tag/v0.1.0
 
+Also, while you are at, remove all entries to tags in changelog.md from **[0.2.0]** onward. As in there should only be two tag entries in your new project.
+
 Then do the following:
 
 	rm -rf build
