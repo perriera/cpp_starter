@@ -136,6 +136,8 @@ This will re-create the project now with all references to cpp_starter changed t
 ## Changelog.md & include/version.hpp
 Remember, when you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to CPP_STARTER will be changed to cpp_starter
 
+**Recommended**: Inside your Github.com for your project, whenever you add a new tag, go the distance and make it a *release* as well. Just go to your project on Github, select **tag**. Once the tags page is displayed left mouse click on the three dots you see for the newly added tag and select "Create Release"
+
 ## CPM Optimization
 > Note: Be sure to have the desired **VERSION** of perrier/extras specified in the **VERSION** keyword of the CPMAddPackage specification, (in your CMakeLists.txt). Also, to optimize CPM support on your projects be sure to set the CPM_SOURCE_CACHE environment variable for shared CPM libraries. Typically you would add this to your `.bashrc` script. With this environment variable set, the CPM package manager will not need to reload after successive build/ directory resets, (aka. `rm -rf build`). 
 
