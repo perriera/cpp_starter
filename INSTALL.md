@@ -27,6 +27,15 @@ With the **checkinstall** package installed your installation process now become
      
 The above command will by default install all header file, (of your project) into the shared include (**/usr/local/include**) directory and all shared libraries into the shared libraries directory (**/usr/local/lib**).
 
+Where all the named programs you see will be installed into: **/usr/local/bin**.</br>
+**NOTE**: Just be sure to have LD_LIBRARY_PATH set, (see below) if your executables use any shared libraries.
+
+## Uninstall command
+Assuming you installed **<cpp_starter>** with **checkinstall** you may uninstall at any time with:
+
+     sudo dpkg -r <cpp_starter>
+
+
 CMakeLists.txt:
 
      #
@@ -74,14 +83,6 @@ where approapriate.
      #
      # Using these flags speeds up the CPM inclusions in other projects significantly.
      #
-
-Where all the named programs you see will be installed into: **/usr/local/bin**.</br>
-**NOTE**: Just be sure to have LD_LIBRARY_PATH set, (see below) if your executables use any shared libraries.
-
-## Uninstall command
-Assuming you installed **<cpp_starter>** with **checkinstall** you may uninstall at any time with:
-
-     sudo dpkg -r <cpp_starter>
 
 ## PRODUCTION vs. DEBUG
 Near line 57 of CMakeLists.txt you may specify a production version here:
