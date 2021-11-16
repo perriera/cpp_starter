@@ -39,7 +39,7 @@ If you have done everything correctly, you will see a Catch2 diagnostic with all
 
 **Recommended**: The project now has been successfully created in git already. So add your first github tag:
 
-	git tag -a v0.1.0 -m "Created <project_name>"
+	git tag -a v0.1.0 -m "Created cpp_starter"
 	git push origin v0.1.0
 
 However, you not done yet:
@@ -84,17 +84,17 @@ Then do the following:
 	make
 	cd ..
 
-This will re-create the project now with all references to cpp_starter changed to <your_project_name>. To test this do  the following:
+This will re-create the project now with all references to cpp_starter changed to cpp_starter. To test this do the following:
 
-	build/run-unittests-<your_project_name>
+	build/run-unittests-<press tab> 
 
 **Recommended**: The project now has been successfully created in git already. So add your first github tag:
 
-	git tag -a v0.2.0 -m "Renamed cpp_starter to: <project_name>"
+	git tag -a v0.2.0 -m "Renamed C++ template to: <project_name>"
 	git push origin v0.2.0
 
 ## Changelog.md
-When you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to CPP_STARTER will be changed to <YOUR_PROJECT_NAME>
+When you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to CPP_STARTER will be changed to cpp_starter
 
 	#ifndef _CPP_STARTER_VERSION_HPP
 	#define _CPP_STARTER_VERSION_HPP
