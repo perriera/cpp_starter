@@ -133,7 +133,7 @@ This will re-create the project now with all references to cpp_starter changed t
 	git tag -a v0.2.0 -m "Renamed C++ template to: cpp_starter"
 	git push origin v0.2.0
 
-## Changelog.md & include/version.h 
+## Changelog.md & include/version.hpp
 Remember, when you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to CPP_STARTER will be changed to cpp_starter
 
 ## CPM Optimization
