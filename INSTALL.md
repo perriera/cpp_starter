@@ -67,16 +67,16 @@ To expediate the use of shared libraries be sure to utilize these flags
 where approapriate.
 
      #
-     # MAKE_CPP_STARTER_LIBRARY_ONLY
+     # MAKE_EXTRAS_CPP_LIBRARY_ONLY
      #
      # Quite often when you include a library from a github project, (via CPM)
      # all you are interested in are the shared library files. When you use this
      # flag you have to set it on any executables (see below) that you setup
      # and/or wish to make optional. Mind you, this option has not been fully
-     # tested for use with CPP_STARTER_PRODUCTION flag. So, there might be 
+     # tested for use with EXTRAS_CPP_PRODUCTION flag. So, there might be 
      # a hiccup in here that needs to be worked out, (reader beware).
      #
-     # see also MAKE_CPP_STARTER_LIBRARY_EXECUTABLES
+     # see also MAKE_EXTRAS_CPP_LIBRARY_EXECUTABLES
      #
      # This second flag will allow both the shared libraries and any executatbles
      # (but not the unit tests) to be compiled.

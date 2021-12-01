@@ -47,7 +47,7 @@ However, you not done yet:
 Inside your favorite editor, (or search & replace command utility):
 
  1. Global search and replace **extras_cpp** to <project_name> (case sensitive)
- 2. Global search and replace **CPP_STARTER** to <PROJECT_NAME> (case sensitive)
+ 2. Global search and replace **EXTRAS_CPP** to <PROJECT_NAME> (case sensitive)
  3. Change directory name '**include/extras_cpp**' to '**include/<project_name>**'
  4. Change the links found in changelog.md such that they begin at 0.1.0 for your project.
 
@@ -111,9 +111,9 @@ To this:
 
 Then change the version information in **include/version.h** to 0.2.0
 
-	#define CPP_STARTER_VER_MAJOR 0
-	#define CPP_STARTER_VER_MINOR 2
-	#define CPP_STARTER_VER_PATCH 0
+	#define EXTRAS_CPP_VER_MAJOR 0
+	#define EXTRAS_CPP_VER_MINOR 2
+	#define EXTRAS_CPP_VER_PATCH 0
 
 **Recommended**: You must make sure that the github tags you setup are always the same as the version number for the project. This has to be done by you manually, (at this point in time).
 
@@ -134,7 +134,7 @@ This will re-create the project now with all references to extras_cpp changed to
 	git push origin v0.2.0
 
 ## Changelog.md & include/version.hpp
-Remember, when you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to CPP_STARTER will be changed to extras_cpp
+Remember, when you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to EXTRAS_CPP will be changed to extras_cpp
 
 **Recommended**: Inside your Github.com for your project, whenever you add a new tag, go the distance and make it a *release* as well. Just go to your project on Github, select **tag**. Once the tags page is displayed left mouse click on the three dots you see for the newly added tag and select "Create Release"
 
