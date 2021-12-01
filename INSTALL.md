@@ -1,28 +1,28 @@
 ## Shared Library support
-If wish to install your cpp_starter-based project as a shared library there are two methods.
+If wish to install your extras_cpp-based project as a shared library there are two methods.
 
 ## standard sudo make install
 
 The following command will install all the targets specified in your CMakeLists.txt into the standard Linux areas for header files and binaries:
 
 	sudo make install
-However, quite often you will be upgrading **cpp_starter** so a better way to install **cpp_starter** is by using **sudo checkinstall**.
+However, quite often you will be upgrading **extras_cpp** so a better way to install **extras_cpp** is by using **sudo checkinstall**.
 
 ## sudo checkinstall
-Since you will be working on different versions of **cpp_starter** it is important that you be able to make a clean uninstall, (when required) , To be able to uninstall you will need to install the Ubuntu **checkinstall** package: [here](https://help.ubuntu.com/community/CheckInstall). 
+Since you will be working on different versions of **extras_cpp** it is important that you be able to make a clean uninstall, (when required) , To be able to uninstall you will need to install the Ubuntu **checkinstall** package: [here](https://help.ubuntu.com/community/CheckInstall). 
 
 `sudo apt-get update && sudo apt-get install checkinstall`
 
 With the **checkinstall** package installed your installation process now becomes:
     
-     git git@github.com:perriera/<cpp_starter>.git 
-     cd <cpp_starter>
+     git git@github.com:perriera/<extras_cpp>.git 
+     cd <extras_cpp>
      mkdir build
      cd build
      cmake ..
      make
      ./run-unittests
-     sudo dpkg -r <cpp_starter>
+     sudo dpkg -r <extras_cpp>
      sudo checkinstall
      
 The above command will by default install all header file, (of your project) into the shared include (**/usr/local/include**) directory and all shared libraries into the shared libraries directory (**/usr/local/lib**).
@@ -31,9 +31,9 @@ Where all the named programs you see will be installed into: **/usr/local/bin**.
 **NOTE**: Just be sure to have LD_LIBRARY_PATH set, (see below) if your executables use any shared libraries.
 
 ## Uninstall command
-Assuming you installed **<cpp_starter>** with **checkinstall** you may uninstall at any time with:
+Assuming you installed **<extras_cpp>** with **checkinstall** you may uninstall at any time with:
 
-     sudo dpkg -r <cpp_starter>
+     sudo dpkg -r <extras_cpp>
 
 
 CMakeLists.txt:
@@ -67,16 +67,16 @@ To expediate the use of shared libraries be sure to utilize these flags
 where approapriate.
 
      #
-     # MAKE_CPP_STARTER_LIBRARY_ONLY
+     # MAKE_EXTRAS_CPP_LIBRARY_ONLY
      #
      # Quite often when you include a library from a github project, (via CPM)
      # all you are interested in are the shared library files. When you use this
      # flag you have to set it on any executables (see below) that you setup
      # and/or wish to make optional. Mind you, this option has not been fully
-     # tested for use with CPP_STARTER_PRODUCTION flag. So, there might be 
+     # tested for use with EXTRAS_CPP_PRODUCTION flag. So, there might be 
      # a hiccup in here that needs to be worked out, (reader beware).
      #
-     # see also MAKE_CPP_STARTER_LIBRARY_EXECUTABLES
+     # see also MAKE_EXTRAS_CPP_LIBRARY_EXECUTABLES
      #
      # This second flag will allow both the shared libraries and any executatbles
      # (but not the unit tests) to be compiled.
@@ -90,17 +90,17 @@ Inevitably, if you use **perriera/extras** with more than one project, you are p
 ## PRODUCTION vs. DEBUG
 Near line 57 of CMakeLists.txt you may specify a production version here:
 
-	option(<cpp_starter>_PRODUCTION "Production build"  OFF)
+	option(<extras_cpp>_PRODUCTION "Production build"  OFF)
 	
 In a PRODUCTION build of your project no DEBUG code is included in your installed code.
 
 ## Important note on using shared libraries
-After installation the **cpp_starter** library should be found in your **/usr/local/include** and your **/usr/local/lib** directories. Also, set **LD_LIBRARY_PATH**, (if you haven't already done so). 
+After installation the **extras_cpp** library should be found in your **/usr/local/include** and your **/usr/local/lib** directories. Also, set **LD_LIBRARY_PATH**, (if you haven't already done so). 
 
      export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 ##  Ubuntu PPA support 
-If you are interested in having <cpp_starter> setup for deployment as a Ubuntu PPA, then this is a good starting point.
+If you are interested in having <extras_cpp> setup for deployment as a Ubuntu PPA, then this is a good starting point.
 
 >
 >  ### Adding a PPA using the command-line
@@ -132,6 +132,6 @@ If you are interested in having <cpp_starter> setup for deployment as a Ubuntu P
 >
  	sudo add-apt-repository ppa:admin/ppa-dmg
  	sudo apt update
-	sudo apt install openssl libssl-dev libcurlpp-dev cpp_starter
+	sudo apt install openssl libssl-dev libcurlpp-dev extras_cpp
 	
  

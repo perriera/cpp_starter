@@ -16,7 +16,7 @@
  *
  */
 
-#include <cpp_starter/game/ChessGame.hpp>
+#include <extras_cpp/game/ChessGame.hpp>
 #include <extras/interfaces.hpp>
 #include <iostream>
 

@@ -9,10 +9,10 @@ cmake_minimum_required(VERSION 3.21)
 include(cmake/CPM.cmake)
 include(cmake/print.cmake)
 include(cmake/utils.cmake)
-cpp_starter_get_version()
+extras_cpp_get_version()
 project(
-  cpp_starter
-  VERSION ${CPP_STARTER_VERSION}
+  extras_cpp
+  VERSION ${EXTRAS_CPP_VERSION}
   LANGUAGES CXX
 )
 
@@ -54,19 +54,19 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -pedantic -fPIC")
 #
 # NOTE: add additional project options
 #
-option(CPP_STARTER_PRODUCTION "Production build" OFF)
+option(EXTRAS_CPP_PRODUCTION "Production build" OFF)
 
 #
-# MAKE_CPP_STARTER_LIBRARY_ONLY
+# MAKE_EXTRAS_CPP_LIBRARY_ONLY
 #
 # Quite often when you include a library from a github project, (via CPM)
 # all you are interested in are the shared library files. When you use this
 # flag you have to set it on any executables (see below) that you setup
 # and/or wish to make optional. Mind you, this option has not been fully
-# tested for use with CPP_STARTER_PRODUCTION flag. So, there might be 
+# tested for use with EXTRAS_CPP_PRODUCTION flag. So, there might be 
 # a hiccup in here that needs to be worked out, (reader beware).
 #
-# see also MAKE_CPP_STARTER_LIBRARY_EXECUTABLES
+# see also MAKE_EXTRAS_CPP_LIBRARY_EXECUTABLES
 #
 # This second flag will allow both the shared libraries and any executatbles
 # (but not the unit tests) to be compiled.
@@ -74,11 +74,11 @@ option(CPP_STARTER_PRODUCTION "Production build" OFF)
 # Using these flags speeds up the CPM inclusions in other projects significantly.
 #
 
-message(STATUS "MAKE_CPP_STARTER_LIBRARY_ONLY is ${MAKE_CPP_STARTER_LIBRARY_ONLY}")
-if(MAKE_CPP_STARTER_LIBRARY_ONLY)
+message(STATUS "MAKE_EXTRAS_CPP_LIBRARY_ONLY is ${MAKE_EXTRAS_CPP_LIBRARY_ONLY}")
+if(MAKE_EXTRAS_CPP_LIBRARY_ONLY)
   option(BUILD_TESTS "Build tests" OFF)
   option(DEBUG "Debug Build" OFF)
-  set(CPP_STARTER_TESTS OFF)
+  set(EXTRAS_CPP_TESTS OFF)
   message(STATUS "BUILD_TESTS is ${BUILD_TESTS}")
   message(STATUS "DEBUG is ${DEBUG}")
 else()
@@ -88,17 +88,17 @@ else()
   message(STATUS "DEBUG is ${DEBUG}")
 
   #
-  # NOTE: Build defaults to production, cmake -DCPP_STARTER_PRODUCTION=OFF will build debug with tests
+  # NOTE: Build defaults to production, cmake -DEXTRAS_CPP_PRODUCTION=OFF will build debug with tests
   #
-  if(NOT CPP_STARTER_PRODUCTION)
+  if(NOT EXTRAS_CPP_PRODUCTION)
     print(STATUS "Building ${PROJECT_NAME}-${PROJECT_VERSION} [DEBUG]")
     set(CMAKE_BUILD_TYPE Debug)
-    set(CPP_STARTER_TESTS ON)
+    set(EXTRAS_CPP_TESTS ON)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
   else()
     print(STATUS "Building ${PROJECT_NAME}-${PROJECT_VERSION} [RELEASE]")
-    set(CPP_STARTER_TESTS OFF)
+    set(EXTRAS_CPP_TESTS OFF)
     set(CMAKE_BUILD_TYPE Release)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
@@ -116,7 +116,7 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 
 #
 # NOTE: "Include 3rd party libraries, Perry and I maintain an open-source extras C++ library, which
-# is used extensively in cpp_starter, it comes bundled with spdlog, cpr, and nlohmann json. extras has
+# is used extensively in extras_cpp, it comes bundled with spdlog, cpr, and nlohmann json. extras has
 # project options that allow us to control how other libraries it includes are built. for example we
 # can tell extras to build spdlog as a static library (for faster compile times) by settings
 # MAKE_SPDLOG_SHARED OFF" -- Matt Williams, October, 2021
@@ -141,14 +141,14 @@ endif()
 #
 # HACK: glob src files and header files
 #
-file(GLOB_RECURSE CPP_STARTER_HEADERS CONFIGURE_DEPENDS "${INCLUDES}/${PROJECT_NAME}/*.hpp")
-file(GLOB_RECURSE CPP_STARTER_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
+file(GLOB_RECURSE EXTRAS_CPP_HEADERS CONFIGURE_DEPENDS "${INCLUDES}/${PROJECT_NAME}/*.hpp")
+file(GLOB_RECURSE EXTRAS_CPP_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 
 #
 # NOTE: declare libraries here all source should be placed into a single library, (whether they be
 # shared or static)
 #
-add_library(${PROJECT_NAME} SHARED ${CPP_STARTER_HEADERS} ${CPP_STARTER_SOURCE})
+add_library(${PROJECT_NAME} SHARED ${EXTRAS_CPP_HEADERS} ${EXTRAS_CPP_SOURCE})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras)
 
@@ -156,13 +156,15 @@ target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras)
 # NOTE: declare unit test cases here all source should have adequate test cases whether they be mock
 # or unit tests, (or both)
 #
-if(CPP_STARTER_TESTS)
-  print(STATUS "Building tests")
-  file(GLOB_RECURSE CPP_STARTER_TESTS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/test/*.cpp")
-  set(TEST_EXEC "run-unittests-${PROJECT_NAME}")
-  add_executable(${TEST_EXEC} ${CPP_STARTER_TESTS})
-  target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES})
-  target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras )
+if (NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY)
+  if(EXTRAS_CPP_TESTS)
+    print(STATUS "Building tests")
+    file(GLOB_RECURSE EXTRAS_CPP_TESTS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/test/*.cpp")
+    set(TEST_EXEC "run-unittests-${PROJECT_NAME}")
+    add_executable(${TEST_EXEC} ${EXTRAS_CPP_TESTS})
+    target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES})
+    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras )
+  endif()
 endif()
 
 #
@@ -171,7 +173,7 @@ endif()
 # includes ALL headers and sources under include/ and src/. So, to keep two or more main() 
 # declarations seperate, we place any sources that have a main() in the instances/ folder
 #
-if( NOT MAKE_CPP_STARTER_LIBRARY_ONLY OR MAKE_CPP_STARTER_LIBRARY_EXECUTABLES)
+if( NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY OR MAKE_EXTRAS_CPP_LIBRARY_EXECUTABLES)
 add_executable(main instances/main.cpp) 
 target_include_directories(main PUBLIC ${INCLUDES})
 target_link_libraries(main PRIVATE ${PROJECT_NAME} stdc++fs extras )
