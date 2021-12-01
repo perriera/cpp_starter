@@ -9,9 +9,9 @@ cmake_minimum_required(VERSION 3.21)
 include(cmake/CPM.cmake)
 include(cmake/print.cmake)
 include(cmake/utils.cmake)
-cpp_starter_get_version()
+extras_cpp_get_version()
 project(
-  cpp_starter
+  extras_cpp
   VERSION ${CPP_STARTER_VERSION}
   LANGUAGES CXX
 )
@@ -116,7 +116,7 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 
 #
 # NOTE: "Include 3rd party libraries, Perry and I maintain an open-source extras C++ library, which
-# is used extensively in cpp_starter, it comes bundled with spdlog, cpr, and nlohmann json. extras has
+# is used extensively in extras_cpp, it comes bundled with spdlog, cpr, and nlohmann json. extras has
 # project options that allow us to control how other libraries it includes are built. for example we
 # can tell extras to build spdlog as a static library (for faster compile times) by settings
 # MAKE_SPDLOG_SHARED OFF" -- Matt Williams, October, 2021
