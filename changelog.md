@@ -1,14 +1,15 @@
-
 # Changelog
+
 > All notable changes to this project will be documented in this file.</br>
 > The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), </br>
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
-> > git tag -a v0.13.0 -m " Using v5.8.0"</br>
-> > git push origin v0.13.0
-> 
+>
+> > git tag -a v0.14.0 -m " Using v5.18.1"</br>
+> > git push origin v0.14.0
 
-IMPORTANT: 
+IMPORTANT:
+
 - Manually keep the changelog version number in sync with CMakeLists.txt project version.<br>
 - Keep the changelog.md up to date, neat and tidy, (as it is a convenient tool for code maintenance).<br>
 - Use [Semantic Versioning](https://semver.org/spec/v2.0.0.html) such that<br>
@@ -20,125 +21,181 @@ IMPORTANT:
 - MAKE SURE to tag and update the tag compare list below, (for quick code comparison purposes).<br>
 
 ## [Unreleased]
+
 Detailed test cases</br>
 Detailed class descriptions in README.md</br>
 Correct URL for github, (for source compare)</br>
 
 ## [Next Steps]
+
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordinging</br>
 
+#### 0.14.0 (2021-12-15)
+
+### Changed
+
+- Using v5.18.1
+
 #### 0.13.0 (2021-12-01)
-### Changed 
+
+### Changed
+
 - Using v5.8.0
 
 #### 0.12.0 (2021-11-30)
-### Changed 
+
+### Changed
+
 - Renamed project
 
 #### 0.11.0 (2021-11-29)
-### Changed 
+
+### Changed
+
 - Using extras 5.5.1
 
 #### 0.10.0 (2021-11-29)
-### Changed 
+
+### Changed
+
 - Using extras 5.4.0
-- Added LICENSE.md 
+- Added LICENSE.md
 
 #### 0.9.0 (2021-11-15)
-### Changed 
+
+### Changed
+
 - Added MAKE_EXTRAS_CPP_LIBRARY_ONLY
 - Added MAKE_EXTRAS_CPP_LIBRARY_EXECUTABLES
 
 #### 0.8.0 (2021-11-14)
-### Changed 
+
+### Changed
+
 - Updated README.md
 
 #### 0.7.0 (2021-11-14)
-### Changed 
+
+### Changed
+
 - Updated README.md
 
 #### 0.6.0 (2021-11-8)
-### Changed 
+
+### Changed
+
 - Now using perroera/extras 5.0.9
 
 #### 0.5.6 (2021-11-8)
-### Changed 
+
+### Changed
+
 - Now using perroera/extras 5.0.8
-- Added additional VSC docs 
-- Added additional CPM docs 
- 
+- Added additional VSC docs
+- Added additional CPM docs
+
 #### 0.5.5 (2021-11-8)
-### Changed 
-- Now using perroera/extras 5.0.7 
+
+### Changed
+
+- Now using perroera/extras 5.0.7
 
 #### 0.5.4 (2021-11-8)
-### Changed 
+
+### Changed
+
 - Updated to use perriera/extras v5.0.4
 
 #### 0.5.3 (2021-11-8)
-### Changed 
+
+### Changed
+
 - Updated to use perriera/extras v4.19.0
 
 #### 0.5.2 (2021-11-8)
-### Changed 
+
+### Changed
+
 - Updated to use perriera/extras v4.16.0
 
 #### 0.5.1 (2021-10-17)
-### Changed 
-- Fixed Link issue 
+
+### Changed
+
+- Fixed Link issue
 
 #### 0.5.0 (2021-10-17)
-### Changed 
-- Update for use with perriera/extras 3.22 
+
+### Changed
+
+- Update for use with perriera/extras 3.22
 
 #### 0.4.2 (2021-09-07)
-### Changed 
+
+### Changed
+
 - Added instances/ directory
 
 #### 0.4.1 (2021-09-07)
-### Changed 
-- CMakeLists.txt entry for runtime instances 
-### Removed 
+
+### Changed
+
+- CMakeLists.txt entry for runtime instances
+
+### Removed
+
 - Unnecessary file
 
 #### 0.4.0 (2021-09-03)
-### Moved 
+
+### Moved
+
 - Vendor files
 
 #### 0.3.1 (2021-09-03)
-### Removed 
+
+### Removed
+
 - Renamed identifier
 
 #### 0.3.0 (2021-09-03)
-### Removed 
+
+### Removed
+
 - extras_cpp source code
 
 #### 0.2.0 (2021-09-03)
+
 ### Added
+
 - SHARED library support
 - (perriera) extras library support, (3.11.0)
 - CPM.cmake support
-  * [CPM.cmake](https://github.com/cpm-cmake/CPM.cmake/blob/master/LICENSE) 
-  * This allows us to include other Github packages with the ability
+  - [CPM.cmake](https://github.com/cpm-cmake/CPM.cmake/blob/master/LICENSE)
+  - This allows us to include other Github packages with the ability
     to add package OPTIONS
 - FakeIt Mock Library support
-  * [FakeIt](https://github.com/eranpeer/FakeIt) 
-  * This gives us the ability to mock C++ interfaces, (before implementation)
+  - [FakeIt](https://github.com/eranpeer/FakeIt)
+  - This gives us the ability to mock C++ interfaces, (before implementation)
 - Catch2 support
-  * [Catch2](https://github.com/catchorg/Catch2)
-  * This gives us the ability to test C++ classes, (during implementation)
+  - [Catch2](https://github.com/catchorg/Catch2)
+  - This gives us the ability to test C++ classes, (during implementation)
+
 ### Changed
+
 - CMakeLists.txt
-  * [ModernCppStarter](https://github.com/TheLartians/ModernCppStarter/blob/master/LICENSE) 
+  - [ModernCppStarter](https://github.com/TheLartians/ModernCppStarter/blob/master/LICENSE)
 - spdlog is now used as a shared library, (libspdlog.so)
 - cpr is now used as a shared library, (libcpr.so)
 - placed all source into /src
 - placed all headers into /include/extras_cpp
 
 #### 0.1.0 (2021-08-26)
+
 ### Added
+
 - Fetch_Content support
 - changelog.md
 - Project VERSION inside CMakeLists.txt & changelog.md
@@ -153,6 +210,7 @@ Updated README.md accordinging</br>
 - Mock framework support, (FakeIt)
 
 ### Changed
+
 - CMakeLists.txt revamped & streamlined
 - README.md revamped & streamlined
 - Added documentation on code
@@ -160,13 +218,16 @@ Updated README.md accordinging</br>
 - std::filesystem on all targets
 
 ### Maintained
+
 - @brief style formatting
-- Doxygen support 
+- Doxygen support
 
 ### Removed
+
 - Conan package manager deprecated
 
-[Unreleased]: https://github.com/perriera/extras_cpp/compare/v0.13.0...HEAD
+[unreleased]: https://github.com/perriera/extras_cpp/compare/v0.14.0...HEAD
+[0.14.0]: https://github.com/perriera/extras_cpp/compare/v0.13.0...v0.14.0
 [0.13.0]: https://github.com/perriera/extras_cpp/compare/v0.12.0...v0.13.0
 [0.12.0]: https://github.com/perriera/extras_cpp/compare/v0.11.0...v0.12.0
 [0.11.0]: https://github.com/perriera/extras_cpp/compare/v0.10.0...v0.11.0
