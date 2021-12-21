@@ -27,6 +27,8 @@ using namespace extras;
 SCENARIO("Verify ChessGameInterface can be read PGN file", "[ChessGame]")
 {
     cpp::ChessGame game;
+    cpp::ChessGameInterface& i = game;
+    i.moves();
     REQUIRE(true);
 }
 
