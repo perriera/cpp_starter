@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.15.0 -m " Using v5.22.0"</br>
-> > git push origin v0.15.0
+> > git tag -a v0.16.0 -m "Using MAKE_EXTRAS_CPP_LIBRARY_TOOLS"</br>
+> > git push origin v0.16.0
 
 IMPORTANT:
 
@@ -31,6 +31,12 @@ Correct URL for github, (for source compare)</br>
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordinging</br>
+
+#### 0.16.0 (2021-12-21)
+
+### Changed
+
+- Using MAKE_EXTRAS_CPP_LIBRARY_TOOLS
 
 #### 0.15.0 (2021-12-21)
 

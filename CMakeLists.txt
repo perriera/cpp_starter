@@ -66,7 +66,7 @@ option(EXTRAS_CPP_PRODUCTION "Production build" OFF)
 # tested for use with EXTRAS_CPP_PRODUCTION flag. So, there might be 
 # a hiccup in here that needs to be worked out, (reader beware).
 #
-# see also MAKE_EXTRAS_CPP_LIBRARY_EXECUTABLES
+# see also MAKE_EXTRAS_CPP_LIBRARY_TOOLS
 #
 # This second flag will allow both the shared libraries and any executatbles
 # (but not the unit tests) to be compiled.
@@ -173,7 +173,7 @@ endif()
 # includes ALL headers and sources under include/ and src/. So, to keep two or more main() 
 # declarations seperate, we place any sources that have a main() in the instances/ folder
 #
-if( NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY OR MAKE_EXTRAS_CPP_LIBRARY_EXECUTABLES)
+if( NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY OR MAKE_EXTRAS_CPP_LIBRARY_TOOLS)
 add_executable(main instances/main.cpp) 
 target_include_directories(main PUBLIC ${INCLUDES})
 target_link_libraries(main PRIVATE ${PROJECT_NAME} stdc++fs extras )

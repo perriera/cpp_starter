@@ -28,7 +28,6 @@ With the **checkinstall** package installed your installation process now become
      sudo dpkg -r <extras_cpp>
      sudo checkinstall
 
-
 The above command will by default install all header file, (of your project) into the shared include (**/usr/local/include**) directory and all shared libraries into the shared libraries directory (**/usr/local/lib**).
 
 Where all the named programs you see will be installed into: **/usr/local/bin**.</br>
@@ -81,7 +80,7 @@ where approapriate.
      # tested for use with EXTRAS_CPP_PRODUCTION flag. So, there might be
      # a hiccup in here that needs to be worked out, (reader beware).
      #
-     # see also MAKE_EXTRAS_CPP_LIBRARY_EXECUTABLES
+     # see also MAKE_EXTRAS_CPP_LIBRARY_TOOLS
      #
      # This second flag will allow both the shared libraries and any executatbles
      # (but not the unit tests) to be compiled.
