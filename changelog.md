@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.16.1 -m "Using MAKE_EXTRAS_CPP_LIBRARY_TOOLS (Link)"</br>
-> > git push origin v0.16.1
+> > git tag -a v0.17.0 -m "Using MAKE_EXTRAS_CPP_LIBRARY_TOOLS (Link)"</br>
+> > git push origin v0.17.0
 
 IMPORTANT:
 
@@ -31,6 +31,14 @@ Correct URL for github, (for source compare)</br>
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordinging</br>
+
+#### 0.17.0 (2021-12-22)
+
+### Changed
+
+- main to extras_cpp_app
+
+* (for the benefit of templated apps)
 
 #### 0.16.1 (2021-12-21)
 
@@ -244,7 +252,8 @@ Updated README.md accordinging</br>
 
 - Conan package manager deprecated
 
-[unreleased]: https://github.com/perriera/extras_cpp/compare/v0.16.1...HEAD
+[unreleased]: https://github.com/perriera/extras_cpp/compare/v0.17.0...HEAD
+[0.17.0]: https://github.com/perriera/extras_cpp/compare/v0.16.1...v0.17.0
 [0.16.1]: https://github.com/perriera/extras_cpp/compare/v0.16.0...v0.16.1
 [0.16.0]: https://github.com/perriera/extras_cpp/compare/v0.15.0...v0.16.0
 [0.15.0]: https://github.com/perriera/extras_cpp/compare/v0.14.0...v0.15.0

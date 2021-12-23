@@ -174,9 +174,9 @@ endif()
 # declarations seperate, we place any sources that have a main() in the instances/ folder
 #
 if( NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY OR MAKE_EXTRAS_CPP_LIBRARY_TOOLS)
-add_executable(main instances/main.cpp) 
-target_include_directories(main PUBLIC ${INCLUDES})
-target_link_libraries(main PRIVATE ${PROJECT_NAME} stdc++fs extras )
+add_executable(extras_cpp_app instances/main.cpp) 
+target_include_directories(extras_cpp_app PUBLIC ${INCLUDES})
+target_link_libraries(extras_cpp_app PRIVATE ${PROJECT_NAME} stdc++fs extras )
 endif()
 
 #
