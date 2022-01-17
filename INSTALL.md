@@ -1,156 +1,132 @@
-## Shared Library support
+## Recommended Development Environment
 
-If wish to install your extras_cpp-based project as a shared library there are two methods.
+Recommended GCC environment:
 
-## standard sudo make install
+    sudo apt update
+    sudo apt install build-essential libtool autotools-dev automake
+    sudo apt install pkg-config git clangd cppcheck clang-tidy
 
-The following command will install all the targets specified in your CMakeLists.txt into the standard Linux areas for header files and binaries:
+Then [Install pip, (either pip 2 or pip 3)](https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/)
 
-    sudo make install
+    sudo apt update
+    sudo apt install python3-pip
+    pip3 --version
 
-However, quite often you will be upgrading **extras_cpp** so a better way to install **extras_cpp** is by using **sudo checkinstall**.
+Once pip is installed:
 
-## sudo checkinstall
+    pip install clang-format
+    pip install cmake-format
+    pip install cmake
 
-Since you will be working on different versions of **extras_cpp** it is important that you be able to make a clean uninstall, (when required) , To be able to uninstall you will need to install the Ubuntu **checkinstall** package: [here](https://help.ubuntu.com/community/CheckInstall).
+**NOTE**: pip does a much better job of installing cmake 3.22 (or better)
+
+WARNING: The scripts cmake, cpack and ctest are installed in '/home/perry/.local/bin' which is not on PATH.
+Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+
+## Recommended Environment Variable additions
+
+    vi ~/.bashrc
+
+Add this to the end of `~/.bashrc `
+
+    export PATH=/home/[your_directory_here]/.local/bin:${PATH}
+    export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+    export CPM_SOURCE_CACHE=/home/[your_directory_here]/.cache/CPM
+
+**Note**: Where it says `[your_directory_here]` add your name according to [Linux username standards](https://www.ibm.com/docs/en/db2/9.7?topic=rules-user-user-id-group-naming)
+
+## Visual Studio Code extensions
+
+When prompted be sure to add the recommended extensions for C++, CMake and other source code support.
+
+     sudo snap install --classic code # or code-insiders
+     code .
+
+## .vscode directory
+
+Inside the `extras/` project directory you'll see 4 files:
+
+- c_cpp_properties.json
+- launch.json
+- settings.json
+- tasks.json
+
+These govern things like which C++ standard to use, (in this case **C++17**), which test case to launch, file associations and key associations, (such that if you type **shift-control-B** a compile/make will begin). You may have to restart the editor once the path has been edited.
+
+### sudo checkinstall
+
+While the `sudo make install` will work for most applications, should you wish to uninstall you will need to install **extras** using a slightly different approach. To be able to uninstall you will need to install the Ubuntu **checkinstall** package: [here](https://help.ubuntu.com/community/CheckInstall).
 
 `sudo apt-get update && sudo apt-get install checkinstall`
 
-With the **checkinstall** package installed your installation process now becomes:
+With the checkinstall package installed your installation process now becomes:
 
-     git git@github.com:perriera/<extras_cpp>.git
-     cd <extras_cpp>
+     git clone https://github.com/perriera/extras.git
+     cd extras
      mkdir build
      cd build
      cmake ..
      make
-     ./run-unittests
-     sudo dpkg -r <extras_cpp>
+     ./run-unittests-extras
      sudo checkinstall
 
-The above command will by default install all header file, (of your project) into the shared include (**/usr/local/include**) directory and all shared libraries into the shared libraries directory (**/usr/local/lib**).
+**NOTE**: Once installed runtime access to the shared libraries by other packages will usually require the following to be added to your .bashrc:
 
-Where all the named programs you see will be installed into: **/usr/local/bin**.</br>
-**NOTE**: Just be sure to have LD_LIBRARY_PATH set, (see below) if your executables use any shared libraries.
+     export LD_LIBRARY_PATH=/usr/local/lib
 
-## Uninstall command
+**Note**: During the checkinstall process be sure to change the name of the package from the default: **build** to **extras**. It'll be item #2 on the checkinstall parameter listings, (you can safely use the defaults for the rest of the items on the checkinstall).
 
-Assuming you installed **<extras_cpp>** with **checkinstall** you may uninstall at any time with:
+Then when you need to uninstall this package:
 
-     sudo dpkg -r <extras_cpp>
+    sudo dpkg -r extras
 
-CMakeLists.txt:
+Should you run into a strange situation to where you issued the above command but the **extras** package appears to still be installed, run the following:
 
-     #
-     # NOTE: Install all shared libraries
-     #
-     install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib)
-     install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
+    sudo dpkg -r build
 
-To install any executables at the same time you would modify the above to, (for example):
+As you may have installed it earlier without changing the name of the package from **build** to **extras**.
 
-CMakeLists.txt:
+Just be sure to have the desired **VERSION** of perrier/extras specified in the **VERSION** keyword above. To optimize CPM support on your projects be sure to set the environment variable for shared CPM libraries:
 
-     #
-     # NOTE: Install all shared libraries & executables
-     #
-     install(TARGETS
-          parcel
-          socketpool_client socketpool_server
-          uploader_client uploader_server
-          vendor_client vendor_server
-          downloader_client downloader_server
-          ${PROJECT_NAME}
-          LIBRARY DESTINATION lib
-          RUNTIME DESTINATION bin)
-     install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
+    export CPM_SOURCE_CACHE=$HOME/.cache/CPM
 
-## CPM usage
+For more about CPM [see here](https://github.com/cpm-cmake/CPM.cmake)
 
-To expediate the use of shared libraries be sure to utilize these flags
-where approapriate.
+## CMakeLists.txt
 
-     #
-     # MAKE_EXTRAS_CPP_LIBRARY_ONLY
-     #
-     # Quite often when you include a library from a github project, (via CPM)
-     # all you are interested in are the shared library files. When you use this
-     # flag you have to set it on any executables (see below) that you setup
-     # and/or wish to make optional. Mind you, this option has not been fully
-     # tested for use with EXTRAS_CPP_PRODUCTION flag. So, there might be
-     # a hiccup in here that needs to be worked out, (reader beware).
-     #
-     # see also MAKE_EXTRAS_CPP_LIBRARY_TOOLS
-     #
-     # This second flag will allow both the shared libraries and any executatbles
-     # (but not the unit tests) to be compiled.
-     #
-     # Using these flags speeds up the CPM inclusions in other projects significantly.
-     #
+You just include the **extras** library to any targets in your CMakeLists.txt target_include_libraries specs
 
-## CPM dual inclusion
+For example:
 
-Inevitably, if you use **perriera/extras** with more than one project, you are probably going to run into a situation where you to coordinate multiple installations. To make that work, you have to make sure that ALL projects are using the same version of **perriera/extras**. If your situation gets more complicated than that, send me an email. The same holds true with any projects that you develope. Look at it from CPM's perspective, if there are more than one version of your library then it is going to try it's best to include them all, (and sometimes you are asking CPM to do the impossible).
+    target_link_libraries(run-unittests-extras
+       chessmind::library
+       extras
+    )
 
-## CPM: Debian package, (Shared libraries) & gdb, (debugging) issue
+The 2.3.8 version of the extras libraries installs the debug version by default. If you wish to use a production version of the library you can either comment out this line in the main CMakeLists.txt file and recompile:
 
-**NOTE:** If you ever run into a situation where your debugging environment is not displaying the same variable names or code changes that you are currently working on be sure to check whether or not the source code you are working is not currently installed as a Debian package, (as a shared library).
+    # add additional project options
+    option(BUILD_TESTS "Build tests" ON)
+    option(DEBUG "Debug Build" ON)
 
+Or, as of 3.2.1 you must set DEBUG to false, (& BUILD_TESTS=false) on the command line of the cmake command and it will cause a production version of the library to be generated instead, (just be sure to delete the build directory before hand):
+
+    cd ..
+    rm -rf build
     cd build
-    sudo dpkg -r <package-name>
+    cmake -DDEBUG=false -DBUILD_TESTS=false ..
+    make
+    ./run-unittests-extras
+    sudo make install
 
-**Further**: Whenever your development environment appears to be acting strange, (as in the compiled code does not appear to be consistent with the source code) remember these three factors:
+### FYI: ModernCppStarter
 
-1.  That you can always backtrack your changes using your source repository.
-2.  As well as reset your development environment simply by deleting your **build/** directory.
-3.  Also, be sure to keep in mind whether the code you are working on is currently installed as a shared library.
+> perriera/cpp_starter is based on ModernCppStarter
 
-## PRODUCTION vs. DEBUG
+_"Setting up a new C++ project usually requires a significant amount of preparation and boilerplate code, even more so for modern C++ projects with tests, executables and continuous integration. This template is the result of learnings from many previous projects and should help reduce the work required to setup up a modern C++ project." -- The Lartians</br>_
 
-Near line 57 of CMakeLists.txt you may specify a production version here:
+https://github.com/TheLartians/ModernCppStarter/blob/master/LICENSE</br>
+Copyright (c) 2019 The Lartians
 
-    option(<extras_cpp>_PRODUCTION "Production build"  OFF)
-
-In a PRODUCTION build of your project no DEBUG code is included in your installed code.
-
-## Important note on using shared libraries
-
-After installation the **extras_cpp** library should be found in your **/usr/local/include** and your **/usr/local/lib** directories. Also, set **LD_LIBRARY_PATH**, (if you haven't already done so).
-
-     export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-
-## Ubuntu PPA support
-
-If you are interested in having <extras_cpp> setup for deployment as a Ubuntu PPA, then this is a good starting point.
-
-> ### Adding a PPA using the command-line
->
-> Make sure you have the package **python-software-properties** installed.
->
-> **Step 1**: On the PPA's Launchpad page, look for the heading that reads "Adding this PPA to your system". Make a note of the PPA's location, which has the format ppa:user/ppa-name.
->
-> **Step 2**: Open a terminal and enter:
-
-    sudo add-apt-repository ppa:user/ppa-name
-
-> Replace **'ppa:user/ppa-name**' with the PPA's location that you noted above.
->
-> Your system will now fetch the PPA's key. This enables your system to verify that the packages in the PPA have not been interfered with since they were built.
->
-> **Step 3**: Now, as a one-off, tell your system to pull down the latest list of software from each archive it knows about, including the PPA you just added:
->
-> The Authentication tab lists the keys for your repositories (but not your PPAs). Note: PPAs do have keys but the system handles them automatically and they are not listed here.
->
-> When you add a repository to your system's software sources the maintainer of the repository will normally tell you how to add the key.
->
-> If the maintainer does not tell you how to add the key then you need to find the "key hash" of the repository in order to look up the key on a public key server. Once you know the key hash, the key can be retrieved using the command:
-
-    gpg --keyserver [name of keyserver] --recv-keys [keyhash]
-    sudo apt-get update
-
-> Now you're ready to start installing software from the PPA!
->
-> sudo add-apt-repository ppa:admin/ppa-dmg
-> sudo apt update
-
-    sudo apt install openssl libssl-dev libcurlpp-dev extras_cpp
+[cpp_starter](https://github.com/perriera/cpp_starter)<br/>
+This project will get you up and running with the latest CPM support as well as this library, (a real time saver).
