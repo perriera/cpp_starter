@@ -1,0 +1,5 @@
+set(ORACLE_HOME $ENV{ORACLE_HOME})
+set(ORACLE_INCLUDE "${ORACLE_HOME}/include")
+set(ORACLE_LIB "${ORACLE_HOME}/lib")
+set(ORACLE_BIN "${ORACLE_HOME}/bin")
+link_directories(BEFORE "${ORACLE_LIB}" )
