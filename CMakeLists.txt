@@ -16,6 +16,8 @@ project(
   LANGUAGES CXX
 )
 
+FIND_PACKAGE (Threads)
+
 #
 # NOTE: Set our source and include directory variables for use through the build
 #
@@ -124,7 +126,7 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 CPMAddPackage(
   NAME extras
   GITHUB_REPOSITORY perriera/extras
-  VERSION 5.25.0
+  VERSION 5.26.0
   OPTIONS "MAKE_SPDLOG_SHARED OFF"
   OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
 )
@@ -148,9 +150,27 @@ file(GLOB_RECURSE EXTRAS_CPP_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 # NOTE: declare libraries here all source should be placed into a single library, (whether they be
 # shared or static)
 #
+
+set(ORACLE_HOME "/usr/lib/oracle/19.14/client64")
+set(ORACLE_INCLUDE "${ORACLE_HOME}/include")
+set(ORACLE_LIB "${ORACLE_HOME}/lib")
+
+link_directories(BEFORE "${ORACLE_LIB}" )
+
 add_library(${PROJECT_NAME} SHARED ${EXTRAS_CPP_HEADERS} ${EXTRAS_CPP_SOURCE})
-target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras)
+target_include_directories(
+  ${PROJECT_NAME} 
+    PUBLIC 
+      "${CMAKE_CURRENT_SOURCE_DIR}/include"
+      "${ORACLE_INCLUDE}"
+    )
+target_link_libraries(
+  ${PROJECT_NAME} 
+  PRIVATE 
+    stdc++fs extras
+    occi clntsh
+    Threads::Threads
+  )
 
 #
 # NOTE: declare unit test cases here all source should have adequate test cases whether they be mock
@@ -162,8 +182,8 @@ if (NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY)
     file(GLOB_RECURSE EXTRAS_CPP_TESTS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/test/*.cpp")
     set(TEST_EXEC "run-unittests-${PROJECT_NAME}")
     add_executable(${TEST_EXEC} ${EXTRAS_CPP_TESTS})
-    target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES})
-    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras )
+    target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES} "${ORACLE_INCLUDE}")
+    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
   endif()
 endif()
 
@@ -175,8 +195,8 @@ endif()
 #
 if( NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY OR MAKE_EXTRAS_CPP_LIBRARY_TOOLS)
 add_executable(extras_cpp_app instances/main.cpp) 
-target_include_directories(extras_cpp_app PUBLIC ${INCLUDES})
-target_link_libraries(extras_cpp_app PRIVATE ${PROJECT_NAME} stdc++fs extras )
+target_include_directories(extras_cpp_app PUBLIC ${INCLUDES} "${ORACLE_INCLUDE}")
+target_link_libraries(extras_cpp_app PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
 endif()
 
 #
