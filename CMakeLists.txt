@@ -153,19 +153,8 @@ file(GLOB_RECURSE EXTRAS_CPP_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 #
 
 add_library(${PROJECT_NAME} SHARED ${EXTRAS_CPP_HEADERS} ${EXTRAS_CPP_SOURCE})
-target_include_directories(
-  ${PROJECT_NAME} 
-    PUBLIC 
-      "${CMAKE_CURRENT_SOURCE_DIR}/include"
-      ${ORACLE_INCLUDE}
-    )
-target_link_libraries(
-  ${PROJECT_NAME} 
-  PRIVATE 
-    stdc++fs extras
-    occi clntsh
-    Threads::Threads
-  )
+target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
+target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras occi clntsh Threads::Threads)
 
 #
 # NOTE: declare unit test cases here all source should have adequate test cases whether they be mock
