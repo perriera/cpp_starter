@@ -16,7 +16,7 @@ Welcome to the **(perriera) / extras_cpp** project.
 
  - [How to clone your project from (perriera) extras_cpp template](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
  - [How to setup your project with (perriera) extras_cpp template](https://github.com/perriera/extras_cpp/blob/dev/docs/SETUP.md)
- - [How to install C++17, CMake, PIP and other tools needed for your project ((perriera) extras_cpp template)](https://github.com/perriera/extras_cpp/blob/dev/docs/INSTALL.md)
+ - [How to install C++17, CMake, PIP and other tools for your project(https://github.com/perriera/extras_cpp/blob/dev/docs/INSTALL.md)
 
 ### Copyright (see [LICENSE.md](https://github.com/perriera/extras_cpp/blob/dev/LICENSE.md))
 > The "MIT/X Consortium License", (adapted for EXPARX.COM)<br/>
