@@ -1,182 +1,78 @@
-# perriera/extras_cpp
+## How to clone your project with (perriera) extras_cpp template
+> This is a basic step-by-step process whereby you can quickly setup a C++17 based project using CMake 3.21 (or above) including a properly setup changelog.md file (that will help you keep track of changes to your github.com repository).
 
-Welcome to the perriera/extras_cpp project.
+ 1. **GIVEN** we need to create a C++17 template with CMake 3.2.1
+ 2. **WHEN** we use (perriera) extras_cpp as that template
+ 3. **THEN** we can just make a few changes to have our C++ project
 
-[![CMake](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml/badge.svg?branch=dev)](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml)
+### Prerequisites
+ 1. Github.com account (or something similiar)
+ 2. Access to *(perriera) extras_cpp* 
+ 3. The ability to create a project from this template
+ 4. You are logged into your account
+ 5. You are running Linux (or a variant) 
+ 6. You have the git utility installed
+ 7. You have Visual Studio Code installed (or similar) 
+ 8. You have a SSH key added to your github.com account
 
-<div align="center">
-  <img width="442" height="320" src="assets/extras.png">
-  <br>
-</div>
+### Wish Case
+As you already using github.com it therefore perfectly logical for you to merely press the green NEW button to the left of your github.com page. 
 
-## Who would want to use this?
+ 1. Go to your github.com account page 
+ 2. Press the green button entitled *New*
+ 3. Under *Repository template s*elect *perrier/extras_cpp*
+ 4. In the *Repository name* field enter the name of your project
+ 5. Optionally fill in the *Description* field
+ 6. Select *Public* or *Private*
+ 7. Check over the parameters (for accuracy)
+ 8. Press the green Create Repository button
+ 9. Now you will be shown your new project
+ 10. There should be a green Code button, click it
+ 11. Select the SSH tab (default)
+ 12. Copy the URL to the clipboard
+ 13. Open a Terminal box
+ 14. Make/create a projects directory
+ 15. Cd into that directory
+ 16. Execute **git clone <url>** (paste the clipboard)
+ 17. cd into your projects directory
+ 18. Execute **code .** 
 
-> This project aims to get you up and running with C++17 based project with a 'git clone' operation. As well, this particular C++ project template comes with builtin [CPM](https://github.com/cpm-cmake/CPM.cmake) support. This means that you can incorporate other [github](https://github.com) projects, (or anything that uses the git tool) into your project with the simple inclusion of a CPM directive in in your CMakeLists.txt file.
+From here you have a new project with the name of your project.
 
-## Prerequisites
+### Alternate Case
+#### In the case of not having a github.com account
+ 1. Goto Github.com 
+ 2. In the *Search Github* text box enter *extras_cpp*
+ 3. Scroll down until you see *perrier/extras_cpp*
+ 4. Click on  *perrier/extras_cpp*
+ 5. There should be a green Code button, click it
+ 6. Select the HTTPS tab (default)
+ 7. Copy the URL to the clipboard
+ 8. Open a Terminal box
+ 9. Make/create a projects directory
+ 10. Cd into that directory
+ 11. Execute **git clone <url>** (paste the clipboard)
+ 12. Execute **mv extras_cpp <name of your project>**
+ 13. Execute **code .** 
 
-To use this template you will need a Linux environment, (Ubuntu is idea).
+### Alternate Case
+#### You downloaded the .zip file instead
+ 1. There should be a green *Code* button, click it
+ 2. Press the *Download ZIP* option
+ 3. In your *~/Downloads* folder you should see the zip
+ 4. Cut & Paste that to your projects directory
+ 5. Unzip the file 
+ 6. Open a Terminal box
+ 7. Make/create a projects directory
+ 8. Cd into that directory
+ 9. Execute **git clone <url>** (paste the clipboard)
+ 10. Execute **mv extras_cpp-dev <name of your project>**
+ 11. Execute **code .** 
 
-1.  [Install pip](https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/), (either pip 2 or pip 3)
-2.  [Install cmake](https://cmake-python-distributions.readthedocs.io/en/latest/installation.html) using pip, (cmake 3.2.1 or better required)
-3.  Create project on [Github.com](https://github.com) using **perriera/extras_cpp** out of the box, (or as a Github template).
+### Summary 
+This has been a basic example of how to clone the *(perriera) extras_cpp* repository (and rename it for your purposes). However, you are not really done yet. You will probably want to change all the *extras_cpp* references to your project name.
 
-Once you have established these THREE STEPS you may do the following
+### Next Steps
+ - How to setup your project with (perriera) extras_cpp template
+ - 
 
-    git clone https://github.com/<your project>
-    cd <your project>
-    mkdir build
-    cd build
-    cmake ..
-    make
-    cd ..
-    build/run-unittests-extras_cpp
-
-If you have done everything correctly, you will see a Catch2 diagnostic with all green, (similar to the following):
-
-    perry@ubuntu:~/Projects/extras_cpp$ build/run-unittests-extras_cpp
-    ===============================================================================
-    All tests passed (1 assertion in 2 test cases)
-
-**Recommended**: The project now has been successfully created in git already. So add your first github tag:
-
-    git tag -a v0.1.0 -m "Created extras_cpp"
-    git push origin v0.1.0
-
-However, you not done yet:
-
-Inside your favorite editor, (or search & replace command utility):
-
-1.  Global search and replace **extras_cpp** to <project_name> (case sensitive)
-2.  Global search and replace **EXTRAS_CPP** to <PROJECT_NAME> (case sensitive)
-3.  Change directory name '**include/extras_cpp**' to '**include/<project_name>**'
-4.  Change the links found in changelog.md such that they begin at 0.1.0 for your project.
-
-For example, instead of:
-
-    [Unreleased]: https://github.com/perriera/extras_cpp/compare/v0.7.0...HEAD
-    [0.7.0]: https://github.com/perriera/extras_cpp/compare/v0.6.6...v0.7.0
-    [0.6.6]: https://github.com/perriera/extras_cpp/compare/v0.5.6...v0.6.0
-    [0.5.6]: https://github.com/perriera/extras_cpp/compare/v0.5.5...v0.5.6
-    [0.5.5]: https://github.com/perriera/extras_cpp/compare/v0.5.4...v0.5.5
-    [0.5.4]: https://github.com/perriera/extras_cpp/compare/v0.5.3...v0.5.4
-    [0.5.3]: https://github.com/perriera/extras_cpp/compare/v0.5.2...v0.5.3
-    [0.5.2]: https://github.com/perriera/extras_cpp/compare/v0.5.1...v0.5.2
-    [0.5.1]: https://github.com/perriera/extras_cpp/compare/v0.5.0...v0.5.1
-    [0.5.0]: https://github.com/perriera/extras_cpp/compare/v0.4.2...v0.5.0
-    [0.4.2]: https://github.com/perriera/extras_cpp/compare/v0.4.1...v0.4.2
-    [0.4.1]: https://github.com/perriera/extras_cpp/compare/v0.4.0...v0.4.1
-    [0.4.0]: https://github.com/perriera/extras_cpp/compare/v0.3.1...v0.4.0
-    [0.3.1]: https://github.com/perriera/extras_cpp/compare/v0.3.0...v0.3.1
-    [0.3.0]: https://github.com/perriera/extras_cpp/compare/v0.2.0...v0.3.0
-    [0.2.0]: https://github.com/perriera/extras_cpp/compare/v0.1.0...v0.2.0
-    [0.1.0]: https://github.com/perriera/extras_cpp/releases/tag/v0.1.0
-
-Make it more like:
-
-    [Unreleased]: https://github.com/perriera/extras_cpp/compare/v0.2.0...HEAD
-    [0.2.0]: https://github.com/perriera/extras_cpp/compare/v0.1.0...v0.2.0
-    [0.1.0]: https://github.com/perriera/extras_cpp/releases/tag/v0.1.0
-
-Also, while you are at, remove all entries to tags in changelog.md from **[0.2.0]** onward. As in there should only be two tag entries in your new project.
-
-Change this:
-
-    #### 0.8.0 (2021-09-03)
-    ### Moved
-    - Vendor files
-
-    ...
-
-    #### 0.3.1 (2021-09-03)
-    ### Removed
-    - Renamed identifier
-
-    #### 0.3.0 (2021-09-03)
-    ### Removed
-    - extras_cpp source code
-
-    #### 0.2.0 (2021-09-03)
-    ### Added
-    - SHARED library support
-    - (perriera) extras library support, (3.11.0)
-    - CPM.cmake support
-
-To this:
-
-    #### 0.2.0 (2021-09-03)
-    ### Added
-    - SHARED library support
-    - (perriera) extras library support, (3.11.0)
-    - CPM.cmake support
-
-Then change the version information in **include/version.h** to 0.2.0
-
-    #define EXTRAS_CPP_VER_MAJOR 0
-    #define EXTRAS_CPP_VER_MINOR 2
-    #define EXTRAS_CPP_VER_PATCH 0
-
-**Recommended**: You must make sure that the github tags you setup are always the same as the version number for the project. This has to be done by you manually, (at this point in time).
-
-Then do the following:
-
-    rm -rf build
-    cd build
-    make
-    cd ..
-
-This will re-create the project now with all references to extras_cpp changed to extras_cpp. To test this do the following:
-
-    build/run-unittests-<press tab>
-
-**Recommended**: The project now has been successfully created in git already. So add your first github tag:
-
-    git tag -a v0.2.0 -m "Renamed C++ template to: extras_cpp"
-    git push origin v0.2.0
-
-## Changelog.md & include/version.hpp
-
-Remember, when you go to make changes to your changelog.md you should maintain the version number of your project using 'include/version.hpp'. For example, in your version.hpp will look something similiar to the following but all referenced to EXTRAS_CPP will be changed to extras_cpp
-
-**Recommended**: Inside your Github.com for your project, whenever you add a new tag, go the distance and make it a _release_ as well. Just go to your project on Github, select **tag**. Once the tags page is displayed left mouse click on the three dots you see for the newly added tag and select "Create Release"
-
-## CPM Optimization
-
-> Note: Be sure to have the desired **VERSION** of perrier/extras specified in the **VERSION** keyword of the CPMAddPackage specification, (in your CMakeLists.txt). Also, to optimize CPM support on your projects be sure to set the CPM_SOURCE_CACHE environment variable for shared CPM libraries. Typically you would add this to your `.bashrc` script. With this environment variable set, the CPM package manager will not need to reload after successive build/ directory resets, (aka. `rm -rf build`).
-
-    export CPM_SOURCE_CACHE=$HOME/.cache/CPM
-
-## CPM: Debian package, (Shared libraries) & gdb, (debugging) issue
-
-**NOTE:** If you ever run into a situation where your debugging environment is not displaying the same variable names or code changes that you are currently working on be sure to check whether or not the source code you are working is not currently installed as a Debian package, (as a shared library).
-
-    cd build
-    sudo dpkg -r <package-name>
-
-**Further**: Whenever your development environment appears to be acting strange, (as in the compiled code does not appear to be consistent with the source code) remember these three factors:
-
-1.  That you can always backtrack your changes using your source repository.
-2.  As well as reset your development environment simply by deleting your **build/** directory.
-3.  Also, be sure to keep in mind whether the code you are working on is currently installed as a shared library.
-
-## Visual Studio Code (build/ directory) Compilation Fail Safe
-
-The industry practice of compiling to a build/ directory is supported here. When you detect some funny business going on with your development environment, (for example if the cmake utility keeps rebuilding everything), merely delete the build/ directory, (aka. `rm -rf build`) and recreate it. If you are using the Visual Studio Code environment you can press **SHIFT-CTRL-B**, (see `.vscode/tasks.conf`) which will force a rebuild of the directory, (including re-creating `build/` for you).
-
-> Please note: At present whenever you re-open your project with Visual Studio Code the cmake utility may or may not be in sync with the projects, (you'll notice this when all the source files keep getting rebuilt). To correct this open a Terminal window **inside** the Visual Studio Code environment and delete the build/ directory, (aka. `rm -rf build`)then rebuild the project with **SHIFT-CTRL-B**.
-
-## FakeIt2 C++ Mocking Framework
-
-This project is already setup for use with [FakeIt](https://github.com/eranpeer/FakeIt). Anyone familiar with writing interface mocks, (as in [Mock Object](https://en.wikipedia.org/wiki/Mock_object) should find the built-in support for mocking interfaces using the FakeIt framework to be indispensible here).
-
-## Catch2 C++ Test Case Framework
-
-This project is already setup for use with [Catch2](https://github.com/catchorg/Catch2). Anyone familiar with writing test cases, (as in [TDD - Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) should find the built-in support for Catch2 to be indispensible here).
-
-## JIRA/Confluence/Bitbucket support
-
-This project is already setup for use with [Jira (software)](<https://en.wikipedia.org/wiki/Jira_(software)>). Anyone familiar with writing JIRA entries as part of morning [SCRUM](<https://en.wikipedia.org/wiki/Scrum_(software_development)>) meetings, (or bi-weekly [SCRUM SPRINT](https://en.wikipedia.org/wiki/Scrum_Sprint) meetings) will find **perriera/extras_cpp** to be well suited to the needs of JIRA/SCRUM/SPRINT.
-
-## Conclusion
-
-Your brand new C++ project is now setup and ready for use with **[perriera/extras](https://github.com/perriera/extras)**, (which comes bundled with [spdlog](https://github.com/gabime/spdlog), [cpr](https://github.com/libcpr/cpr), and [nlohmann json](https://github.com/nlohmann/json) support, plus others).
