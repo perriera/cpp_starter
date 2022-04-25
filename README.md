@@ -1,3 +1,18 @@
+# perriera/extras_cpp
+
+Welcome to the perriera/extras_cpp project.
+
+[![CMake](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml/badge.svg?branch=dev)](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml)
+
+<div align="center">
+  <img width="442" height="320" src="assets/extras.png">
+  <br>
+</div>
+
+## Who would want to use this?
+
+> This project aims to get you up and running with C++17 based project with a 'git clone' operation. As well, this particular C++ project template comes with builtin [CPM](https://github.com/cpm-cmake/CPM.cmake) support. This means that you can incorporate other [github](https://github.com) projects, (or anything that uses the git tool) into your project with the simple inclusion of a CPM directive in in your CMakeLists.txt file.
+
 ## How to clone your project with (perriera) extras_cpp template
 > This is a basic step-by-step process whereby you can quickly setup a C++17 based project using CMake 3.21 (or above) including a properly setup changelog.md file (that will help you keep track of changes to your github.com repository).
 
@@ -73,6 +88,10 @@ From here you have a new project with the name of your project.
 This has been a basic example of how to clone the *(perriera) extras_cpp* repository (and rename it for your purposes). However, you are not really done yet. You will probably want to change all the *extras_cpp* references to your project name.
 
 ### Next Steps
- - How to setup your project with (perriera) extras_cpp template
- - 
+ - [How to setup your project with (perriera) extras_cpp template](https://github.com/perriera/extras_cpp/blob/dev/docs/SETUP.md)
+
+### Copyright (see [LICENSE.md](https://github.com/perriera/extras_cpp/blob/dev/LICENSE.md))
+> The "MIT/X Consortium License", (adapted for EXPARX.COM)
+> Copyright (C) November 22, 2021 EXPARX INCORPORATED
+
 
