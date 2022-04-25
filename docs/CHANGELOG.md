@@ -1,12 +1,13 @@
-## How to setup the tools necessary for your new project
-> In this step we need to install all  the tools used by this project (that you may or may not already have installed.
+## How to setup your changelog.md
+> The ability to keep track of your changes to source code comes in very handy in the later stages of your projects development, (as well as look much more professional). 
 
- 1. **GIVEN** we need to have C++17, cmake 3.2.1, pip installed
- 2. **WHEN** we follow the instructions listed here
- 3. **THEN** we can press Ctrl-B inside Visual Studio Code
+ 1. **GIVEN** we need to keep track of source code changes
+ 2. **WHEN** we take the time to manage a changelog.md file
+ 3. **THEN** we can compare version differences much easier
 
 ### Prerequisites
  - [How to clone your project from (perriera) extras_cpp template](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
+ - [How to setup your project from (perriera) extras_cpp template](https://github.com/perriera/extras_cpp/blob/dev/docs/SETUP.md)
  
 ### Wish Case
 Now that you have your project cloned we need to make sure you have the tools necessary to compile properly:
