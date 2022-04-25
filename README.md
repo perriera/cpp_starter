@@ -1,7 +1,7 @@
 
-# perriera/extras_cpp
+# [(perriera) / extras_cpp](https://github.com/perriera/extras_cpp)
 
-Welcome to the **(perriera) extras_cpp** project.
+Welcome to the **(perriera) / extras_cpp** project.
 
 [![CMake](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml/badge.svg?branch=dev)](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml)
 
@@ -102,7 +102,8 @@ This has been a basic example of how to clone the *(perriera) extras_cpp* reposi
  - [How to setup your project with (perriera) extras_cpp template](https://github.com/perriera/extras_cpp/blob/dev/docs/SETUP.md)
 
 ### Copyright (see [LICENSE.md](https://github.com/perriera/extras_cpp/blob/dev/LICENSE.md))
-> The "MIT/X Consortium License", (adapted for EXPARX.COM)
-> Copyright (C) November 22, 2021 EXPARX INCORPORATED
-
+> The "MIT/X Consortium License", (adapted for EXPARX.COM)<br/>
+> Copyright (C) November 22, 2021 EXPARX INCORPORATED<br/>
+> Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
+> CPM support made possible by [Matt Williams](Matt@programmer)<br/>
 
