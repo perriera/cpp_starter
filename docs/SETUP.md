@@ -6,7 +6,8 @@
  3. **THEN** we can press Ctrl-B inside Visual Studio Code
 
 ### Prerequisites
- - [How to clone your project from (perriera) extras_cpp template](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
+  - [How to clone your project (with this template)](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
+
  
 ### Wish Case
 Now that you have your project cloned we need to make sure you have the tools necessary to compile properly:
