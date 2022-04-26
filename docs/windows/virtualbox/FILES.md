@@ -71,11 +71,14 @@
 ### Alternate Case
 #### /mnt/c on Ubuntu (WSL/WSL2)
 > On WSL/WSL2 they already share drive C as /mnt/c. Hence, anything downloaded in Windows to ~/Downloads can be found in /mnt/c/Downloads
-Alternate Case
-Virtualbox shared folder permissions
-On a fresh Ubuntu install the $USER needs to be added to a special group.
-Execute sudo adduser $USER vboxsf 
-For more information see Virtualbox shared folder permissions
+
+### Alternate Case
+#### Virtualbox shared folder permissions
+> On a fresh Ubuntu install the $USER needs to be added to a special group.
+
+>		sudo adduser $USER vboxsf 
+
+> For more information see Virtualbox shared folder permissions
 
 ### Alternate Case
 #### Downloads folder is already Shared
