@@ -1,9 +1,7 @@
 
-## How to setup a development environment (on Linux, Windows or Mac)
-
 # [(perriera) / extras_cpp](https://github.com/perriera/extras_cpp)
 
-Welcome to the **(perriera) / extras_cpp** project.
+## How to setup a development environment (on Linux, Windows or Mac)
 
 [![CMake](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml/badge.svg?branch=dev)](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml)
 
