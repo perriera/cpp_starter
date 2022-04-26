@@ -20,8 +20,8 @@ Welcome to the **(perriera) / extras_cpp** project.
  3. [How to setup your changelog.md](https://github.com/perriera/extras_cpp/blob/dev/docs/CHANGELOG.md)
 
 ### Copyright (see [LICENSE.md](https://github.com/perriera/extras_cpp/blob/dev/LICENSE.md))
+> [Open Source / MIT License](https://opensource.org/licenses/MIT)<br/>
 > Copyright 2022 EXPARX INCORPORATED ([exparx.com](https://www.exparx.com/))<br/>
-> (See [Open Source / MIT License](https://opensource.org/licenses/MIT))<br/>
 > Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
 > CPM support made possible by [Matt Williams](Matt@programmer)<br/>
 
