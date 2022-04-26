@@ -56,7 +56,7 @@ Assuming you have an iMac with Parallels Desktop installed
  - [ ] Start your cloned Ubuntu instance for your project (keeping the original one in reserve as a backup)
 
 ### Alternate Case
-> **In the case of some other Linux installation**
+> **In the case of some other Linux installation**<br/>
 > You do not need to use Ubuntu (or an iMac), if you have some other hardware or software arrangement that is perfectly fine. As long as your system is supporting Linux kernel 5.13 or greater is fine.
 
 ### Summary 
