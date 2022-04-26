@@ -6,18 +6,19 @@
  3. **THEN** we can compare version differences much easier
 
 ### Prerequisites
- - [How to clone your project from (perriera) extras_cpp template](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
- - [How to setup your project from (perriera) extras_cpp template](https://github.com/perriera/extras_cpp/blob/dev/docs/SETUP.md)
+- [How to clone your project (with this template)](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
+- [How to setup the tools necessary for your new project](https://github.com/perriera/extras_cpp/blob/dev/docs/SETUP.md)
  
 ### Wish Case
-Now that you have your project cloned we need to make sure you have the tools necessary to compile properly:
+Now that you have your project compiles properly we need to setup your changelog.md with v0.1.0 (to support **neatly** all future versions).
 
- - [ ] Install C++11/17 packages for a Linux environment
+ - [ ] Open a Terminal box and be in your project's directory the do:
 
-		sudo apt update
-		sudo apt install -y build-essential libtool autotools-dev automake pkg-config git clangd cppcheck clang-tidy python3-pip checkinstall
+		git add . 
+		git commit -m "added v0.1.0"
+		git push
 
- - [ ] Install CMake 3.21
+ - [ ] The above has placed the entire project (where is, as is) as v0.1.0 into your Github.com repository (check your repository to see this).
 
 		pip install clang-format
 		pip install cmake-format
