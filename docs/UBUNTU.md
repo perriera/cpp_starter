@@ -1,5 +1,5 @@
 
-## How to install the tools necessary for C++11/17 projects
+## How to install a Linux Platform (Ubuntu 20.04.4)
 > In this step we need to install all the tools used by this project (that you may or may not already have installed.
 
  1. **GIVEN** we need to have C++17, cmake 3.2.1, pip installed
