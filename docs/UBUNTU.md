@@ -7,7 +7,7 @@
  3. **THEN** we can press Ctrl-B inside Visual Studio Code
 
 ### Prerequisites
-  - [How to install a Linux Platform (Ubuntu 20.04.4)](https://github.com/perriera/extras_cpp/blob/dev/docs/UBUNTU.md)
+  - [How to a Linux Platform (Ubuntu 20.04.4)](https://github.com/perriera/extras_cpp/blob/dev/docs/UBUNTU.md)
   - [How to clone your project (with this template)](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
 
  
