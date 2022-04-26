@@ -20,9 +20,11 @@ Welcome to the **(perriera) / extras_cpp** project.
  2. [How to clone your project (with this template)](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
  3. [How to setup your changelog.md](https://github.com/perriera/extras_cpp/blob/dev/docs/CHANGELOG.md)
 
-### Copyright
-> Copyright 2022 EXPARX INCORPORATED ([exparx.com](https://www.exparx.com/))<br/>
+### Credits
 > Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
 > CPM support made possible by [Matt Williams](Matt@programmer)<br/>
+
+### Copyright
+> Copyright 2022 EXPARX INCORPORATED ([exparx.com](https://www.exparx.com/))<br/>
 > [Open Source / MIT License](https://opensource.org/licenses/MIT) (see [LICENSE.md](https://github.com/perriera/extras_cpp/blob/dev/LICENSE.md))<br/>
 
