@@ -1,6 +1,6 @@
 
 ## How to install a Linux Platform (Ubuntu 20.04.4)
-> In this step we need to install all the tools used by this project (that you may or may not already have installed.
+> While intended to be cross-platform, at this point in time all instructions are based upon a Ubuntu 20.04.4 installation.
 
  1. **GIVEN** we need to have C++17, cmake 3.2.1, pip installed
  2. **WHEN** we follow the instructions listed here
