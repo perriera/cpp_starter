@@ -21,7 +21,7 @@ Welcome to the **(perriera) / extras_cpp** project.
 
 ### Copyright (see [LICENSE.md](https://github.com/perriera/extras_cpp/blob/dev/LICENSE.md))
 > [Open Source / MIT License](https://opensource.org/licenses/MIT)<br/>
-> Copyright 2022 EXPARX INCORPORATED<br/>
+> Copyright 2022 [exparx.com](https://www.exparx.com/)<br/>
 > Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
 > CPM support made possible by [Matt Williams](Matt@programmer)<br/>
 
