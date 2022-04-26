@@ -50,6 +50,8 @@ Inside your favorite editor, (or search & replace command utility):
 1.  Global search and replace **extras_cpp** to <project_name> (case sensitive)
 2.  Global search and replace **EXTRAS_CPP** to <PROJECT_NAME> (case sensitive)
 3.  Change directory name '**include/extras_cpp**' to '**include/<project_name>**'
+3.  Change namesoace name 'cpp::' to 'something meaningful to your project (aka. oci::')
+3.  Change namesoace name 'namespce cpp' to '(aka. namespace oci')
 4.  Change the links found in changelog.md such that they begin at 0.1.0 for your project.
 
 For example, instead of:
