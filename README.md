@@ -22,7 +22,7 @@ Welcome to the **(perriera) / extras_cpp** project.
 
 ### Credits
 > Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
-> CPM support made possible by [Matt Williams](https://github.com/mattcoding4days/cmake-starter#)<br/>
+> C++ EXTRAS logo and CPM support made possible by [Matt Williams](https://github.com/mattcoding4days/cmake-starter#)<br/>
 
 ### Copyright
 > Copyright 2022 EXPARX INCORPORATED ([exparx.com](https://www.exparx.com/))<br/>
