@@ -57,7 +57,7 @@ Assuming you have an iMac with Parallels Desktop installed
 
 ### Alternate Case
 > **In the case of some other Linux installation**<br/>
-> You do not need to use Ubuntu (or an iMac), if you have some other hardware or software arrangement that is perfectly fine. As long as your system is supporting Linux kernel 5.13 or greater is fine.
+> You do not need to use Ubuntu (or an iMac), (if you have some other hardware or software arrangement that is perfectly fine). As long as your system is supporting Linux kernel 5.13 or greater is fine.
 
 ### Summary 
 Now you have a platform with which to install the C++11/17 tools necessary for *(perriera) /  extras_cpp* cloned projects.
