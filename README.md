@@ -15,7 +15,7 @@ Welcome to the **(perriera) / extras_cpp** project.
 
  1. [How to setup a Linux Platform (Ubuntu 20.04.4) on macOS (Parallels Desktop)](https://github.com/perriera/extras_cpp/blob/dev/docs/MAC.md)
  2. [How to setup a Linux Platform (Ubuntu 20.04.4) on Windows 10/11 (VirtualBox)](https://github.com/perriera/extras_cpp/blob/dev/docs/VIRTUALBOX.md)
- 3. [How to setup a Linux Platform (Ubuntu 20.04.4) on WSL/WSL2](https://github.com/perriera/extras_cpp/blob/dev/docs/WSLWSL2.md)
+ 3. [How to setup a Linux Platform (Ubuntu 20.04.4) on Windows 10/11 (WSL/WSL2](https://github.com/perriera/extras_cpp/blob/dev/docs/WSLWSL2.md)
  4. [How to setup a Linux Platform (Ubuntu 20.04.4) on Linux](https://github.com/perriera/extras_cpp/blob/dev/docs/LINUX.md)
  5. [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_cpp/blob/dev/docs/INSTALL.md)
  6. [How to clone your project (with this template)](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
