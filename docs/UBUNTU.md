@@ -28,40 +28,41 @@ Assuming you have an iMac with Parallels Desktop installed
  - [ ] Under *Options -> CPU & Memory* set Memory to 8192 
  - [ ] Under *Options -> Mouse & Keyboard* set Mouse & Keyboard to *Don't optimize for games*
  - [ ] Close the dialog and press the blue *Continue* button
+ - [ ] Wait for the install to complete
+ - [ ] Login in with the login credentials you provided
+ - [ ] (Optional) connect to any online accounts you may wish to include 
+ - [ ] (Optional) Setup a Ubuntu One / Live Patch account
+ - [ ] Click *Next* until you see the desktop
+ - [ ] Select *Update Now* on the Software Updater
+ - [ ] To the left you should now see a small icon with a status bar slowly going right
+ - [ ] That status bar shows you updates being installed (wait for that to complete)
+ - [ ] Click on the icon you see In the bottom left corner 
+ - [ ] Type "ter" in the search box, select Terminal
+ - [ ] When the Terminal box opens execute the following
+ - [ ] **sudo apt update**
+ - [ ] **sudo apt upgrade**
+ - [ ] **sudo apt autoremove** (click yes)
+ - [ ] **sudo apt update**
+ - [ ]  This time you should see the message "*All packages are up to date*."
+ - [ ] **sudo reboot**
+ - [ ] When you login again you now have a fully working Ubuntu instance
+ - [ ] Shutdown the Ubuntu instance (top right corner click on the icon)
+ - [ ] Select *Power Off -> Power Off*
+ - [ ] Now in the Parallels Desktop Control Center select *Ubuntu 20.04.4 LTS*
+ - [ ] Click the *Reclaim* button to reclaim unused hard disk space
+ - [ ] Close the *Configuration* dialog
+ - [ ] Right mouse click on *Ubuntu 20.04.4 LTS* and select *Clone...*
+ - [ ] Replace the name *Copy of Ubuntu 20.04.4 LTS* with something meaningful (ex. buntu 20.04.4 <your project name>"
+ - [ ] Start your cloned Ubuntu instance for your project (keeping the original one in reserve as a backup)
 
-		sudo apt update
-		sudo apt install -y build-essential libtool autotools-dev automake pkg-config git clangd cppcheck clang-tidy python3-pip checkinstall
-
- - [ ] Install CMake 3.21
-
-		pip install clang-format
-		pip install cmake-format
-		pip install cmake
-
- - [ ] Add these enironment variables (aka.  `vi ~/.bashrc `)
-
-		
-		export PATH=$HOME/.local/bin:${PATH}
-		export CPM_SOURCE_CACHE=$HOME/.cache/CPM
-		export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
-
- - [ ] Then source it ... 
-
-		source ~/.bashrc
-
- - [ ] Now install Visual Studio Code
-
-		sudo snap install --classic code # or code-insiders
-
- - [ ] Now start Visual Studio Code
-
-		cd <into your project directory>
-		code .
+### Alternate Case
+> **In the case of some other Linux installation**
+> You do not need to use Ubuntu (or an iMac), if you have some other hardware or software arrangement that is perfectly fine. As long as your system is supporting Linux kernel 5.13 or greater is fine.
 
 ### Summary 
-Now you have all the tools necessary to compile your new C++17 project complete with cmake 3.21 support. Press Ctrl-B (inside Visual Studio Code) to see your first successful compile.
+Now you have a platform with which to install the C++11/17 tools necessary for *(perriera) /  extras_cpp* cloned projects.
 
 ### Next Steps
- - [How to setup your changelog.md](https://github.com/perriera/extras_cpp/blob/dev/docs/CHANGELOG.md)
+ - [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_cpp/blob/dev/docs/INSTALL.md)
 
 
