@@ -10,13 +10,24 @@
 ### Prerequisites
   - [Preferably a late model iMac](https://www.apple.com/ca/imac-24/?afid=p238%7CsOluZynmu-dc_mtid_1870765e38482_pcrid_571348307644_pgrid_125362851562_pntwk_g_pchan__pexid__&cid=aos-ca-kwGO-mac--slid---product-) (with a large screen)
   - [Parallels Desktop installed](https://www.parallels.com/ca/pd/general/?gclid=CjwKCAjwjZmTBhB4EiwAynRmD6SV4LdfM_DXaYiwTJhJJBddfc6JM_bDuAuWsUyyHUMj5zEQnC3wjBoCfgcQAvD_BwE)
-  - [How to clone your project (with this template)](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
 
  
 ### Wish Case
-Now that you have your project cloned we need to make sure you have the tools necessary to compile properly:
+Assuming you have an iMac with Parallels Desktop installed
 
- - [ ] Install C++11/17 packages for a Linux environment
+ - [ ] Goto Ubuntu.com and download [Ubuntu 20.04.4](https://releases.ubuntu.com/20.04/)
+ - [ ] Press the + button to the top right corner of Parallels Desktop Control Center
+ - [ ] Select *Install Windows or another OS from a DVD or image file*
+ - [ ] Press *Continue*
+ - [ ] Select *ubuntu-20.04.4-desktop-amd64.iso* in *~/Downloads* 
+ - [ ] Fill out the details for an *Express Installation*
+ - [ ] Rename the installation *Ubuntu 20.04.4 LTS* (for clarity)
+ - [ ] Select *Customize settings before installation*
+ - [ ] Press *Create*
+ - [ ] Under *Options -> Sharing* share the Home folder (and unselect everything else)
+ - [ ] Under *Options -> CPU & Memory* set Memory to 8192 
+ - [ ] Under *Options -> Mouse & Keyboard* set Mouse & Keyboard to *Don't optimize for games*
+ - [ ] Close the dialog and press the blue *Continue* button
 
 		sudo apt update
 		sudo apt install -y build-essential libtool autotools-dev automake pkg-config git clangd cppcheck clang-tidy python3-pip checkinstall
