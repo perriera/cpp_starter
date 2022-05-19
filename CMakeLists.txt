@@ -151,9 +151,11 @@ file(GLOB_RECURSE EXTRAS_CPP_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 # shared or static)
 #
 
+set(EXTRAS_CPP_LIBS_NEEDED stdc++fs extras Threads::Threads)
+
 add_library(${PROJECT_NAME} SHARED ${EXTRAS_CPP_HEADERS} ${EXTRAS_CPP_SOURCE})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
-target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs extras Threads::Threads)
+target_link_libraries(${PROJECT_NAME} PRIVATE ${EXTRAS_CPP_LIBS_NEEDED})
 
 #
 # NOTE: declare unit test cases here all source should have adequate test cases whether they be mock
@@ -166,7 +168,7 @@ if (NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY)
     set(TEST_EXEC "run-unittests-${PROJECT_NAME}")
     add_executable(${TEST_EXEC} ${EXTRAS_CPP_TESTS})
     target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras Threads::Threads)
+    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} ${EXTRAS_CPP_LIBS_NEEDED})
   endif()
 endif()
 
@@ -179,7 +181,7 @@ endif()
 if( NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY OR MAKE_EXTRAS_CPP_LIBRARY_TOOLS)
 add_executable(extras_cpp_app instances/main.cpp) 
 target_include_directories(extras_cpp_app PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-target_link_libraries(extras_cpp_app PRIVATE ${PROJECT_NAME} stdc++fs extras Threads::Threads)
+target_link_libraries(extras_cpp_app PRIVATE ${PROJECT_NAME} ${EXTRAS_CPP_LIBS_NEEDED})
 endif()
 
 #
