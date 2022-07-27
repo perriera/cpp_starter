@@ -10,7 +10,8 @@ Now this might change again so you will have to be conscious of this parameter w
 
 To check what type of shared library you produced do this:<br/>
 
-cd build$ file libextras_cpp.so.0.1.0<br/><br/>
+$ cd build<br/>
+$ file libextras_cpp.so.0.1.0<br/><br/>
 libextras_cpp.so.0.1.0: ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, BuildID[sha1]=854b1299e523cbac6487e574e009fdafe6193d88, with debug_info, not stripped
 
 
