@@ -8,9 +8,9 @@
 
 Now this might change again so you will have to be conscious of this parameter when setting up a project for 32bit support
 
-To check what type of shared library you produced do this:
+To check what type of shared library you produced do this:<br/>
 
-dev@src-svn6432:~/dev/extras_cpp/build$ file libextras_cpp.so.0.1.0
+cd build$ file libextras_cpp.so.0.1.0<br/><br/>
 libextras_cpp.so.0.1.0: ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, BuildID[sha1]=854b1299e523cbac6487e574e009fdafe6193d88, with debug_info, not stripped
 
 
