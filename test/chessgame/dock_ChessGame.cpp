@@ -18,6 +18,7 @@
 
 #include <iostream>
 #include <extras_cpp/game/ChessGame.hpp>
+#include <extras/docking/DockIt.hpp>
 
 #include "../vendor/catch.hpp"
 #include "../vendor/fakeit.hpp"
@@ -25,12 +26,12 @@
 using namespace extras;
 using namespace fakeit;
 
-SCENARIO("Mock ChessGameInterface: toOctal", "[CHES-9]") {
+SCENARIO("Dock ChessGameInterface: toOctal", "[CHES-9]") {
 
-    Mock<cpp::ChessGameInterface> mock;
-    When(Method(mock, moves)).Return();
+    Dock<cpp::ChessGameInterface> dock;
+    When(Method(dock, moves)).Return();
 
-    cpp::ChessGameInterface& i = mock.get();
+    cpp::ChessGameInterface& i = dock.get();
     i.moves();
-    Verify(Method(mock, moves));
+    Verify(Method(dock, moves));
 }

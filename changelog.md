@@ -28,7 +28,7 @@ Correct URL for github, (for source compare)</br>
 
 ## [Next Steps]
 
-Adding mock test cases </br>
+Adding dock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordingly</br>
 
