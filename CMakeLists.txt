@@ -50,8 +50,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 #
 # NOTE: Set C/C++ parameters for all targets in this CMakeLists.txt
 #
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic --std=c++17 -fPIC")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -pedantic -fPIC")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32 -Wall -Wextra -pedantic --std=c++17 -fPIC")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m32 -Wall -Wextra -pedantic -fPIC")
 
 #
 # NOTE: add additional project options
@@ -126,7 +126,7 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 CPMAddPackage(
   NAME extras
   GITHUB_REPOSITORY perriera/extras
-  VERSION 6.0.0
+  VERSION 6.1.0
   OPTIONS "MAKE_SPDLOG_SHARED OFF"
   OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
 )
