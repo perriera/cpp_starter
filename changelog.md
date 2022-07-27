@@ -33,15 +33,11 @@ Adding unit test cases </br>
 Updated README.md accordingly</br>
 
 #### 0.2.0 (2021-MM-DD)
-
 ### Changed
-
 - extras_cpp created from template
 
 #### 0.1.0 (2021-09-03)
-
 ### Added
-
 - SHARED library support
 - (perriera) extras library support, (3.11.0)
 - CPM.cmake support
