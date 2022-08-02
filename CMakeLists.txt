@@ -50,8 +50,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 #
 # NOTE: Set C/C++ parameters for all targets in this CMakeLists.txt
 #
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32 -Wall -Wextra -pedantic --std=c++17 -fPIC")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m32 -Wall -Wextra -pedantic -fPIC")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic --std=c++17 -fPIC")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -pedantic -fPIC")
 
 #
 # NOTE: add additional project options
@@ -126,7 +126,7 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 CPMAddPackage(
   NAME extras
   GITHUB_REPOSITORY perriera/extras
-  VERSION 6.1.0
+  VERSION 7.2.0
   OPTIONS "MAKE_SPDLOG_SHARED OFF"
   OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
 )
@@ -152,6 +152,13 @@ file(GLOB_RECURSE EXTRAS_CPP_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 #
 
 set(EXTRAS_CPP_LIBS_NEEDED stdc++fs extras Threads::Threads)
+set(EXTRAS_CPP_LIBS_NEEDED_i386 stdc++fs extras_i386 Threads::Threads)
+
+add_library(${PROJECT_NAME}_i386 SHARED ${EXTRAS_CPP_HEADERS} ${EXTRAS_CPP_SOURCE})
+target_include_directories(${PROJECT_NAME}_i386 PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
+target_link_libraries(${PROJECT_NAME}_i386 PRIVATE ${EXTRAS_CPP_LIBS_NEEDED_i386})
+target_compile_options(${PROJECT_NAME}_i386 PUBLIC -m32)
+target_link_options(${PROJECT_NAME}_i386 PRIVATE -m32)
 
 add_library(${PROJECT_NAME} SHARED ${EXTRAS_CPP_HEADERS} ${EXTRAS_CPP_SOURCE})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
@@ -166,10 +173,18 @@ if (NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY)
     print(STATUS "Building tests")
     file(GLOB_RECURSE EXTRAS_CPP_TESTS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/test/*.cpp")
     set(TEST_EXEC "run-unittests-${PROJECT_NAME}")
+
+    add_executable(${TEST_EXEC}_i386 ${EXTRAS_CPP_TESTS})
+    target_include_directories(${TEST_EXEC}_i386 PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+    target_link_libraries(${TEST_EXEC}_i386 ${PROJECT_NAME}_i386 ${EXTRAS_CPP_LIBS_NEEDED_i386})
+    target_compile_options(${TEST_EXEC}_i386 PUBLIC -m32)
+    target_link_options(${TEST_EXEC}_i386 PRIVATE -m32)
+
     add_executable(${TEST_EXEC} ${EXTRAS_CPP_TESTS})
     target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
     target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} ${EXTRAS_CPP_LIBS_NEEDED})
-  endif()
+
+    endif()
 endif()
 
 #
@@ -179,6 +194,13 @@ endif()
 # declarations seperate, we place any sources that have a main() in the instances/ folder
 #
 if( NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY OR MAKE_EXTRAS_CPP_LIBRARY_TOOLS)
+
+add_executable(extras_cpp_app_i386 instances/main.cpp) 
+target_include_directories(extras_cpp_app_i386 PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+target_link_libraries(extras_cpp_app_i386 PRIVATE ${PROJECT_NAME}_i386 ${EXTRAS_CPP_LIBS_NEEDED_i386})
+target_compile_options(extras_cpp_app_i386 PUBLIC -m32)
+target_link_options(extras_cpp_app_i386 PRIVATE -m32)
+
 add_executable(extras_cpp_app instances/main.cpp) 
 target_include_directories(extras_cpp_app PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
 target_link_libraries(extras_cpp_app PRIVATE ${PROJECT_NAME} ${EXTRAS_CPP_LIBS_NEEDED})
@@ -187,6 +209,7 @@ endif()
 #
 # NOTE: Install all shared libraries
 #
+install(TARGETS ${PROJECT_NAME}_i386 LIBRARY DESTINATION lib)
 install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib)
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
 
@@ -218,6 +241,15 @@ else()
 endif()
 
 set_target_properties(
-  ${PROJECT_NAME} PROPERTIES VERSION ${${PROJECT_NAME}_VERSION} SOVERSION
-                                                                ${${PROJECT_NAME}_VERSION_MAJOR}
+  ${PROJECT_NAME}_i386 
+  PROPERTIES VERSION 
+  ${${PROJECT_NAME}_VERSION} SOVERSION
+  ${${PROJECT_NAME}_VERSION_MAJOR}
+)
+
+set_target_properties(
+  ${PROJECT_NAME} 
+  PROPERTIES VERSION 
+  ${${PROJECT_NAME}_VERSION} SOVERSION
+  ${${PROJECT_NAME}_VERSION_MAJOR}
 )
