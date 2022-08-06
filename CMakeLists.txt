@@ -9,6 +9,7 @@ cmake_minimum_required(VERSION 3.21)
 include(cmake/CPM.cmake)
 include(cmake/print.cmake)
 include(cmake/utils.cmake)
+include(cmake/Find32or64bit.cmake)
 extras_cpp_get_version()
 project(
   extras_cpp
@@ -126,7 +127,7 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 CPMAddPackage(
   NAME extras
   GITHUB_REPOSITORY perriera/extras
-  VERSION 7.2.0
+  VERSION 7.4.0
   OPTIONS "MAKE_SPDLOG_SHARED OFF"
   OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
 )
@@ -135,7 +136,7 @@ if(extras_ADDED)
   # NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
   #
   print(STATUS "Configuring extras build properties")
-  set_target_properties(extras PROPERTIES CMAKE_BUILD_TYPE Release)
+  # set_target_properties(extras PROPERTIES CMAKE_BUILD_TYPE Release)
 else()
   print(WARNING "extras was not configured properly")
 endif()
@@ -151,18 +152,23 @@ file(GLOB_RECURSE EXTRAS_CPP_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 # shared or static)
 #
 
-set(EXTRAS_CPP_LIBS_NEEDED stdc++fs extras Threads::Threads)
-set(EXTRAS_CPP_LIBS_NEEDED_i386 stdc++fs extras_i386 Threads::Threads)
+set(EXTRAS_CPP_LIBS_COMMON stdc++fs ldap gcrypt gnutls uuid microhttpd Threads::Threads)
 
+if (MAKE32BIT)
+set(EXTRAS_CPP_LIBS_NEEDED_i386 extras_i386 ${EXTRAS_CPP_LIBS_COMMON})
 add_library(${PROJECT_NAME}_i386 SHARED ${EXTRAS_CPP_HEADERS} ${EXTRAS_CPP_SOURCE})
 target_include_directories(${PROJECT_NAME}_i386 PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
 target_link_libraries(${PROJECT_NAME}_i386 PRIVATE ${EXTRAS_CPP_LIBS_NEEDED_i386})
 target_compile_options(${PROJECT_NAME}_i386 PUBLIC -m32)
 target_link_options(${PROJECT_NAME}_i386 PRIVATE -m32)
+endif()
 
+if (MAKE64BIT)
+set(EXTRAS_CPP_LIBS_NEEDED extras  ${EXTRAS_CPP_LIBS_COMMON})
 add_library(${PROJECT_NAME} SHARED ${EXTRAS_CPP_HEADERS} ${EXTRAS_CPP_SOURCE})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${EXTRAS_CPP_LIBS_NEEDED})
+endif()
 
 #
 # NOTE: declare unit test cases here all source should have adequate test cases whether they be mock
@@ -174,17 +180,20 @@ if (NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY)
     file(GLOB_RECURSE EXTRAS_CPP_TESTS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/test/*.cpp")
     set(TEST_EXEC "run-unittests-${PROJECT_NAME}")
 
-    add_executable(${TEST_EXEC}_i386 ${EXTRAS_CPP_TESTS})
-    target_include_directories(${TEST_EXEC}_i386 PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-    target_link_libraries(${TEST_EXEC}_i386 ${PROJECT_NAME}_i386 ${EXTRAS_CPP_LIBS_NEEDED_i386})
-    target_compile_options(${TEST_EXEC}_i386 PUBLIC -m32)
-    target_link_options(${TEST_EXEC}_i386 PRIVATE -m32)
-
-    add_executable(${TEST_EXEC} ${EXTRAS_CPP_TESTS})
-    target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} ${EXTRAS_CPP_LIBS_NEEDED})
-
+    if (MAKE32BIT)
+      add_executable(${TEST_EXEC}_i386 ${EXTRAS_CPP_TESTS})
+      target_include_directories(${TEST_EXEC}_i386 PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+      target_link_libraries(${TEST_EXEC}_i386 ${PROJECT_NAME}_i386 ${EXTRAS_CPP_LIBS_NEEDED_i386})
+      target_compile_options(${TEST_EXEC}_i386 PUBLIC -m32)
+      target_link_options(${TEST_EXEC}_i386 PRIVATE -m32)
     endif()
+    if (MAKE64BIT)
+      add_executable(${TEST_EXEC} ${EXTRAS_CPP_TESTS})
+      target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+      target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} ${EXTRAS_CPP_LIBS_NEEDED})
+    endif()
+
+  endif()
 endif()
 
 #
@@ -195,22 +204,29 @@ endif()
 #
 if( NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY OR MAKE_EXTRAS_CPP_LIBRARY_TOOLS)
 
-add_executable(extras_cpp_app_i386 instances/main.cpp) 
-target_include_directories(extras_cpp_app_i386 PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-target_link_libraries(extras_cpp_app_i386 PRIVATE ${PROJECT_NAME}_i386 ${EXTRAS_CPP_LIBS_NEEDED_i386})
-target_compile_options(extras_cpp_app_i386 PUBLIC -m32)
-target_link_options(extras_cpp_app_i386 PRIVATE -m32)
+  if (MAKE32BIT)
+    add_executable(extras_cpp_app_i386 instances/main.cpp) 
+    target_include_directories(extras_cpp_app_i386 PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+    target_link_libraries(extras_cpp_app_i386 PRIVATE ${PROJECT_NAME}_i386 ${EXTRAS_CPP_LIBS_NEEDED_i386})
+    target_compile_options(extras_cpp_app_i386 PUBLIC -m32)
+    target_link_options(extras_cpp_app_i386 PRIVATE -m32)
+  endif()
 
-add_executable(extras_cpp_app instances/main.cpp) 
-target_include_directories(extras_cpp_app PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-target_link_libraries(extras_cpp_app PRIVATE ${PROJECT_NAME} ${EXTRAS_CPP_LIBS_NEEDED})
+  if (MAKE64BIT)
+    add_executable(extras_cpp_app instances/main.cpp) 
+    target_include_directories(extras_cpp_app PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+    target_link_libraries(extras_cpp_app PRIVATE ${PROJECT_NAME} ${EXTRAS_CPP_LIBS_NEEDED})
+  endif()
+
 endif()
 
 #
 # NOTE: Install all shared libraries
 #
-install(TARGETS ${PROJECT_NAME}_i386 LIBRARY DESTINATION lib)
+# install(TARGETS ${PROJECT_NAME}_i386 LIBRARY DESTINATION lib)
+if (MAKE32BIT||MAKE64BIT)
 install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib)
+endif()
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
 
 #
@@ -235,21 +251,27 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
 check_ipo_supported(RESULT result OUTPUT output)
 if(result)
   print(STATUS "Building ${PROJECT_NAME} with Interprocedural Optimization")
-  set_target_properties(${PROJECT_NAME} PROPERTIES INTERPROCEDURAL_OPTIMIZATION TRUE)
+  if (MAKE32BIT||MAKE64BIT)
+    set_target_properties(${PROJECT_NAME} PROPERTIES INTERPROCEDURAL_OPTIMIZATION TRUE)
+  endif()
 else()
   print(WARNING "IPO is not supported: ${output}")
 endif()
 
-set_target_properties(
-  ${PROJECT_NAME}_i386 
-  PROPERTIES VERSION 
-  ${${PROJECT_NAME}_VERSION} SOVERSION
-  ${${PROJECT_NAME}_VERSION_MAJOR}
-)
+if (MAKE32BIT)
+  set_target_properties(
+    ${PROJECT_NAME}_i386 
+    PROPERTIES VERSION 
+    ${${PROJECT_NAME}_VERSION} SOVERSION
+    ${${PROJECT_NAME}_VERSION_MAJOR}
+  )
+endif()
 
-set_target_properties(
-  ${PROJECT_NAME} 
-  PROPERTIES VERSION 
-  ${${PROJECT_NAME}_VERSION} SOVERSION
-  ${${PROJECT_NAME}_VERSION_MAJOR}
-)
+if (MAKE64BIT)
+  set_target_properties(
+    ${PROJECT_NAME} 
+    PROPERTIES VERSION 
+    ${${PROJECT_NAME}_VERSION} SOVERSION
+    ${${PROJECT_NAME}_VERSION_MAJOR}
+  )
+endif()
