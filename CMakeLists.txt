@@ -152,7 +152,14 @@ file(GLOB_RECURSE EXTRAS_CPP_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 # shared or static)
 #
 
-set(EXTRAS_CPP_LIBS_COMMON stdc++fs ldap gcrypt gnutls uuid microhttpd Threads::Threads)
+# 
+# EXTRAS_CPP_THIRD_PARTY_LIBRARIES
+#
+# list here any 3rd party libraries that you want that were
+# installed using sudo apt install ....
+#
+# set(EXTRAS_CPP_THIRD_PARTY_LIBRARIES ldap gcrypt gnutls uuid microhttpd)
+set(EXTRAS_CPP_LIBS_COMMON stdc++fs ${EXTRAS_CPP_THIRD_PARTY_LIBRARIES} Threads::Threads)
 
 if (MAKE32BIT)
 set(EXTRAS_CPP_LIBS_NEEDED_i386 extras_i386 ${EXTRAS_CPP_LIBS_COMMON})
