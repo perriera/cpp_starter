@@ -6,11 +6,16 @@
  3. **THEN** we can compare version differences much easier
 
 ### Prerequisites
-- [How to clone your project (with this template)](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
-- [How to setup the tools necessary for your new project](https://github.com/perriera/extras_cpp/blob/dev/docs/SETUP.md)
+- [How to clone your project (with this template)](https://github.com/perriera/extras_dbo/blob/dev/docs/CLONE.md)
+- [How to setup the tools necessary for your new project](https://github.com/perriera/extras_dbo/blob/dev/docs/SETUP.md)
  
 ### Wish Case
 Now that you have your project compiles properly we need to setup your changelog.md with v0.1.0 (to support **neatly** all future versions).
+
+
+WORK IN PROGREE
+(ignore this page)
+
 
  - [ ] Open a Terminal box and be in your project's directory the do:
 
@@ -48,6 +53,6 @@ Now that you have your project compiles properly we need to setup your changelog
 Now you have all the tools necessary to compile your new C++17 project complete with cmake 3.21 support. Press Ctrl-B (inside Visual Studio Code) to see your first successful compile.
 
 ### Next Steps
- - [How to setup your changelog.md](https://github.com/perriera/extras_cpp/blob/dev/docs/CHANGELOG.md)
+ - [How to setup your changelog.md](https://github.com/perriera/extras_dbo/blob/dev/docs/CHANGELOG.md)
 
 
