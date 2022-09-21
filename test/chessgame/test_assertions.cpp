@@ -17,21 +17,21 @@
  */
 
 #include <iostream>
-#include <extras_cpp/game/ChessGame.hpp>
-#include <extras/docking/DockIt.hpp>
+#include <extras_cpp/game/interface.hpp>
 
 #include "../vendor/catch.hpp"
-#include "../vendor/fakeit.hpp"
 
+using namespace std;
 using namespace extras;
-using namespace fakeit;
+using namespace extras::cpp;
 
-SCENARIO("Dock ChessGameInterface: toOctal", "[CHES-9]") {
+SCENARIO("test game::Interface assertions", "[JIRA-1440]") {
 
-    Dock<cpp::ChessGameInterface> dock;
-    When(Method(dock, moves)).Return();
+    /**
+     *    test all the assertions
+     */
+    REQUIRE_THROWS_AS(
+        game::EndOfGameReachedException::assertion(
+            0, 0, "sample", __INFO__), game::EndOfGameReachedException);
 
-    cpp::ChessGameInterface& i = dock.get();
-    i.moves();
-    Verify(Method(dock, moves));
 }

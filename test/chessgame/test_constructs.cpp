@@ -16,12 +16,26 @@
  *
  */
 
-#include <extras_cpp/game/ChessGame.hpp>
-#include <extras/interfaces.hpp>
 #include <iostream>
+#include <extras_cpp/game/clazz.hpp>
+
+#include "../vendor/catch.hpp"
 
 using namespace std;
 using namespace extras;
+using namespace extras::cpp;
 
-void cpp::ChessGame::moves() const {}
+SCENARIO("test game::constructs", "[JIRA-1440]")
+{
+    /**
+     *
+     *    test various constructors
+     *    with various parameters
+     *
+     */
+    cpp::game::ChessGame game(1, 2);
 
+    REQUIRE_THROWS_AS(
+        cpp::game::ChessGame(0, 0), game::EndOfGameReachedException);
+
+}

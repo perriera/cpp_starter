@@ -16,19 +16,24 @@
  *
  */
 
+#include <extras_cpp/game/clazz.hpp>
+#include <extras/interfaces.hpp>
 #include <iostream>
-#include <extras_cpp/game/ChessGame.hpp>
-
-#include "../vendor/catch.hpp"
 
 using namespace std;
-using namespace extras;
+using namespace extras::cpp;
 
-SCENARIO("Verify ChessGameInterface can be read PGN file", "[ChessGame]")
+game::ChessGame::ChessGame(int x, int y)
+  : _x(x), _y(y)
 {
-    cpp::ChessGame game;
-    cpp::ChessGameInterface& i = game;
-    i.moves();
-    REQUIRE(true);
+
+  /**
+   *   this shows how assertions can be used to
+   *   centralize conditions that cause exceptions
+   *   in one place
+   */
+  game::EndOfGameReachedException::assertion(
+    _x, _y, "sample", __INFO__);
+
 }
 
