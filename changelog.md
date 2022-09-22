@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.24.1 -m "Using extras 8.40"</br>
-> > git push origin v0.24.1
+> > git tag -a v0.24.2 -m "Using extras 8.40"</br>
+> > git push origin v0.24.2
 
 IMPORTANT:
 
