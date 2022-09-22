@@ -32,19 +32,19 @@ namespace extras {
       bool ChessGame::exists() const
       {
         return true;
-      };
+      }
 
       bool ChessGame::piece(int, int) const
       {
         return true;
-      };
+      }
 
       bool ChessGame::zone(int row, int col) const
       {
         game::EndOfGameReachedException::assertion(
           row, col, "sample", __INFO__);
         return row == _x && col == _y;
-      };
+      }
 
     }
   }
