@@ -9,8 +9,8 @@
  *
  */
 
-#ifndef _CHESSGAME_CLAZZ_HPP
-#define _CHESSGAME_CLAZZ_HPP
+#ifndef _EXTRAS_CPP_CHESSGAME_CLAZZ_HPP
+#define _EXTRAS_CPP_CHESSGAME_CLAZZ_HPP
 
  /**
   * @brief the "MIT/X Consortium License", (adapted for EXPARX.COM)
@@ -69,4 +69,4 @@ namespace extras {
     } // end namespace 
 }
 
-#endif // _CHESSGAME_CLAZZ_HPP
+#endif // _EXTRAS_CPP_CHESSGAME_CLAZZ_HPP
