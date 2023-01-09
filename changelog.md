@@ -10,7 +10,7 @@
 
 IMPORTANT:
 
-- Manually keep the changelog version number in sync with CMakeLists.txt project version.<br>
+- Manually keep the changelog version number in sync with CMakeLists.txt project version<br>
 - Keep the changelog.md up to date, neat and tidy, (as it is a convenient tool for code maintenance).<br>
 - Use [Semantic Versioning](https://semver.org/spec/v2.0.0.html) such that<br>
 - Given a version number MAJOR.MINOR.PATCH, increment the:<br>
