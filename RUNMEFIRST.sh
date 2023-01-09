@@ -64,6 +64,7 @@ rm RUNMEFIRST.sh
 
 git add .; git commit -m "Added 0.1.0"; git push
 git tag -a v0.1.0 -m "$f1 created using extras 8.6.4"
+git push origin v0.1.0
 git log
 git tag
 
