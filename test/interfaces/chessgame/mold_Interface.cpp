@@ -20,8 +20,8 @@
 #include <extras_cpp/game/interface.hpp>
 #include <extras/docking/DockIt.hpp>
 
-#include "../vendor/catch.hpp"
-#include "../vendor/fakeit.hpp"
+#include "../../vendor/catch.hpp"
+#include "../../vendor/fakeit.hpp"
 
 using namespace extras;
 using namespace extras::cpp;

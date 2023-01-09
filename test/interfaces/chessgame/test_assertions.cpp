@@ -17,33 +17,21 @@
  */
 
 #include <iostream>
-#include <extras_cpp/game/clazz.hpp>
+#include <extras_cpp/game/interface.hpp>
 
-#include "../vendor/catch.hpp"
+#include "../../vendor/catch.hpp"
 
 using namespace std;
+using namespace extras;
 using namespace extras::cpp;
 
-SCENARIO("test game::methods", "[JIRA-1440]")
-{
-    /**
-     *    construct an object
-     */
-
-    game::ChessGame game(1, 2);
-    game::Interface& i = game;
+SCENARIO("test game::Interface assertions", "[JIRA-1440]") {
 
     /**
-     *    repeat same tests from mold
+     *    test all the assertions
      */
-
-    i.moves();
-    REQUIRE(i.exists() == true);
-    REQUIRE(i.piece(1, 2) == true);
     REQUIRE_THROWS_AS(
-        i.zone(0, 0), game::EndOfGameReachedException);
-    REQUIRE(i.zone(1, 0) == false);
-    REQUIRE(i.zone(0, 1) == false);
+        game::EndOfGameReachedException::assertion(
+            0, 0, "sample", __INFO__), game::EndOfGameReachedException);
 
 }
-

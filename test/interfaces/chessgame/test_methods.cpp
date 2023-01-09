@@ -19,23 +19,31 @@
 #include <iostream>
 #include <extras_cpp/game/clazz.hpp>
 
-#include "../vendor/catch.hpp"
+#include "../../vendor/catch.hpp"
 
 using namespace std;
-using namespace extras;
 using namespace extras::cpp;
 
-SCENARIO("test game::constructs", "[JIRA-1440]")
+SCENARIO("test game::methods", "[JIRA-1440]")
 {
     /**
-     *
-     *    test various constructors
-     *    with various parameters
-     *
+     *    construct an object
      */
-    cpp::game::ChessGame game(1, 2);
 
+    game::ChessGame game(1, 2);
+    game::Interface& i = game;
+
+    /**
+     *    repeat same tests from mold
+     */
+
+    i.moves();
+    REQUIRE(i.exists() == true);
+    REQUIRE(i.piece(1, 2) == true);
     REQUIRE_THROWS_AS(
-        cpp::game::ChessGame(0, 0), game::EndOfGameReachedException);
+        i.zone(0, 0), game::EndOfGameReachedException);
+    REQUIRE(i.zone(1, 0) == false);
+    REQUIRE(i.zone(0, 1) == false);
 
 }
+
