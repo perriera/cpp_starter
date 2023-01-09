@@ -31,8 +31,6 @@ then
     n2="reassign"
 fi
 
-exit
-
 rm -rf build
 
 find . -type f -name *.h* -print0 | xargs -0 sed -i "s/EXTRAS_CPP/$f2/g"
