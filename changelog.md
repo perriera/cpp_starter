@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.25.0 -m "Using extras 8.6.4 / CPM_DOWNLOAD_VERSION 0.36.0"</br>
-> > git push origin v0.25.0
+> > git tag -a v0.1.0 -m "extras_cpp created using extras 8.6.4"</br>
+> > git push origin v0.1.0
 
 IMPORTANT:
 
@@ -32,14 +32,14 @@ Adding dock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordingly</br>
 
-#### 0.2.0 (2021-MM-DD)
+#### 0.2.0 (2023-MM-DD)
 ### Changed
 - extras_cpp created from template
 
 #### 0.1.0 (2021-09-03)
 ### Added
 - SHARED library support
-- (perriera) extras library support, (3.11.0)
+- (perriera) extras library support 
 - CPM.cmake support
   - [CPM.cmake](https://github.com/cpm-cmake/CPM.cmake/blob/master/LICENSE)
   - This allows us to include other Github packages with the ability
