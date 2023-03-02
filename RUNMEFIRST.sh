@@ -62,11 +62,11 @@ build/run-unittests-$f1
 
 rm RUNMEFIRST.sh
 
-git add .; git commit -m "Added 0.1.0"; git push
-git tag -a v0.1.0 -m "$f1 created using extras 8.6.4"
-git push origin v0.1.0
-git log
-git tag
+# git add .; git commit -m "Added 0.1.0"; git push
+# git tag -a v0.1.0 -m "$f1 created using extras 8.6.4"
+# git push origin v0.1.0
+# git log
+# git tag
 
 echo $f1 now setup and committed as tag "(v0.1.0)"
 
