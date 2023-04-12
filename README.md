@@ -27,7 +27,7 @@ Assuming you have a Linux box setup you can create a project as follows:
 > **NOTE** <br/>
 > When you create your project the 'extras_cpp' specified above will be replaced with your project name.<br/>
 > **OPTIONAL** <br/>
-> When you specify a name for your project you may specify a sub name which will be converted into a namespace, (aka ***my_project*** instead of ***myproject*** ). In the case of sub name is specified you will see a namespace called 'reassign' after the RUNMEFIRST.sh script is completed.
+> When you specify a name for your project you may specify a sub name which will be converted into a namespace, (aka ***my_project*** instead of ***myproject*** ). In the case of sub name is **not** specified you will see a namespace called 'reassign' after the RUNMEFIRST.sh script is completed.
 
 In the case where you don't have a Linux box already setup:
 > 1. [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/extras_cpp/blob/dev/docs/ENVIRONMENT.md)
