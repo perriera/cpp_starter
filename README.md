@@ -18,8 +18,8 @@ Welcome to the **(perriera) / extras_cpp** project.
 
 ## Setup instructions
 Assuming you have a Linux box setup you can create a project as follows:
-> 1. [Generate your project using this template](https://github.com/perriera/extras_cpp/generate)
-> **NOTE** <br/>
+> 1. [Generate your project using this template](https://github.com/perriera/extras_cpp/generate)<br/>
+> **NOTE**: 
 > When you create your project the 'extras_cpp' specified above will be replaced with your project name.<br/>
 > 2. Clone the project to local directory using either https or ssh<br/>
 > `git clone git@github.com:perriera/extras_cpp.git`
