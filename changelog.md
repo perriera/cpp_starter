@@ -96,6 +96,6 @@ Updated README.md accordingly</br>
 
 ### Note
 > The following will only show on PUBLIC repositories:
-[unreleased]: https://github.com/perriera/extras_cpp/compare/v0.2.0...HEAD
-[0.2.0]: https://github.com/perriera/extras_cpp/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/perriera/extras_cpp/tree/v0.1.0
+[unreleased]: https://github.com/perriera/extras_cpp/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/perriera/extras_cpp/compare/v0.0.0...v0.1.0
+[0.0.0]: https://github.com/perriera/extras_cpp/tree/v0.0.0
