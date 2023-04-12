@@ -20,9 +20,9 @@ Welcome to the **(perriera) / extras_cpp** project.
 Assuming you have a Linux box setup you can create a project as follows:
 > 1. [Generate your project using this template](https://github.com/perriera/extras_cpp/generate)
 > 2. Clone the project to local directory using either https or ssh
-> `git clone git@github.com:perriera/extras_cpp.git`
+> `git clone git@github.com:perriera/my_project.git`
 > 3. cd into the project and run the start up script
-> `cd extras_cpp`
+> `cd my_project`
 > `./RUNMEFIRST.sh`
 > **OPTION** 
 > When you specify a name for your project you may specify a sub name which will be converted into a namespace, (aka ***my_project*** instead of ***myproject*** ). In the case of sub name is specified you will see a namespace called 'reassign' after the RUNMEFIRST.sh script is completed.
