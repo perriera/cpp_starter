@@ -21,7 +21,7 @@ Assuming you have a Linux box setup you can create a project as follows:
 > 1. [Generate your project using this template](https://github.com/perriera/extras_cpp/generate)<br/>
 > **NOTE**: 
 > When you create your project the 'extras_cpp' specified <br/>below will be replaced with your project name.<br/>
-> 2. Clone the project to local directory using either https or ssh<br/>
+> 2. Clone the project to local directory using either the https or ssh url<br/>
 > `git clone git@github.com:perriera/extras_cpp.git`
 > 3. cd into the project and run the start up script<br/>
 > `cd extras_cpp`<br/>
