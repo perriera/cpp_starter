@@ -1,5 +1,6 @@
 
 
+
 # [(perriera) / extras_cpp](https://github.com/perriera/extras_cpp)
 
 Welcome to the **(perriera) / extras_cpp** project.
@@ -16,14 +17,21 @@ Welcome to the **(perriera) / extras_cpp** project.
 > This project aims to get you up and running with C++17 based project with a 'git clone' operation. As well, this particular C++ project template comes with builtin [CPM](https://github.com/cpm-cmake/CPM.cmake) support. This means that you can incorporate other [github](https://github.com) projects, (or anything that uses the git tool) into your project with the simple inclusion of a CPM directive in in your CMakeLists.txt file.
 
 ## Setup instructions
-> **NOTE:** As soon as your project is cloned and you are in the project directory run the RUNMEFIRST.sh script
-> **NOTE:** It is highly recommended that you use a project name that contains one hyphen, (aka ***my_project***).
-> **NOTE:** The RUNMEFIRST.sh script assumes a Linux BASH shell environment. 
-> 
- 1. [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/extras_cpp/blob/dev/docs/ENVIRONMENT.md)
- 2. [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_cpp/blob/dev/docs/INSTALL.md)
- 3. [How to clone your project (with this template)](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
- 4. [How to setup your changelog.md](https://github.com/perriera/extras_cpp/blob/dev/docs/CHANGELOG.md)
+Assuming you have a Linux box setup you can create a project as follows:
+> 1. [Generate your project using this template](https://github.com/perriera/extras_cpp/generate)
+> 2. Clone the project to local directory using either https or ssh
+> `git clone git@github.com:perriera/extras_cpp.git`
+> 3. cd into the project and run the start up script
+> `cd extras_cpp`
+> `./RUNMEFIRST.sh`
+> **OPTION** 
+> When you specify a name for your project you may specify a sub name which will be converted into a namespace, (aka ***my_project*** instead of ***myproject*** ). In the case of sub name is specified you will see a namespace called 'reassign' after the RUNMEFIRST.sh script is completed.
+
+In the case where you don't have a Linux box already setup:
+> 1. [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/extras_cpp/blob/dev/docs/ENVIRONMENT.md)
+> 2. [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_cpp/blob/dev/docs/INSTALL.md)
+ >3. [How to clone your project (with this template)](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
+> 4. [How to setup your changelog.md](https://github.com/perriera/extras_cpp/blob/dev/docs/CHANGELOG.md)
 
 ### Credits
 > Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
