@@ -14,7 +14,7 @@ Welcome to the **(perriera) / extras_cpp** project.
 
 ## Who would want to use this?
 
-> This project aims to get you up and running with C++17 based project with a 'git clone' operation. As well, this particular C++ project template comes with builtin [CPM](https://github.com/cpm-cmake/CPM.cmake) support. This means that you can incorporate other [github](https://github.com) projects, (or anything that uses the git tool) into your project with the simple inclusion of a CPM directive in in your CMakeLists.txt file.
+> This project aims to get you up and running with C++17 based project with a 'git clone' operation. As well, this particular C++ project template comes with builtin [CPM](https://github.com/cpm-cmake/CPM.cmake) support. This means that you can incorporate other [github](https://github.com) projects, (or anything that uses the git tool) into your project with the simple inclusion of a CPM directive in in your CMakeLists.txt file, (for C++11 support change the `--std=c++17` directive specified in CMAKE_CXX_FLAGS)
 
 ## Setup instructions
 Assuming you have a Linux box setup you can create a project as follows:
