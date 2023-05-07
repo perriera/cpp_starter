@@ -1,5 +1,3 @@
-
-
 ## How to install the tools necessary for C++11/17 projects
 > In this step we need to install all the tools used by this project (that you may or may not already have installed.
 
@@ -22,13 +20,13 @@ Now that you have your project cloned we need to make sure you have the tools ne
  - [ ] Now copy and paste the following for a Linux environment
 
 		sudo apt update
-		sudo apt install -y build-essential libtool autotools-dev automake pkg-config git clangd cppcheck clang-tidy python3-pip checkinstall
+		sudo apt install -y build-essential libtool autotools-dev automake pkg-config git clangd cppcheck clang-tidy python3-pip checkinstall gdb gcc-multilib g++-multilib
 
- - [ ] Assuming that was successful, install CMake 3.21
+ - [ ] Assuming that was successful, install CMake 
 
 		pip install clang-format
 		pip install cmake-format
-		pip install cmake
+		sudo snap install cmake --classic 
 
  - [ ] Now open the vi editor 
 
@@ -50,12 +48,23 @@ Now that you have your project cloned we need to make sure you have the tools ne
 
  - [ ] Now start Visual Studio Code
 
+		cd <into your project directory>
 		code .
 
 ### Alternate Case 
 > **Visual Studio Code Extensions** </br>
 >	Visual Studio Code will detect whatever language you are using and offer to install extentions automatically. Feel free to allow all recommendations as they appear to the bottom right of the Visual Studio Code environment.
 
+### Alternate Case 
+> **Ubuntu 18.04** </br>
+>	Slightly different parameters required
+```
+sudo apt install -y build-essential libtool autotools-dev automake pkg-config git clang-9 cppcheck clang-tidy python3-pip checkinstall gdb gcc-multilib g++-multilib
+```
+> In the case you've installed a version of gcc / g++ that doesn't ship by default (such as g++-4.8 on lucid) you'll want to match the version as well:
+```
+sudo apt-get install gcc-4.8-multilib g++-4.8-multilib
+```
 ### Summary 
 Now you have instaled the development environment and editor for a C++17 project (complete with cmake 3.21 support). The next steps are now to clone the project then setup your changelog.md (for accurate version control).
 
@@ -63,5 +72,4 @@ Now you have instaled the development environment and editor for a C++17 project
  - [How to generate a new SSH key for your GitHub.com account](https://github.com/perriera/extras_dbo/blob/dev/docs/SSHKEY.md)
  - [How to clone your project (with this template)](https://github.com/perriera/extras_dbo/blob/dev/docs/CLONE.md)
  - [How to setup your changelog.md](https://github.com/perriera/extras_dbo/blob/dev/docs/CHANGELOG.md)
-
-
+ - [How to tag your latest revisions](https://github.com/perriera/extras_dbo/blob/dev/docs/TAGIT.md)
