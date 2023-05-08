@@ -1,0 +1,4 @@
+## (perriera)/extras docs/ folder
+> In the interest of keeping track of a single set of tutorials and technical resources we have placed all documentation into its own git repository. Further, when extras_cpp is used as a template a copy of the for_extras git repository is placed inside the docs folder. At the moment the .gitmodules specification is operational (due to some as yet syntax specification). However, this turns out to be a benefit to you the author or your own projects, (as having a sub module updating without your knowledge and/or consent may not be ideal for your project). 
+> In the event that you might like to keep updated a simple `git pull` inside the for_extras folder will bring you the latest updates. Other than that it is up to you to resolve the current syntax for the .gitmodules specification, (to make it dynamic).
+> 
