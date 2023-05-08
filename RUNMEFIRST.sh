@@ -79,6 +79,7 @@ clear
 ls -la 
 
 echo $f1 now setup and committed as tag "(v0.1.0)"
+git tag -n
 
 
 
