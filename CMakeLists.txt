@@ -125,32 +125,22 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 # MAKE_SPDLOG_SHARED OFF" -- Matt Williams, October, 2021
 #
 if (MAKE32BITONLY)
-  CPMAddPackage(
-    NAME extras
-    GITHUB_REPOSITORY perriera/extras
-    VERSION 8.19.4
-    OPTIONS "MAKE_SPDLOG_SHARED OFF"
-    OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
-    OPTIONS "MAKE32BITONLY 1"
-  )
+set(EXTRAS_32_64_MODE "MAKE32BITONLY")
 elseif(MAKE64BITONLY)
-CPMAddPackage(
-  NAME extras
-  GITHUB_REPOSITORY perriera/extras
-  VERSION 8.19.4
-  OPTIONS "MAKE_SPDLOG_SHARED OFF"
-  OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
-  OPTIONS "MAKE64BITONLY 1"
-  )
+set(EXTRAS_32_64_MODE "MAKE64BITONLY")
 else()
+set(EXTRAS_32_64_MODE "MAKEBOTH32AND64")
+endif()
+
 CPMAddPackage(
   NAME extras
   GITHUB_REPOSITORY perriera/extras
   VERSION 8.19.4
   OPTIONS "MAKE_SPDLOG_SHARED OFF"
   OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
-  )
-endif()
+  OPTIONS "${EXTRAS_32_64_MODE} ON"
+)
+
 if(extras_ADDED)
   #
   # NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
