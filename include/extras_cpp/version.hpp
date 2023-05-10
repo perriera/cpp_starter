@@ -1,6 +1,6 @@
 /**
 * @file version.hpp
-* @author Matt Williams (mattltf@protonmail.com)
+* @author Matt Williams, (mattltf@protonmail.com)
 * @brief Adds version support for Cmake script
 * @version 3.2.0
 * @date 2021-08-08
@@ -14,7 +14,8 @@
 
 /**
  * @brief The MIT License (MIT)
- * @copyright © 2023 Perry Anderson, (perry@exparx.ca)
+ * @copyright © 2021 Matt Williams, (mattltf@protonmail.com)
+ * @ref https://github.com/thebashpotato
  *
  * Permission  is  hereby  granted, free  of  charge, to  any person  obtaining
  * a copy of this software and associated documentation files (the “Software”),

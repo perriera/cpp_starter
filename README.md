@@ -35,7 +35,7 @@ In the case where you don't have a Linux box already setup:
 
 ### Credits
 > Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
-> C++ EXTRAS logo and CPM support compliments [Matt Williams](https://github.com/mattcoding4days/cmake-starter#)<br/>
+> C++ EXTRAS logo and CPM support compliments [Matt Williams](https://github.com/thebashpotato)<br/>
 
 ### Copyright
 > Copyright 2022 EXPARX INCORPORATED ([exparx.com](https://www.exparx.com/))<br/>
