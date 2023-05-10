@@ -1,6 +1,6 @@
 /**
  * @file ChessGame.hpp
- * @author Perry Anderson (perry@exparx.com)
+ * @author Perry Anderson (perry@exparx.ca)
  * @brief Sample Header file
  * @version 0.1
  * @date 2021-11-30

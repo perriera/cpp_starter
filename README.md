@@ -38,6 +38,6 @@ In the case where you don't have a Linux box already setup:
 > C++ EXTRAS logo and CPM support compliments [Matt Williams](https://github.com/thebashpotato)<br/>
 
 ### Copyright
-> Copyright 2022 EXPARX INCORPORATED ([exparx.com](https://www.exparx.com/))<br/>
+> Copyright 2022 EXPARX INCORPORATED ([exparx.ca](https://www.exparx.ca/))<br/>
 > [Open Source / MIT License](https://opensource.org/licenses/MIT) (see [LICENSE.md](https://github.com/perriera/extras_cpp/blob/dev/LICENSE.md))<br/>
 
