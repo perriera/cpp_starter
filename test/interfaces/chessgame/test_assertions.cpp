@@ -31,7 +31,7 @@ using namespace std;
 using namespace extras;
 using namespace extras::cpp;
 
-SCENARIO("test game::Interface assertions", "[JIRA-1440]") {
+SCENARIO("Dock cpp::game::Interface assertions", "[cpp::game::Interface]") {
 
     /**
      *    test all the assertions

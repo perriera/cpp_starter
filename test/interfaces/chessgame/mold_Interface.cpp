@@ -34,7 +34,7 @@ using namespace extras::cpp;
 using namespace fakeit;
 
 /**
- *    Mold<cpp::ChessGameInterface> dock;
+ *    Mold<cpp::cpp::game::Interface> dock;
  *
  *    (aka. mold the cpp::ChessGame interface to this dock)
  *
@@ -47,7 +47,7 @@ using namespace fakeit;
  *    the (perrier) extras framework
  *
  */
-SCENARIO("Mold ChessGameInterface", "[JIRA-1440]") {
+SCENARIO("Mold cpp::game::Interface", "[cpp::game::Interface]") {
 
     /**
      *    Steps 1. Mold the Interface to a dock

@@ -30,7 +30,7 @@
 using namespace std;
 using namespace extras::cpp;
 
-SCENARIO("test game::methods", "[JIRA-1440]")
+SCENARIO("Dock cpp::game::Interface methods", "[cpp::game::Interface]")
 {
     /**
      *    construct an object

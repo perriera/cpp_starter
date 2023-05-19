@@ -31,7 +31,7 @@ using namespace std;
 using namespace extras;
 using namespace extras::cpp;
 
-SCENARIO("test game::constructs", "[JIRA-1440]")
+SCENARIO("Dock cpp::game::Interface constructs", "[cpp::game::Interface]")
 {
     /**
      *
