@@ -57,6 +57,8 @@ find . -type f -name '*.c*' -print0 | xargs -0 sed -i "s/extras::cpp/$n1::$n2/g"
 find . -type f -name '*.c*' -print0 | xargs -0 sed -i "s/cpp::game/$n2::game/g"
 find . -type f -name '*.c*' -print0 | xargs -0 sed -i "s/$n1::cpp/$n1::$n2/g"
 
+find . -type f -name launch.json -print0 | xargs -0 sed -i "s/cpp::game::/$n2::game::/g"
+
 mv include/extras_cpp include/$f1
 
 mkdir build
