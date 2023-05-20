@@ -62,7 +62,7 @@ namespace extras {
             };
 
             /**
-             * @brief EndOfGameReachedException
+             * @brief Interface::Exception
              *
              */
             abstract class Exception
@@ -77,7 +77,7 @@ namespace extras {
             };
 
             /**
-             * @brief EndOfGameReachedException
+             * @brief sample custom exception
              *
              */
             concrete class EndOfGameReachedException
