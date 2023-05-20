@@ -21,12 +21,9 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 #
-#
 
 #
-# recommendations acquired from here:
-#
-# https://github.com/lefticus/cppbestpractices/blob/master/02-Use_the_Tools_Available.md
+# @brief see also docs/for_extras/cpp/CPPWARNINGS.md
 #
 
 function(set_project_warnings project_name)

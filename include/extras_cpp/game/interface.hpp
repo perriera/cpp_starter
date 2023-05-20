@@ -6,6 +6,7 @@
  * @date 2021-11-30
  *
  * @copyright © 2023 Perry Anderson, (perry@exparx.ca)
+ * @ref https://github.com/perriera
  *
  */
 

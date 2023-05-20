@@ -1,17 +1,25 @@
 #
-# Determining 32 or 64 (and/or both) from environment variables
-# 
-# Notes on INTEL 32 BIT SUPPORT 
+# @brief The MIT License (MIT)
+# @copyright © 2023 Perry Anderson, (perry@exparx.ca)
+# @ref https://github.com/perriera
 #
-# By default the perriera/extras shared libraries and the perriera/extras_cpp template
-# will compile to a 64bit platform. In modern applications this is rarely an issue. 
-# But in the case were older architectures require 32bit support or perhaps dual 32bit
-# and 64bit targets (simultaneously) all that needs to be done to build for the desired
-# platforms are to set EITHER (not both) MAKE64BITONLY or MAKE32BITONLY, (see lines 21/22).
+# Permission  is  hereby  granted, free  of  charge, to  any person  obtaining
+# a copy of this software and associated documentation files (the “Software”),
+# to deal in the Software  without restriction,  including  without limitation
+# the rights to  use,  copy,  modify,  merge, publish, distribute, sublicense,
+# and/or sell  copies of the  Software,  and  to  permit  persons  to whom the
+# Software is furnished to do so, subject to the following conditions:
 #
-# In the case where GitHub.com testing is required these libraries will select 64bit.
+# The above copyright notice  and this permission  notice shall be included in
+# all copies or substantial portions of the Software.
 #
-# In the case where both MAKE64BITONLY and MAKE32BITONLY is desired COMMENT OUT BOTH.
+# THE SOFTWARE IS  PROVIDED “AS IS”,  WITHOUT WARRANTY  OF ANY  KIND,  EXPRESS
+# OR IMPLIED,  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR  PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR  COPYRIGHT HOLDERS BE  LIABLE FOR ANY  CLAIM,  DAMAGES  OR  OTHER
+# LIABILITY,  WHETHER IN  AN ACTION  OF CONTRACT,  TORT OR  OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
 #
 
 include(cmake/print.cmake)
