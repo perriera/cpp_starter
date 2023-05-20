@@ -89,3 +89,7 @@ git tag -n
 
 bin/update_docs.sh
 
+echo NEXT STEPS:
+echo you may now open your favorite text editor and set a breakpoint
+echo on line 60 of test/interfaces/chessgame/mold_interfaces  
+echo for those of you using Visual Studio Code merely type 'code .'
