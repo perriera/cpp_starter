@@ -58,6 +58,7 @@ find . -type f -name '*.c*' -print0 | xargs -0 sed -i "s/cpp::game/$n2::game/g"
 find . -type f -name '*.c*' -print0 | xargs -0 sed -i "s/$n1::cpp/$n1::$n2/g"
 
 find . -type f -name launch.json -print0 | xargs -0 sed -i "s/cpp::game::/$n2::game::/g"
+find . -type f -name launch.json -print0 | xargs -0 sed -i "s/extras_cpp/${f1}/g"
 
 mv include/extras_cpp include/$f1
 mv instances/extras_cpp_app.cpp instances/${f1}_app.cpp
