@@ -62,6 +62,8 @@ find . -type f -name launch.json -print0 | xargs -0 sed -i "s/cpp::game::/$n2::g
 mv include/extras_cpp include/$f1
 mv instances/extras_cpp_app.cpp instances/${$f1}_app.cpp
 
+exit
+
 mkdir build
 cd build
 cmake ..
