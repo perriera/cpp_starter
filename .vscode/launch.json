@@ -79,6 +79,29 @@
             "miDebuggerPath": "/usr/bin/gdb"
         },
         {
+            "name": "extras_cpp_app_i386",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/extras_cpp_app_i386",
+            "args": [
+                "data/pgn/kasparov_muratkuliev_1973.PGN"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Build C++ project",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
             "name": "your_app_here",
             "type": "cppdbg",
             "request": "launch",
