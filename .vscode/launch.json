@@ -15,7 +15,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/run-unittests-${workspaceRootFolderName}",
             "args": [
-                "[cpp::game::Interface]"
+                "[injections::retag::Instance]"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
