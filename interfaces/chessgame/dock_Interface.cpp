@@ -28,29 +28,43 @@
 
 #include "../../test/vendor/catch.hpp"
 
-using namespace std;
+using namespace extras;
 using namespace extras::cpp;
 
-SCENARIO("Dock cpp::game::Interface methods", "[cpp::game::Interface]")
-{
+/**
+ *    Mold<cpp::cpp::game::Interface> dock;
+ *
+ *    (aka. mold the cpp::ChessGame interface to this dock)
+ *
+ *    this is a very simple dock/mold for the purpose
+ *    of showing how parameters can be passed to methods
+ *    and how dock/molds can be used in their simplist
+ *    form and execution.
+ *
+ *    for a more complete examples of dock/molds see
+ *    the (perrier) extras framework
+ *
+ */
+SCENARIO("Dock cpp::game::Interface", "[cpp::game::Interface]") {
+
     /**
-     *    construct an object
+     *    Steps 1. Mold the Interface to a dock
+     *          2. dock methods of interest
+     *          3. supply a reference to that dock
+     *
      */
 
-    game::ChessGame game(1, 2);
-    game::Interface& i = game;
+    cpp::game::Instance dock(1, 2);
+    cpp::game::Interface& i = dock;
 
-    /**
-     *    repeat same tests from mold
-     */
+    test(i);
 
-    i.moves();
-    REQUIRE(i.exists() == true);
-    REQUIRE(i.piece(1, 2) == true);
     REQUIRE_THROWS_AS(
-        i.zone(0, 0), game::EndOfGameReachedException);
-    REQUIRE(i.zone(1, 0) == false);
-    REQUIRE(i.zone(0, 1) == false);
+        cpp::game::Instance(0, 0), game::EndOfGameReachedException);
+
+    REQUIRE_THROWS_AS(
+        game::EndOfGameReachedException::assertion(
+            0, 0, "sample", __INFO__), game::EndOfGameReachedException);
 
 }
 

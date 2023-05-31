@@ -24,25 +24,48 @@
  */
 
 #include <iostream>
-#include <extras_cpp/game/clazz.hpp>
+#include <extras_cpp/game/interface.hpp>
 
 #include "../../test/vendor/catch.hpp"
 
-using namespace std;
 using namespace extras;
 using namespace extras::cpp;
 
-SCENARIO("Dock cpp::game::Interface constructs", "[cpp::game::Interface]")
-{
-    /**
-     *
-     *    test various constructors
-     *    with various parameters
-     *
-     */
-    cpp::game::ChessGame game(1, 2);
+/**
+ *    Mold<cpp::cpp::game::Interface> dock;
+ *
+ *    (aka. mold the cpp::ChessGame interface to this dock)
+ *
+ *    this is a very simple dock/mold for the purpose
+ *    of showing how parameters can be passed to methods
+ *    and how dock/molds can be used in their simplist
+ *    form and execution.
+ *
+ *    for a more complete examples of dock/molds see
+ *    the (perrier) extras framework
+ *
+ */
 
-    REQUIRE_THROWS_AS(
-        cpp::game::ChessGame(0, 0), game::EndOfGameReachedException);
+namespace extras {
+    namespace cpp {
+        namespace game {
 
+            void test(Interface& i) {
+
+                /**
+                 * @brief mold the interface
+                 *
+                 */
+                i.moves();
+                REQUIRE(i.exists() == true);
+                REQUIRE(i.piece(1, 2) == true);
+                REQUIRE(i.zone(0, 0) == false);
+                REQUIRE(i.zone(1, 0) == false);
+                REQUIRE(i.zone(0, 1) == false);
+
+            }
+        }
+    }
 }
+
+

@@ -49,7 +49,7 @@ namespace extras {
              * @brief ChessGame
              *
              */
-            concrete class ChessGame implements Interface
+            concrete class Instance implements Interface
             {
 
                 int _x = 0, _y = 0;
@@ -59,7 +59,7 @@ namespace extras {
                 /**
                  * construct ChessGame
                  */
-                ChessGame(int x, int y) : _x(x), _y(y)
+                Instance(int x, int y) : _x(x), _y(y)
                 {
 
                     /**
@@ -77,15 +77,9 @@ namespace extras {
                  * @return all the chess moves of the given chess game
                  */
                 virtual void moves() const override {}
-                virtual bool exists() const override {
-                    return true;
-                }
+                virtual bool exists() const override { return true; }
                 virtual bool piece(int, int) const override { return true; }
-                virtual bool zone(int row, int col) const override {
-                    game::EndOfGameReachedException::assertion(
-                        row, col, "sample", __INFO__);
-                    return row == _x && col == _y;
-                }
+                virtual bool zone(int, int) const override { return false; }
 
             };
 

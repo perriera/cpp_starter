@@ -78,6 +78,12 @@ namespace extras {
             };
 
             /**
+             * @brief test(Interface&);
+             *
+             */
+            void test(Interface&);
+
+            /**
              * @brief sample custom exception
              *
              */

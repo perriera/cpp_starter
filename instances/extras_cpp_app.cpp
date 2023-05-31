@@ -18,7 +18,7 @@ using namespace extras::cpp;
 int main(int, const char**)
 {
   try {
-    game::ChessGame game(1, 2);
+    game::Instance game(1, 2);
     game.moves();
     return 0;
   }

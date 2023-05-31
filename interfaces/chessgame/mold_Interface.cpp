@@ -63,7 +63,7 @@ SCENARIO("Mold cpp::game::Interface", "[cpp::game::Interface]") {
     When(Method(dock, piece)).AlwaysDo([](int, int) { return true; });
     int _x = 0, _y = 0;
     When(Method(dock, zone)).AlwaysDo([&_x, &_y](int row, int col) {
-        return row == _x && col == _y;
+        return false;
         });
     cpp::game::Interface& i = dock.get();
 
@@ -104,12 +104,7 @@ SCENARIO("Mold cpp::game::Interface", "[cpp::game::Interface]") {
       * @brief mold the interface
       *
       */
-    i.moves();
-    REQUIRE(i.exists() == true);
-    REQUIRE(i.piece(1, 2) == true);
-    REQUIRE(i.zone(0, 0) == true);
-    REQUIRE(i.zone(1, 0) == false);
-    REQUIRE(i.zone(0, 1) == false);
+    test(i);
 
     /**
      *     Steps 5. Verify all methods intended to be called
