@@ -62,7 +62,7 @@ SCENARIO("Mold cpp::game::Interface", "[cpp::game::Interface]") {
     When(Method(dock, exists)).AlwaysDo([]() { return true; });
     When(Method(dock, piece)).AlwaysDo([](int, int) { return true; });
     int _x = 0, _y = 0;
-    When(Method(dock, zone)).AlwaysDo([&_x, &_y](int row, int col) {
+    When(Method(dock, zone)).AlwaysDo([&_x, &_y](int, int) {
         return false;
         });
     cpp::game::Interface& i = dock.get();

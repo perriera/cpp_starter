@@ -26,10 +26,7 @@
 #include <iostream>
 #include <extras/file/clazz.hpp>
 #include <injections/retag/clazz.hpp>
-
 #include "../../test/vendor/catch.hpp"
-
-using namespace extras;
 
 SCENARIO("Test injections::retag::Instance", "[injections::retag::Instance]") {
 
