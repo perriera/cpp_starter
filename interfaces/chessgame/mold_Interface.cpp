@@ -29,8 +29,8 @@
 #include <injections/retag/clazz.hpp>
 #include <extras/docking/DockIt.hpp>
 
-#include "../../vendor/catch.hpp"
-#include "../../vendor/fakeit.hpp"
+#include "../../test/vendor/catch.hpp"
+#include "../../test/vendor/fakeit.hpp"
 
 using namespace extras;
 using namespace extras::cpp;

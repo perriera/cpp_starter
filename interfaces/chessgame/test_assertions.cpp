@@ -23,6 +23,22 @@
  *
  */
 
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+#include <iostream>
+#include <extras_cpp/game/interface.hpp>
 
+#include "../../test/vendor/catch.hpp"
+
+using namespace std;
+using namespace extras;
+using namespace extras::cpp;
+
+SCENARIO("Dock cpp::game::Interface assertions", "[cpp::game::Interface]") {
+
+    /**
+     *    test all the assertions
+     */
+    REQUIRE_THROWS_AS(
+        game::EndOfGameReachedException::assertion(
+            0, 0, "sample", __INFO__), game::EndOfGameReachedException);
+
+}

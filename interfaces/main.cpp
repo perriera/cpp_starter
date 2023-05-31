@@ -23,14 +23,6 @@
  *
  */
 
-#include <iostream>
-
-#include "../../catch.hpp"
-
-using namespace std;
-
-SCENARIO("Verify HelloWorld OEM", "[HelloWorld]")
-{
-    cout << "Hello, world" << endl;
-}
+#define CATCH_CONFIG_MAIN
+#include "../test/vendor/catch.hpp"
 

@@ -24,21 +24,25 @@
  */
 
 #include <iostream>
-#include <extras_cpp/game/interface.hpp>
+#include <extras_cpp/game/clazz.hpp>
 
-#include "../../vendor/catch.hpp"
+#include "../../test/vendor/catch.hpp"
 
 using namespace std;
 using namespace extras;
 using namespace extras::cpp;
 
-SCENARIO("Dock cpp::game::Interface assertions", "[cpp::game::Interface]") {
-
+SCENARIO("Dock cpp::game::Interface constructs", "[cpp::game::Interface]")
+{
     /**
-     *    test all the assertions
+     *
+     *    test various constructors
+     *    with various parameters
+     *
      */
+    cpp::game::ChessGame game(1, 2);
+
     REQUIRE_THROWS_AS(
-        game::EndOfGameReachedException::assertion(
-            0, 0, "sample", __INFO__), game::EndOfGameReachedException);
+        cpp::game::ChessGame(0, 0), game::EndOfGameReachedException);
 
 }
