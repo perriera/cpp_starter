@@ -25,6 +25,8 @@
 
 #include <iostream>
 #include <extras_cpp/game/interface.hpp>
+#include <extras/file/clazz.hpp>
+#include <injections/retag/clazz.hpp>
 #include <extras/docking/DockIt.hpp>
 
 #include "../../vendor/catch.hpp"
@@ -100,6 +102,22 @@ SCENARIO("Mold cpp::game::Interface", "[cpp::game::Interface]") {
      *
      */
 
+     /**
+      * @brief test the injections::retag::Instance
+      * @todo refactor this into it's source file
+      *
+      */
+    {
+        const char* argv[] = { "build/testarea/libsisutil.so", "9.24.0" };
+        int argc = 2;
+        injections::retag::Instance retag_ex;
+        REQUIRE_THROWS_AS(retag_ex.execute(argc, argv), extras::file::NotFoundException);
+    }
+
+    /**
+     * @brief mold the interface
+     *
+     */
     i.moves();
     REQUIRE(i.exists() == true);
     REQUIRE(i.piece(1, 2) == true);

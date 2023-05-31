@@ -158,22 +158,24 @@ set(EXTRAS_32_64_MODE "MAKEBOTH32AND64")
 endif()
 
 CPMAddPackage(
-  NAME extras
-  GITHUB_REPOSITORY perriera/extras
-  VERSION 8.25.5
+  NAME injections
+  GITHUB_REPOSITORY perriera/injections
+  VERSION 1.0.12
   OPTIONS "MAKE_SPDLOG_SHARED OFF"
   OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
+  OPTIONS "MAKE_INJECTIONS_LIBRARY_ONLY ON"
+  OPTIONS "MAKE_INJECTIONS_LIBRARY_TOOLS ON"
   OPTIONS "${EXTRAS_32_64_MODE} ON"
 )
 
-if(extras_ADDED)
+if(injections_ADDED)
   #
   # NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
   #
-  print(STATUS "Configuring extras build properties")
-  # set_target_properties(extras PROPERTIES CMAKE_BUILD_TYPE Release)
+  print(STATUS "Configuring injections build properties")
+  # set_target_properties(injections PROPERTIES CMAKE_BUILD_TYPE Release)
 else()
-  print(WARNING "extras was not configured properly")
+  print(WARNING "injections was not configured properly")
 endif()
 
 #
@@ -197,7 +199,7 @@ file(GLOB_RECURSE EXTRAS_CPP_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 set(EXTRAS_CPP_LIBS_COMMON stdc++fs ${EXTRAS_CPP_THIRD_PARTY_LIBRARIES} Threads::Threads)
 
 if (MAKE32BIT)
-set(EXTRAS_CPP_LIBS_NEEDED_i386 extras_i386 ${EXTRAS_CPP_LIBS_COMMON})
+set(EXTRAS_CPP_LIBS_NEEDED_i386 extras_i386 injections_i386 ${EXTRAS_CPP_LIBS_COMMON})
 add_library(${PROJECT_NAME}_i386 SHARED ${EXTRAS_CPP_HEADERS} ${EXTRAS_CPP_SOURCE})
 target_include_directories(${PROJECT_NAME}_i386 PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
 target_link_libraries(${PROJECT_NAME}_i386 PRIVATE ${EXTRAS_CPP_LIBS_NEEDED_i386})
@@ -206,7 +208,7 @@ target_link_options(${PROJECT_NAME}_i386 PRIVATE -m32)
 endif()
 
 if (MAKE64BIT)
-set(EXTRAS_CPP_LIBS_NEEDED extras  ${EXTRAS_CPP_LIBS_COMMON})
+set(EXTRAS_CPP_LIBS_NEEDED extras injections ${EXTRAS_CPP_LIBS_COMMON})
 add_library(${PROJECT_NAME} SHARED ${EXTRAS_CPP_HEADERS} ${EXTRAS_CPP_SOURCE})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${EXTRAS_CPP_LIBS_NEEDED})
@@ -216,6 +218,13 @@ endif()
 # NOTE: declare unit test cases here all source should have adequate test cases whether they be mock
 # or unit tests, (or both)
 #
+
+#
+# ${ORACLE_INCLUDE} is included below even though there may not be any .cmake file under the current
+# cmake/ folder to define this macro. It is kept in place here for your future reference should you
+# decide to add either your own Oracle macro or another 3rd party library
+#
+
 if (NOT MAKE_EXTRAS_CPP_LIBRARY_ONLY)
   if(EXTRAS_CPP_TESTS)
     print(STATUS "Building tests")

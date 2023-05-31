@@ -30,7 +30,7 @@ if (IS_GITHUB_ENV)
 print(STATUS "GITHUB_ENV detected")
 set(MAKE64BITONLY 1)
 else()
-#set(MAKE32BITONLY 1)
+# set(MAKE32BITONLY 1)
 set(MAKE64BITONLY 1)
 endif()
 
