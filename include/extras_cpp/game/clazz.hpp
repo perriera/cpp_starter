@@ -59,16 +59,33 @@ namespace extras {
                 /**
                  * construct ChessGame
                  */
-                ChessGame(int x, int y);
+                ChessGame(int x, int y) : _x(x), _y(y)
+                {
+
+                    /**
+                     *   this shows how assertions can be used to
+                     *   centralize conditions that cause exceptions
+                     *   in one place
+                     */
+                    game::EndOfGameReachedException::assertion(
+                        _x, _y, "sample", __INFO__);
+
+                }
 
                 /**
                  * @brief moves()
                  * @return all the chess moves of the given chess game
                  */
-                virtual void moves() const override;
-                virtual bool exists() const override;
-                virtual bool piece(int row, int col) const override;
-                virtual bool zone(int row, int col) const override;
+                virtual void moves() const override {}
+                virtual bool exists() const override {
+                    return true;
+                }
+                virtual bool piece(int, int) const override { return true; }
+                virtual bool zone(int row, int col) const override {
+                    game::EndOfGameReachedException::assertion(
+                        row, col, "sample", __INFO__);
+                    return row == _x && col == _y;
+                }
 
             };
 

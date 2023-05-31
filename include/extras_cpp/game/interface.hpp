@@ -91,7 +91,11 @@ namespace extras {
                 static void assertion(
                     int sizePGN, int sizeFEN,
                     const std::string& msg,
-                    const extras::WhereAmI& ref);
+                    const extras::WhereAmI& ref) {
+                    if (sizePGN == 0) {
+                        if (sizeFEN == 0) throw game::EndOfGameReachedException(msg, ref);
+                    }
+                }
             };
 
         }
