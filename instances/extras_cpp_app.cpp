@@ -22,7 +22,7 @@ int main(int, const char**)
     game.moves();
     return 0;
   }
-  catch (const game::Exception& ex) {
+   catch (const extras::exception& ex) {
     std::cout << ex << std::endl;
   }
   catch (const std::exception& ex) {
