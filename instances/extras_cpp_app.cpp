@@ -10,23 +10,20 @@
  *
  */
 
-#include <iostream>
 #include <extras_cpp/game/clazz.hpp>
+#include <iostream>
 
 using namespace extras::cpp;
 
-int main(int, const char**)
-{
-  try {
-    game::Instance game(1, 2);
-    game.moves();
-    return 0;
-  }
-   catch (const extras::exception& ex) {
-    std::cout << ex << std::endl;
-  }
-  catch (const std::exception& ex) {
-    std::cout << ex.what() << std::endl;
-  }
-  return -1;
+int main(int, const char**) {
+   try {
+      game::Instance game(1, 2);
+      game.moves();
+      return 0;
+   } catch (const extras::exception& ex) {
+      std::cout << ex << std::endl;
+   } catch (const std::exception& ex) {
+      std::cout << ex.what() << std::endl;
+   }
+   return -1;
 }
