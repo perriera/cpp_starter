@@ -82,6 +82,7 @@ clear
 
 ls -la 
 
+mkdir docs
 cd docs
 git clone https://github.com/perriera/for_extras.git
 cd ..
