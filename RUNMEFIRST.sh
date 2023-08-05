@@ -89,9 +89,8 @@ cd ..
 echo $f1 now setup and committed as tag "(v0.1.0)"
 git tag -n
 
-bin/update_docs.sh
-
 echo NEXT STEPS:
 echo you may now open your favorite text editor and set a breakpoint
 echo on line 60 of test/interfaces/chessgame/mold_interfaces  
 echo for those of you using Visual Studio Code merely type 'code .'
+echo also, run bin/update_docs.sh docs folder  
