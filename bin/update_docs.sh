@@ -26,6 +26,12 @@
 
 FILE=docs/for_extras/SETUP.md
 
+if [ ! -d "docs" ] 
+then
+    echo "Directory docs/c DOES NOT exists." 
+    mkdir docs
+fi
+
 if [ ! -f $FILE ]; then
     git clone https://github.com/perriera/for_extras.git docs/for_extras
 fi
