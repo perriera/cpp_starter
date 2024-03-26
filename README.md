@@ -15,7 +15,7 @@ Welcome to the **(perriera) / extras_cpp** project.
 > This project aims to get you up and running with C++17 based project with a 'git clone' operation. As well, this particular C++ project template comes with builtin [CPM](https://github.com/cpm-cmake/CPM.cmake) support. This means that you can incorporate other [github](https://github.com) projects, (or anything that uses the git tool) into your project with the simple inclusion of a CPM directive in in your CMakeLists.txt file, (for C++11 support change the `--std=c++17` directive specified in CMAKE_CXX_FLAGS)
 
 ## Setup instructions
-> Please note the source code repository has been superceded by [`injections.io(C++17)`](https://github.com/perriera/injections) framework
+> Please note this source code repository has now been superceded by [`injections.io(C++17)`](https://github.com/perriera/injections) framework
 - click here for  [injections.io(interfaces_cpp)](https://github.com/perriera/interfaces_cpp)
 
 ### Credits
