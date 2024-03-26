@@ -27,12 +27,6 @@ Assuming you have a Linux box setup you can create a project as follows:
 > **OPTIONAL** <br/>
 > When you specify a name for your project you may specify a sub name which will be converted into a namespace, (aka ***my_project*** instead of ***myproject*** ). In the case of sub name is **not** specified you will see a namespace called 'reassign' after the RUNMEFIRST.sh script is completed.
 
-In the case where you don't have a Linux box already setup:
-> 1. [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/extras_cpp/blob/dev/docs/ENVIRONMENT.md)
-> 2. [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_cpp/blob/dev/docs/INSTALL.md)
- >3. [How to clone your project (with this template)](https://github.com/perriera/extras_cpp/blob/dev/docs/CLONE.md)
-> 4. [How to setup your changelog.md](https://github.com/perriera/extras_cpp/blob/dev/docs/CHANGELOG.md)
-
 ### Credits
 > Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
 > C++ EXTRAS logo and CPM support compliments [Matt Williams](https://github.com/thebashpotato)<br/>
