@@ -22,7 +22,5 @@ Welcome to the **(perriera) / extras_cpp** project.
 > Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
 > C++ EXTRAS logo and CPM support compliments [Matt Williams](https://github.com/thebashpotato)<br/>
 
-### Copyright
-> © 2023 Perry Anderson, (perry@exparx.ca) ([exparx.ca](https://www.exparx.ca/))<br/>
-> [Open Source / MIT License](https://opensource.org/licenses/MIT) (see [LICENSE.md](https://github.com/perriera/extras_cpp/blob/dev/LICENSE.md))<br/>
-
+### Disclaimer
+> The word **if** must not be said anywhere on this page, ([except here](https://www.britannica.com/topic/Monty-Pythons-Flying-Circus)).
